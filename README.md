@@ -17,7 +17,6 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&width=900&lines=Computer+Systems+Engineer;IT+Support+and+Network+Troubleshooting;Web+Development+and+Automation;Always+learning+new+technologies" alt="Typing SVG" />
 </p>
 
----
 
 ## 👨‍💻 About Me
 
@@ -29,30 +28,34 @@
 - 🤝 I work well both independently and in teams
 - 🚀 Passionate about continuous learning and creating better solutions through technology
 
----
 
-<h2 align="left">🌐 Connect With Me</h2>
+<h2>🌐 Connect With Me</h2>
 
 <p align="center">
 
   <!-- LinkedIn -->
   <a href="https://www.linkedin.com/in/alfonso-chavarin/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-Alfonso%20Chavar%C3%ADn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+    <img src="https://img.shields.io/badge/LinkedIn-AlfonsoCha1-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
 
-  <!-- Email -->
+  <!-- Gmail -->
   <a href="mailto:alfonso.chavarin@hotmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/Email-Hotmail-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Gmail-Alfonso%20Chavar%C3%ADn-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
 
   <!-- GitHub -->
   <a href="https://github.com/AlfonsoCha1" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-AlfonsoCha1-181717?style=for-the-badge&logo=github&logoColor=white"/>
+    <img src="https://img.shields.io/badge/GitHub-AlfonsoCha1-000000?style=for-the-badge&logo=github&logoColor=white"/>
   </a>
 
-  <!-- PORTFOLIO DESTACADO -->
+  <!-- Portfolio verde -->
   <a href="https://portafolio-original-tau.vercel.app/" target="_blank">
-    <img src="https://img.shields.io/badge/▲%20PORTFOLIO-LIVE%20SITE-00E676?style=for-the-badge&logoColor=white"/>
+    <img src="https://img.shields.io/badge/▲%20Portfolio-Website-00C853?style=for-the-badge&logoColor=white"/>
+  </a>
+
+  <!-- Live site morado -->
+  <a href="https://portafolio-original-tau.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Site-Visit-8A2BE2?style=for-the-badge&logoColor=white"/>
   </a>
 
 </p>
@@ -87,7 +90,7 @@
   
   <img src="https://img.shields.io/badge/Packet%20Tracer-1BA0D7?style=for-the-badge"/>
 </p>
----
+
 
 ## 📌 Featured Projects
 
@@ -138,7 +141,7 @@
   </tr>
 </table>
 
----
+
 
 ## 💼 Experience
 
@@ -173,7 +176,7 @@
 - 📜 **Microsoft Office Certification**
 - 📜 **Diploma in Generative AI & Automation**
 
----
+
 
 ## 📊 GitHub Stats
 
@@ -190,7 +193,7 @@
   <img src="https://github-profile-trophy.vercel.app/?username=AlfonsoCha1&theme=tokyonight&row=1&column=7&margin-w=10&margin-h=10&no-bg=true&no-frame=true" />
 </p>
 
----
+
 
 ## 🚀 Currently Learning
 
@@ -202,7 +205,7 @@
 - AWS
 - Better practices for frontend and full-stack development
 
----
+
 
 ## ✨ Soft Skills
 
@@ -213,7 +216,7 @@
 - Creativity
 - Continuous Learning
 
----
+
 
 <p align="center">
   <i>"Technology is not only about building things, but about solving real problems with useful solutions."</i>
