@@ -31,15 +31,16 @@
 
 ---
 
-<h2>🌐 Connect With Me</h2>
+<h2 align="left">🌐 Connect With Me</h2>
 
 <p align="center">
+
   <!-- LinkedIn -->
   <a href="https://www.linkedin.com/in/alfonso-chavarin/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-Alfonso%20Chavar%C3%ADn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
 
-  <!-- Email / Hotmail -->
+  <!-- Email -->
   <a href="mailto:alfonso.chavarin@hotmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-Hotmail-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white"/>
   </a>
@@ -49,13 +50,12 @@
     <img src="https://img.shields.io/badge/GitHub-AlfonsoCha1-181717?style=for-the-badge&logo=github&logoColor=white"/>
   </a>
 
-  <!-- Portfolio -->
+  <!-- PORTFOLIO DESTACADO -->
   <a href="https://portafolio-original-tau.vercel.app/" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-Live%20Site-FF6B00?style=for-the-badge&logo=vercel&logoColor=white"/>
+    <img src="https://img.shields.io/badge/▲%20PORTFOLIO-LIVE%20SITE-00E676?style=for-the-badge&logoColor=white"/>
   </a>
-</p>
 
----
+</p>
 
 ## 🧠 Tech Stack
 
@@ -65,7 +65,6 @@
   </a>
 </p>
 
----
 
 <h2>🛠 Tools & Technologies</h2>
 
