@@ -1,127 +1,206 @@
-<h1 align="center">Hola 👋  soy Orlando / unsimpleDev ✨ </h1> 
+<h1 align="center">Hi 👋, I'm José Alfonso Chavarín Montoya</h1>
+<h3 align="center">Computer Systems Engineer | IT Support | Networks | Web Development | Continuous Learner</h3>
 
-<p align="left">
-  <a href="https://www.youtube.com/@unsimpledev" target="blank"><img align="center" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="@unsimpledev"  /></a>
-<a href="https://www.tiktok.com/@unsimpledev" target="blank"><img align="center" src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="@unsimpledev" /></a>
-<a href="https://linkedin.com/in/unsimpledev" target="blank"><img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="unsimpledev"/></a>
-<a href="https://fb.com/unsimpledev" target="blank"><img align="center" src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="unsimpledev"  /></a>
-<a href = "mailto:unsimpledev@gmail.com" target="blank"><img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="@unsimpledev"  /></a>
-  </p>
-<br>
-<h2>Sobre mi 😃</h2>
-<!--Intro start-->
-
-<p align="left">
-🎓 INGENIERO EN INFORMÁTICA
-
-🎥 PEQUEÑO CREADOR DE CONTENIDO que transmite sus conocimientos 📚 a través de las redes en base a mucho estudio 😵 y experiencia
-
-💻 unos cuántos años de experiencia en el proceso de desarrollo de software (solo voy a decir más de 15 para no deschavar mi edad 🙈)
-
-📝 roles en el ámbito: desarrollador... líder... arquitecto... cofundador... emprendedor... programador freelance... y en un futuro quién sabe ☺️
-
-📫 Contacto: **unsimpledev@gmail.com**
-<!--Intro end-->
-  </p>
-<br>
-
-<h2 >Tecnologías conocidas👨🏻‍💻</h2>
-<!--tech stack icons-->
-<p align="left">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=androidstudio,c,cs,cpp,java,php,dart,flutter,py,dotnet,css,html,js,nodejs,mysql,sqlite,firebase,gtk,git,github,docker,materialui,postman,eclipse,vscode,bash,linux,ai,ps&perline=12" />
+<p align="center">
+  <a href="https://komarev.com/ghpvc/?username=AlfonsoCha1&label=Profile%20views&color=0e75b6&style=for-the-badge">
+    <img src="https://komarev.com/ghpvc/?username=AlfonsoCha1&label=Profile%20views&color=0e75b6&style=for-the-badge" alt="profile views" />
+  </a>
+  <a href="https://github.com/AlfonsoCha1?tab=followers">
+    <img src="https://img.shields.io/github/followers/AlfonsoCha1?label=Followers&style=for-the-badge" alt="followers" />
+  </a>
+  <a href="https://github.com/AlfonsoCha1">
+    <img src="https://img.shields.io/github/stars/AlfonsoCha1?affiliations=OWNER%2CCOLLABORATOR&style=for-the-badge" alt="stars" />
   </a>
 </p>
-<br>
-<!-------------------------->
-<div id="proyectos">
-<h2 >Algunos proyectos👨🏻‍💻</h2>
 
-<table align="left" >
-<tr border="none">
-  <td width="25%" align="center">
-    <p align="center">
-     <a href="https://youtu.be/rISmdhlhOPM" title="Go to Source">
-        <img align="center" width=100% src="https://raw.githubusercontent.com/unsimpledev/unsimpledev/main/assets/smsgateway.webp"   alt="VIDEO" /></a>
-      </p>
-    <p align="center">
-        <a href="https://youtu.be/rISmdhlhOPM" target="blank"><img align="center" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="@unsimpledev"  /></a>
-      <a href="https://github.com/unsimpledev/ProyectoSMSGateway" target="blank"><img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="@unsimpledev" /></a>
-    </p>       
-</td>
-<td width="25%" align="center">
-    <p align="center">
-     <a href="https://youtu.be/fiUkA2OZQjs" title="Go to Source">
-        <img align="center" width=100% src="https://raw.githubusercontent.com/unsimpledev/unsimpledev/main/assets/notifandroid.webp"   alt="VIDEO" /></a>
-      </p>
-    <p align="center">
-        <a href="https://youtu.be/fiUkA2OZQjs" target="blank"><img align="center" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="@unsimpledev"  /></a>
-      <a href="https://github.com/unsimpledev/ProyectoNotificaciones" target="blank"><img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="@unsimpledev" /></a>
-    </p>       
-</td>
-  
-  <td width="25%" align="center">
-    <p align="center">
-     <a href="https://youtu.be/py31Y1Ku4Es" title="Go to Source">
-        <img align="center" width=100% src="https://raw.githubusercontent.com/unsimpledev/unsimpledev/main/assets/chatgptapp.webp"   alt="VIDEO" /></a>
-      </p>
-    <p align="center">
-        <a href="https://youtu.be/py31Y1Ku4Es" target="blank"><img align="center" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="@unsimpledev"  /></a>
-      <a href="https://github.com/unsimpledev/MiChatGPT" target="blank"><img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="@unsimpledev" /></a>
-    </p>       
-</td>
-
-   <td width="25%" align="center">
-    <p align="center">
-     <a href="https://youtu.be/FbQtooM3UIs" title="Go to Source">
-        <img align="center" width=100% src="https://raw.githubusercontent.com/unsimpledev/unsimpledev/main/assets/traductorchatgpt.webp"   alt="VIDEO" /></a>
-      </p>
-    <p align="center">
-        <a href="https://youtu.be/FbQtooM3UIs" target="blank"><img align="center" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="@unsimpledev"  /></a>
-      <a href="https://github.com/unsimpledev/MiTraductor" target="blank"><img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="@unsimpledev" /></a>
-    </p>       
-</td>
-  
-</tr>
-</table>
-  </div>
-<br>
-<br><br>
-<br>
-<br><br><br>
-<br><br>
-
-
-<h2>GitHub :octocat:</h2>
-<!--- stats & Trophy (start) -->
 <p align="center">
-  <!--- stats (start) -->
-<table align="left">
-<tr border="none">
-<td width="60%" align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&width=900&lines=Computer+Systems+Engineer;IT+Support+and+Network+Troubleshooting;Web+Development+and+Automation;Always+learning+new+technologies" alt="Typing SVG" />
+</p>
 
-<!--  <img  align="center"  src="https://github-readme-stats.vercel.app/api?username=unsimpledev&theme=dark&show_icons=true&count_private=true" />
-  <br></br> -->
-  <img  title="🔥 Get streak stats for your profile at git.io/streak-stats" alt="Mark streak" src="https://github-readme-streak-stats.herokuapp.com/?user=unsimpledev&theme=dark&hide_border=false" /> 
-</td>
+---
 
-<td width="40%" align="center">
+## 👨‍💻 About Me
 
-  <img  align="center"  src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=unsimpledev&theme=dark&hide_border=false&no-bg=true&no-frame=true&langs_count=10"/>
+- 🎓 **Computer Systems Engineer**
+- 📍 Based in **Cuernavaca, Morelos, Mexico**
+- 💼 Experience in **IT support, networking, maintenance, troubleshooting, and web development**
+- 🔧 I enjoy solving technical problems, improving systems, and building practical projects
+- 🌱 Currently learning more about **React, Next.js, Tailwind CSS, Docker, Azure, and AWS**
+- 🤝 I work well both independently and in teams
+- 🚀 Passionate about continuous learning and creating better solutions through technology
 
-  </td>
-</tr>
+---
+
+## 🌐 Connect With Me
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/alfonso-chavarin/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-Alfonso%20Chavar%C3%ADn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" />
+  </a>
+  <a href="mailto:alfonso.chavarin@hotmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Email-Hotmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="hotmail" />
+  </a>
+  <a href="https://github.com/AlfonsoCha1" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-AlfonsoCha1-181717?style=for-the-badge&logo=github&logoColor=white" alt="github" />
+  </a>
+  <a href="https://portafolio-original-tau.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-Live%20Site-0A66C2?style=for-the-badge&logo=vercel&logoColor=white" alt="portfolio" />
+  </a>
+</p>
+
+---
+
+## 🧠 Tech Stack
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=html,css,js,ts,python,java,cpp,cs,php,git,github,linux,aws,firebase,vscode,figma,arduino&perline=8" />
+  </a>
+</p>
+
+---
+
+## 🛠 Tools & Technologies
+
+<p align="center">
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/Arduino_IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white" />
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" />
+  <img src="https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoftoffice&logoColor=white" />
+  <img src="https://img.shields.io/badge/Packet_Tracer-1BA0D7?style=for-the-badge" />
+</p>
+
+---
+
+## 📌 Featured Projects
+
+<table>
+  <tr>
+    <td width="50%">
+      <h3 align="center">🤖 Artificial Intelligence Project</h3>
+      <p align="center">
+        Repository with practical examples and experiments in artificial intelligence.
+        <br><br>
+        <a href="https://github.com/AlfonsoCha1/IA" target="_blank">
+          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white" />
+        </a>
+      </p>
+    </td>
+    <td width="50%">
+      <h3 align="center">🌐 Portfolio</h3>
+      <p align="center">
+        Personal portfolio to showcase my skills, projects, and professional experience.
+        <br><br>
+        <a href="https://github.com/AlfonsoCha1/portafolio-original" target="_blank">
+          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white" />
+        </a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3 align="center">☕ Java Projects</h3>
+      <p align="center">
+        Java exercises and practice projects focused on programming logic and OOP.
+        <br><br>
+        <a href="https://github.com/AlfonsoCha1/J" target="_blank">
+          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white" />
+        </a>
+      </p>
+    </td>
+    <td width="50%">
+      <h3 align="center">🛍 SMUCKY'S BY CHAVAMON</h3>
+      <p align="center">
+        Business and administration project developed with PHP and JavaScript.
+        <br><br>
+        <a href="https://github.com/AlfonsoCha1/smucky-by-chavamon" target="_blank">
+          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white" />
+        </a>
+      </p>
+    </td>
+  </tr>
 </table>
-<!--- stats (end) -->
 
-<!--- trophy (start) -->
-<div align=left>
-  <a href="https://github.com/ryo-ma/github-profile-trophy" title="Go to Source">
-      <img align="center" width=84% src="https://github-profile-trophy.vercel.app/?username=unsimpledev&theme=radical&row=1&column=7&margin-h=15&margin-w=5&no-bg=true" alt="TROPHY" />
-    </a>
-</div>
-<!--- trophy (start) -->
+---
 
+## 💼 Experience
 
-</p>        
-<!--- stats (end) -->
+### IT Technician (Social Service)
+**Junta de Conciliación y Arbitraje — Cuernavaca, Morelos**  
+- Installation, configuration, and maintenance of computer equipment  
+- Troubleshooting network connectivity problems  
+- Switch cabling organization and user connectivity support  
+
+### IT Intern
+**SEDAGRO — Cuernavaca, Morelos**  
+- Computer maintenance and technical support  
+- Printer and peripheral configuration  
+- Structured cabling installation and cable crimping  
+- Network troubleshooting in office environments  
+
+### Maintenance Assistant
+**Hayward and Burgers Camping — Boston, USA**  
+- General maintenance of facilities and common areas  
+
+---
+
+## 📚 Education & Certifications
+
+- 🎓 **B.Sc. in Computer Systems Engineering** — UNINTER
+- 🎓 **Postgraduate in Technology Management** — UNINTER
+- 📜 **Scrum Master Certification**
+- 📜 **Cisco: Advanced Enterprise Networks**
+- 📜 **Cisco: Enterprise Networks, Security and Automation**
+- 📜 **Python Programming**
+- 📜 **Introduction to Git & GitHub**
+- 📜 **Microsoft Office Certification**
+- 📜 **Diploma in Generative AI & Automation**
+
+---
+
+## 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=AlfonsoCha1&show_icons=true&theme=tokyonight&hide_border=true" height="170" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AlfonsoCha1&layout=compact&theme=tokyonight&hide_border=true" height="170" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AlfonsoCha1&theme=tokyonight&hide_border=true" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=AlfonsoCha1&theme=tokyonight&row=1&column=7&margin-w=10&margin-h=10&no-bg=true&no-frame=true" />
+</p>
+
+---
+
+## 🚀 Currently Learning
+
+- React
+- Next.js
+- Tailwind CSS
+- Docker
+- Azure
+- AWS
+- Better practices for frontend and full-stack development
+
+---
+
+## ✨ Soft Skills
+
+- Problem Solving
+- Teamwork
+- Responsibility
+- Adaptability
+- Creativity
+- Continuous Learning
+
+---
+
+<p align="center">
+  <i>"Technology is not only about building things, but about solving real problems with useful solutions."</i>
+</p>
