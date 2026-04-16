@@ -92,49 +92,43 @@
 </p>
 
 
-## 📌 Featured Projects
+<h2>📌 Featured Projects</h2>
 
 <table>
   <tr>
     <td width="50%">
       <h3 align="center">🤖 Artificial Intelligence Project</h3>
       <p align="center">
-        Repository with practical examples and experiments in artificial intelligence.
+        Practical projects and experiments in Artificial Intelligence.
         <br><br>
-        <a href="https://github.com/AlfonsoCha1/IA" target="_blank">
-          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white" />
-        </a>
-      </p>
-    </td>
-    <td width="50%">
-      <h3 align="center">🌐 Portfolio</h3>
-      <p align="center">
-        Personal portfolio to showcase my skills, projects, and professional experience.
-        <br><br>
-        <a href="https://github.com/AlfonsoCha1/portafolio-original" target="_blank">
-          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white" />
+        <a href="https://github.com/AlfonsoCha1/PROYECTO-INTERLIGENCIA-ARTIFICIAL" target="_blank">
+          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white"/>
         </a>
       </p>
     </td>
   </tr>
+
   <tr>
     <td width="50%">
-      <h3 align="center">☕ Java Projects</h3>
+      <h3 align="center">🏫 School Projects</h3>
       <p align="center">
-        Java exercises and practice projects focused on programming logic and OOP.
+        Academic projects and practices developed during my studies.
         <br><br>
-        <a href="https://github.com/AlfonsoCha1/J" target="_blank">
-          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white" />
+        <a href="https://github.com/AlfonsoCha1/ESCUELA" target="_blank">
+          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white"/>
         </a>
       </p>
     </td>
+  </tr>
+
+  <tr>
     <td width="50%">
-      <h3 align="center">🛍 SMUCKY'S BY CHAVAMON</h3>
+      <h3 align="center">📂 General Projects</h3>
       <p align="center">
-        Business and administration project developed with PHP and JavaScript.
+        Collection of various development projects and experiments.
         <br><br>
-        <a href="https://github.com/AlfonsoCha1/smucky-by-chavamon" target="_blank">
-          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white" />
+        <a href="https://github.com/AlfonsoCha1/PROYECTOS" target="_blank">
+          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white"/>
         </a>
       </p>
     </td>
