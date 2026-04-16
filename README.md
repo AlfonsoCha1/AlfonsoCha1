@@ -113,14 +113,18 @@
     </td>
   </tr>
 
-  <tr>
-    <td width="50%" align="center">
-      <h3>🛍 E-commerce Project</h3>
-      <p>Online store system with products, login, and management features.</p>
-      <a href="https://github.com/AlfonsoCha1/smucky-by-chavamon">
-        <img src="https://img.shields.io/badge/View_Code-000000?style=for-the-badge&logo=github&logoColor=white"/>
-      </a>
-    </td>
+ <td width="50%" align="center">
+  <h3>🛍 SMUCKY´s By CHAVAMON</h3>
+  <p>Mi tienda proyecto.</p>
+  <a href="https://github.com/AlfonsoCha1/smucky-by-chavamon" target="_blank">
+    <img src="https://img.shields.io/badge/View_Code-000000?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+  <br><br>
+  <a href="https://smucky-by-chavamon.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Site-8A2BE2?style=for-the-badge&logoColor=white"/>
+  </a>
+</td>
+
 <tr>
     <td width="50%" align="center">
       <h3>🌐 Portfolio Website</h3>
