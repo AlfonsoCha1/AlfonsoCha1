@@ -31,20 +31,27 @@
 
 ---
 
-## 🌐 Connect With Me
+<h2>🌐 Connect With Me</h2>
 
 <p align="center">
+  <!-- LinkedIn -->
   <a href="https://www.linkedin.com/in/alfonso-chavarin/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-Alfonso%20Chavar%C3%ADn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" />
+    <img src="https://img.shields.io/badge/LinkedIn-Alfonso%20Chavar%C3%ADn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
+
+  <!-- Email / Hotmail -->
   <a href="mailto:alfonso.chavarin@hotmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/Email-Hotmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="hotmail" />
+    <img src="https://img.shields.io/badge/Email-Hotmail-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white"/>
   </a>
+
+  <!-- GitHub -->
   <a href="https://github.com/AlfonsoCha1" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-AlfonsoCha1-181717?style=for-the-badge&logo=github&logoColor=white" alt="github" />
+    <img src="https://img.shields.io/badge/GitHub-AlfonsoCha1-181717?style=for-the-badge&logo=github&logoColor=white"/>
   </a>
+
+  <!-- Portfolio -->
   <a href="https://portafolio-original-tau.vercel.app/" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-Live%20Site-0A66C2?style=for-the-badge&logo=vercel&logoColor=white" alt="portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-Live%20Site-FF6B00?style=for-the-badge&logo=vercel&logoColor=white"/>
   </a>
 </p>
 
@@ -60,19 +67,27 @@
 
 ---
 
-## 🛠 Tools & Technologies
+<h2>🛠 Tools & Technologies</h2>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/Arduino_IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white" />
-  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
-  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
-  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" />
-  <img src="https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoftoffice&logoColor=white" />
-  <img src="https://img.shields.io/badge/Packet_Tracer-1BA0D7?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white"/>
+  
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+  
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  
+  <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white"/>
+  
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
+  
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
+  
+  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black"/>
+  
+  <img src="https://img.shields.io/badge/Microsoft%20Office-D83B01?style=for-the-badge&logo=microsoftoffice&logoColor=white"/>
+  
+  <img src="https://img.shields.io/badge/Packet%20Tracer-1BA0D7?style=for-the-badge"/>
 </p>
-
 ---
 
 ## 📌 Featured Projects
