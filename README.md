@@ -97,12 +97,52 @@
 <table>
   <tr>
     <td width="50%">
-      <h3 align="center">🤖 Artificial Intelligence Project</h3>
+      <h3 align="center">🤖 Artificial Intelligence</h3>
       <p align="center">
-        Practical projects and experiments in Artificial Intelligence.
+        Experiments and projects related to Artificial Intelligence.
         <br><br>
         <a href="https://github.com/AlfonsoCha1/PROYECTO-INTERLIGENCIA-ARTIFICIAL" target="_blank">
-          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white"/>
+          <img src="https://img.shields.io/badge/View_Project-000000?style=for-the-badge&logo=github&logoColor=white"/>
+        </a>
+      </p>
+    </td>
+
+  <tr>
+    <td width="50%">
+      <h3 align="center">☕ Java Projects</h3>
+      <p align="center">
+        Object-oriented programming and Java exercises.
+        <br><br>
+        <a href="https://github.com/AlfonsoCha1/Java" target="_blank">
+          <img src="https://img.shields.io/badge/View_Project-000000?style=for-the-badge&logo=github&logoColor=white"/>
+        </a>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td width="50%">
+      <h3 align="center">🛍 E-commerce Project</h3>
+      <p align="center">
+        Online store system with products, login, and management features.
+        <br><br>
+        <a href="https://github.com/AlfonsoCha1/smucky-by-chavamon" target="_blank">
+          <img src="https://img.shields.io/badge/View_Code-000000?style=for-the-badge&logo=github&logoColor=white"/>
+        </a>
+      </p>
+    </td>
+
+  <tr>
+    <td width="50%">
+      <h3 align="center">🌐 Portfolio Website</h3>
+      <p align="center">
+        Personal portfolio showcasing my projects and skills.
+        <br><br>
+        <a href="https://portafolio-original-tau.vercel.app/" target="_blank">
+          <img src="https://img.shields.io/badge/Portfolio-00C853?style=for-the-badge&logoColor=white"/>
+        </a>
+        <a href="https://portafolio-original-tau.vercel.app/" target="_blank">
+          <img src="https://img.shields.io/badge/Live%20Site-8A2BE2?style=for-the-badge&logoColor=white"/>
         </a>
       </p>
     </td>
@@ -112,10 +152,22 @@
     <td width="50%">
       <h3 align="center">🏫 School Projects</h3>
       <p align="center">
-        Academic projects and practices developed during my studies.
+        Academic practices and coursework.
         <br><br>
         <a href="https://github.com/AlfonsoCha1/ESCUELA" target="_blank">
-          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white"/>
+          <img src="https://img.shields.io/badge/View_Project-000000?style=for-the-badge&logo=github&logoColor=white"/>
+        </a>
+      </p>
+    </td>
+
+  <tr>
+    <td width="50%">
+      <h3 align="center">➕ SUMA Project</h3>
+      <p align="center">
+        Basic programming and logic exercises.
+        <br><br>
+        <a href="https://github.com/AlfonsoCha1/SUMA" target="_blank">
+          <img src="https://img.shields.io/badge/View_Project-000000?style=for-the-badge&logo=github&logoColor=white"/>
         </a>
       </p>
     </td>
@@ -125,17 +177,17 @@
     <td width="50%">
       <h3 align="center">📂 General Projects</h3>
       <p align="center">
-        Collection of various development projects and experiments.
+        Collection of different development projects.
         <br><br>
         <a href="https://github.com/AlfonsoCha1/PROYECTOS" target="_blank">
-          <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white"/>
+          <img src="https://img.shields.io/badge/View_Project-000000?style=for-the-badge&logo=github&logoColor=white"/>
         </a>
       </p>
     </td>
+
+    <td width="50%"></td>
   </tr>
 </table>
-
-
 
 ## 💼 Experience
 
