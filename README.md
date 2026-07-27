@@ -120,7 +120,7 @@
     <img src="https://img.shields.io/badge/View_Code-000000?style=for-the-badge&logo=github&logoColor=white"/>
   </a>
   <br><br>
-  <a href="https://smucky-by-chavamon.vercel.app" target="_blank">
+  <a href="https://smuckys-bychavamon.vercel.app/" target="_blank">
     <img src="https://img.shields.io/badge/Live%20Site-8A2BE2?style=for-the-badge&logoColor=white"/>
   </a>
 </td>
