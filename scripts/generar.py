@@ -66,8 +66,8 @@ SKILL_ICONS = "https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71
 
 # Insignias de la tabla de constancias: tipo → (ícono, acento)
 INSIGNIAS = {
-    "redes": ("red", "cian"), "linux": ("terminal", "cian"), "ia": ("ia", "violeta"),
-    "gestion": ("gestion", "ambar"), "desarrollo": ("codigo", "violeta"), "otros": ("documento", "coral"),
+    "redes": ("red", "esmeralda"), "linux": ("terminal", "cian"), "ia": ("ia", "violeta"),
+    "gestion": ("gestion", "ambar"), "desarrollo": ("codigo", "azul"), "otros": ("documento", "coral"),
 }
 
 ESTADO_TEXTO = {"disponible": "Disponible", "laboratorio": "Laboratorio", "beta": "Beta", "demo": "Demo", "desarrollo": "En desarrollo"}
@@ -223,27 +223,33 @@ def construir_readme(perfil: dict, readme_actual: str) -> str:
     nombres_areas = ", ".join(x["titulo"] for x in perfil["areas"])
     a(f'<p align="center">{imagen("assets/areas.svg", "Áreas: " + nombres_areas)}</p>\n')
     for area in perfil["areas"]:
+        alt = area["titulo"] + ": " + " ".join(area["puntos"])
+        ruta = "assets/tarjetas/area-" + slug(area["titulo"]) + ".svg"
+        a(f'<p align="center">{imagen(ruta, alt)}</p>')
+    a("")
+    a("<details><summary><b>Ver áreas como texto</b></summary>\n")
+    for area in perfil["areas"]:
         a(f"**{area['titulo']}**\n")
         for punto in area["puntos"]:
             a(f"- {punto}")
         a("")
+    a("</details>\n")
 
-    # Lo que sé: una banda animada por categoría y los íconos de cada tecnología
+    # Lo que sé: una banda animada por categoría y una caja neón por tecnología
     a(titulo_seccion("loquese") + "\n")
     for grupo in perfil["lo_que_se"]:
         ruta_banda = f"assets/loquese/{grupo['id']}.svg"
         a(f'<p align="center">{imagen(ruta_banda, grupo["grupo"] + ": " + grupo["descripcion"])}</p>\n')
-        columnas = grupo.get("columnas", 5)
-        items = grupo["items"]
-        a('<table align="center">')
-        for i in range(0, len(items), columnas):
-            a("<tr>")
-            for it in items[i:i + columnas]:
-                nota = f'<br><sub>{esc(it["nota"])}</sub>' if it.get("nota") else ""
-                a(f'<td align="center" width="{100 // columnas}%"><img src="{icono_item(it)}" width="48" height="48" alt="">'
-                  f'<br><b>{esc(it["nombre"])}</b>{nota}</td>')
-            a("</tr>")
-        a("</table>\n")
+        cajas = []
+        for it in grupo["items"]:
+            alt = it["nombre"] + (f" ({it['nota']})" if it.get("nota") else "")
+            cajas.append(imagen(f"assets/tecnologias/{grupo['id']}-{slug(it['nombre'])}.svg", alt, "128"))
+        a('<p align="center">\n' + "\n".join(cajas) + "\n</p>\n")
+    a("<details><summary><b>Ver «Lo que sé» como texto</b></summary>\n")
+    for grupo in perfil["lo_que_se"]:
+        nombres = ", ".join(it["nombre"] + (f" ({it['nota']})" if it.get("nota") else "") for it in grupo["items"])
+        a(f"- **{grupo['grupo']}:** {nombres}")
+    a("\n</details>\n")
 
     # Formación y constancias
     a(titulo_seccion("formacion") + "\n")
@@ -253,14 +259,14 @@ def construir_readme(perfil: dict, readme_actual: str) -> str:
     cursos = [x for x in perfil["cursos"] if x.get("publicar", True)]
     destacados_c = [x for x in cursos if x.get("destacado")]
     if destacados_c:
-        a("<table>")
-        a('<tr><th></th><th align="left">Constancia destacada</th><th align="left">Emisor · fecha</th><th align="left">Verificación</th></tr>')
-        for x in destacados_c:
-            verif = f'<a href="{esc(x["verificacion"])}"><b>verificar</b></a>' if x.get("verificacion") else "<sub>constancia en PDF</sub>"
-            a(f'<tr><td align="center" width="56"><img src="assets/insignias/{x.get("insignia", "otros")}.svg" width="44" height="44" alt=""></td>'
-              f'<td><b>{esc(x["nombre"])}</b><br><sub>{esc(x["tipo"])}</sub></td>'
-              f'<td>{esc(x["emisor"])}<br><sub>{esc(x["fecha"])}</sub></td><td>{verif}</td></tr>')
-        a("</table>\n")
+        for i in range(0, len(destacados_c), 2):
+            piezas = []
+            for x in destacados_c[i:i + 2]:
+                img = imagen(f"assets/tarjetas/constancia-{slug(x['nombre'])}.svg",
+                             f"{x['nombre']} — {x['emisor']}, {x['fecha']}", "49%")
+                piezas.append(f'<a href="{esc(x["verificacion"])}">{img}</a>' if x.get("verificacion") else img)
+            a('<p align="center">' + " ".join(piezas) + "</p>")
+        a("")
     a(f"<details><summary><b>Ver todos mis estudios, cursos y constancias</b> — nombre exacto, emisor, fecha y "
       f"enlace de verificación ({len(perfil['formacion']) + len(cursos)})</summary>\n")
     a("**Formación académica**\n")
@@ -300,18 +306,25 @@ def construir_readme(perfil: dict, readme_actual: str) -> str:
     alt_t = "Trayectoria: " + " → ".join(f"{e['anio']} {e['empresa_corta']}" for e in reversed(experiencia))
     a(f'<p align="center">{imagen("assets/trayectoria.svg", alt_t)}</p>\n')
     for e in experiencia:
+        alt = f"{e['puesto']} en {e['empresa']} ({e['periodo']}, {e['lugar']}): " + " ".join(e["puntos"])
+        ruta = "assets/tarjetas/exp-" + slug(e["empresa_corta"]) + ".svg"
+        a(f'<p align="center">{imagen(ruta, alt)}</p>')
+    a("")
+    a("<details><summary><b>Ver experiencia como texto</b></summary>\n")
+    for e in experiencia:
         a(f"**{e['puesto']}** · {e['empresa']}  ")
         a(f"<sub>{esc(e['periodo'])} · {esc(e['lugar'])}</sub>\n")
         for punto in e["puntos"]:
             a(f"- {punto}")
         a("")
+    a("</details>\n")
 
     # Laboratorios
     if perfil.get("laboratorios"):
         a(titulo_seccion("laboratorios") + "\n")
         for lab in perfil["laboratorios"]:
-            nombre = f"[{lab['nombre']}]({lab['enlace']})" if lab.get("enlace") else lab["nombre"]
-            a(f"- **{nombre}** <sub>`{lab['estado']}`</sub> — {lab['detalle']}")
+            img = imagen("assets/tarjetas/lab-" + slug(lab["nombre"]) + ".svg", f"{lab['nombre']} ({lab['estado']}): {lab['detalle']}")
+            a(f'<p align="center"><a href="{esc(lab["enlace"])}">{img}</a></p>' if lab.get("enlace") else f'<p align="center">{img}</p>')
         a("")
         a("<sub>Mi actividad real es la gráfica de contribuciones que GitHub muestra debajo de este README; "
           "las cuadrículas animadas de esta página son decorativas.</sub>\n")
@@ -339,13 +352,31 @@ def archivos_generados(perfil: dict, readme_actual: str) -> dict[Path, str]:
     salida[ASSETS / "areas.svg"] = g.areas(perfil)
     for i, grupo in enumerate(perfil["lo_que_se"]):
         salida[ASSETS / "loquese" / f"{grupo['id']}.svg"] = g.banda_categoria(grupo, i)
-        for it in grupo["items"]:
-            if not it.get("skill"):
-                salida[ASSETS / "iconos" / f"{slug(it['nombre'])}.svg"] = g.icono_generico(
-                    it["nombre"], it["generico"], it.get("acento", grupo["acento"]))
+        for j, it in enumerate(grupo["items"]):
+            color = it.get("color") or g.P[it.get("acento", grupo["acento"])]
+            salida[ASSETS / "tecnologias" / f"{grupo['id']}-{slug(it['nombre'])}.svg"] = g.caja_tecnologia(
+                it, color, i * 7 + j, grupo.get("aprendiendo", grupo["id"] == "aprendiendo"))
     for tipo, (icono_nombre, acento) in INSIGNIAS.items():
         salida[ASSETS / "insignias" / f"{tipo}.svg"] = g.insignia(icono_nombre, acento, f"Constancia: {tipo}")
     salida[ASSETS / "formacion.svg"] = g.formacion(perfil["formacion_tarjetas"])
+    # Tarjetas neón
+    tarjetas = ASSETS / "tarjetas"
+    for i, area in enumerate(perfil["areas"]):
+        lado = area.get("titulo_lineas", [area["titulo"]])[0]
+        salida[tarjetas / f"area-{slug(area['titulo'])}.svg"] = g.tarjeta_neon(
+            area["titulo"], " ".join(area["lema"]), area["puntos"], area["acento"],
+            area.get("acento2", g.PAREJA[area["acento"]]), area["icono"], lado, f"ÁREA 0{i + 1}", "", i)
+    for i, e in enumerate(visibles(perfil["experiencia"])):
+        salida[tarjetas / f"exp-{slug(e['empresa_corta'])}.svg"] = g.tarjeta_neon(
+            e["puesto"], f"{e['empresa']} · {e['lugar']}", e["puntos"], e.get("acento", "coral"),
+            g.PAREJA[e.get("acento", "coral")], e.get("icono", "maletin"), e["empresa_corta"], e["anio"], e["periodo"], i)
+    for i, x in enumerate([c for c in perfil["cursos"] if c.get("publicar", True) and c.get("destacado")]):
+        icono_nombre, acento = INSIGNIAS[x.get("insignia", "otros")]
+        salida[tarjetas / f"constancia-{slug(x['nombre'])}.svg"] = g.tarjeta_constancia(x, acento, icono_nombre, i)
+    for i, lab in enumerate(perfil.get("laboratorios", [])):
+        salida[tarjetas / f"lab-{slug(lab['nombre'])}.svg"] = g.tarjeta_neon(
+            lab["nombre"], "Laboratorio en desarrollo", [lab["detalle"]], "esmeralda", "cian", "matraz",
+            "Laboratorio", lab["estado"].upper(), lab["estado"], i)
     salida[ASSETS / "trayectoria.svg"] = g.trayectoria(visibles(perfil["experiencia"]))
     for tema in TEMAS:
         for clave, (titulo, nota, icono_nombre, acento, acento2) in SECCIONES.items():
@@ -371,7 +402,7 @@ def archivos_generados(perfil: dict, readme_actual: str) -> dict[Path, str]:
     return salida
 
 
-CARPETAS_GENERADAS = ["proyectos", "secciones", "botones", "loquese", "iconos", "insignias"]  # lo que sobre ahí se borra
+CARPETAS_GENERADAS = ["proyectos", "secciones", "botones", "loquese", "iconos", "insignias", "tarjetas", "tecnologias"]  # lo que sobre ahí se borra
 
 
 def sobrantes(salida: dict[Path, str]) -> list[Path]:

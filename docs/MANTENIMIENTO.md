@@ -14,8 +14,9 @@ assets/
   senal.svg                     ← cuadrícula decorativa de colores con onda luminosa
   areas.svg                     ← 4 tarjetas: Ciberseguridad / Sistemas y redes / Administración / Desarrollo e IA
   loquese/*.svg                 ← bandas animadas de cada categoría de «Lo que sé»
-  iconos/*.svg                  ← íconos propios para lo que no tiene logotipo (soporte, switches, etc.)
-  insignias/*.svg               ← insignias de la tabla de constancias destacadas
+  tecnologias/*.svg             ← una caja neón por tecnología (logo + nombre en su color)
+  tarjetas/*.svg                ← cajas neón animadas: áreas, experiencia, constancias destacadas y laboratorios
+  insignias/*.svg               ← insignias hexagonales
   formacion.svg                 ← tarjetas de formación (cada una con su color)
   trayectoria.svg               ← línea de tiempo de experiencia
   secciones/*.svg               ← encabezados de sección (tema oscuro y claro)
@@ -29,6 +30,7 @@ scripts/
   muro_svg.py                   ← paleta de colores, letras e íconos
   protegidos.py                 ← comprueba que la cabecera y la cuadrícula no cambien
   fuentes/                      ← letras Space Grotesk y JetBrains Mono como trazos (licencia OFL)
+  iconos-skill/                 ← logotipos de tecnologías de skill-icons (licencia MIT, ver LICENSE-skill-icons.txt)
   herramientas/retrato.py       ← convierte una foto en partículas (opcional)
   herramientas/capturar.py      ← crea la imagen estática y un GIF de vista previa (opcional)
 .github/workflows/generar-perfil.yml ← regenera solo cuando cambias perfil.toml en GitHub
@@ -97,18 +99,25 @@ Si algún día cambias tu foto a propósito, actualiza las huellas en `assets/fu
 ## «Lo que sé»
 
 Cuatro categorías `[[lo_que_se]]`: experiencia laboral, tecnologías en proyectos, herramientas y aprendiendo.
-Cada una tiene su banda animada (`assets/loquese/<id>.svg`) y una tabla de íconos con el nombre como texto.
+Cada una tiene su banda animada y una **caja neón por tecnología** (`assets/tecnologias/`), con el logo y el
+nombre brillando en el color de esa tecnología. Debajo hay un desplegable con todo como texto.
 
 ```toml
-{ nombre = "Python", skill = "Python-Dark" }                      # ícono oficial (skill-icons)
-{ nombre = "Switches y redes", generico = "switch", nota = "configuración" }   # ícono propio
+{ nombre = "Python", skill = "Python-Dark", color = "#FFD43B" }                  # logotipo oficial
+{ nombre = "Cisco Packet Tracer", generico = "simulador", color = "#2EE6A0" }    # ícono propio
 ```
 
-- `skill`: nombre exacto del archivo en github.com/tandpfun/skill-icons/tree/main/icons (sin `.svg`).
-  Los íconos se cargan desde ese repositorio (licencia MIT), fijados a un commit para que no cambien solos.
-- `generico`: ícono propio para lo que no tiene logotipo (`auriculares`, `switch`, `cable`, `capas`, `huella`,
-  `basedatos`, `respaldo`, `prueba`, `simulador`, `documento`, `nube`, `terminal`, `escudo`, `red`...).
-- `nota`: texto pequeño debajo del nombre. `columnas`: íconos por fila (5 por defecto).
+- `skill`: archivo de `scripts/iconos-skill/` (sin `.svg`). Para agregar uno nuevo, copia el SVG desde
+  github.com/tandpfun/skill-icons/tree/main/icons a esa carpeta (licencia MIT).
+- `generico`: ícono propio (`auriculares`, `switch`, `cable`, `capas`, `huella`, `basedatos`, `respaldo`, `prueba`,
+  `simulador`, `documento`, `nube`, `terminal`, `escudo`, `red`...).
+- `color`: color neón de la caja. Si lo omites, usa el color de la categoría. `nota`: texto pequeño opcional.
+
+## Cajas neón
+
+Áreas, experiencia, constancias destacadas y laboratorios se dibujan como cajas animadas (una luz recorre el borde
+y el título brilla en el color de cada elemento). Salen de los mismos datos de `perfil.toml`; el texto completo
+también queda en los desplegables «Ver … como texto» para que se pueda leer y copiar.
 
 ## Experiencia, cursos y áreas
 

@@ -481,7 +481,8 @@ puntos = ["Mantenimiento general de instalaciones en un entorno de habla inglesa
 #    generico = ícono propio del muro cuando la tecnología no tiene logotipo
 #               (auriculares, switch, cable, capas, huella, basedatos, respaldo,
 #                prueba, simulador, documento, nube, terminal, escudo, red...)
-#  nota = texto pequeño debajo del nombre (opcional) · columnas = íconos por fila
+#  color = color neón de la caja (opcional; si no, usa el color de la categoría)
+#  nota = texto pequeño debajo del nombre (opcional)
 # ══════════════════════════════════════════════════════════════════════
 
 [[lo_que_se]]
@@ -492,15 +493,15 @@ acento = "coral"
 icono = "maletin"
 items = [
   { nombre = "Soporte técnico", generico = "auriculares", nota = "primer nivel e internacional" },
-  { nombre = "Linux", skill = "Linux-Dark", nota = "usuarios y credenciales" },
+  { nombre = "Linux", skill = "Linux-Dark", nota = "usuarios y credenciales", color = "#FCC624" },
   { nombre = "Switches y redes", generico = "switch", nota = "configuración" },
   { nombre = "Cableado estructurado", generico = "cable" },
   { nombre = "TCP/IP", generico = "capas" },
   { nombre = "Autenticación biométrica", generico = "huella", nota = "Face ID y huella" },
   { nombre = "Bases de datos", generico = "basedatos", nota = "seguimiento de pruebas" },
   { nombre = "Respaldos", generico = "respaldo", nota = "datos de producción" },
-  { nombre = "Java", skill = "Java-Dark", nota = "asistente digital" },
-  { nombre = "AWS", skill = "AWS-Dark", nota = "soporte de infraestructura" },
+  { nombre = "Java", skill = "Java-Dark", nota = "asistente digital", color = "#F89820" },
+  { nombre = "AWS", skill = "AWS-Dark", nota = "soporte de infraestructura", color = "#FF9900" },
 ]
 
 [[lo_que_se]]
@@ -510,21 +511,21 @@ descripcion = "Lenguajes, frameworks y bases de datos que uso en mis proyectos y
 acento = "violeta"
 icono = "codigo"
 items = [
-  { nombre = "HTML5", skill = "HTML" },
-  { nombre = "CSS3", skill = "CSS" },
-  { nombre = "JavaScript", skill = "JavaScript" },
-  { nombre = "TypeScript", skill = "TypeScript" },
-  { nombre = "Python", skill = "Python-Dark" },
+  { nombre = "HTML5", skill = "HTML", color = "#E9603A" },
+  { nombre = "CSS3", skill = "CSS", color = "#3B82F6" },
+  { nombre = "JavaScript", skill = "JavaScript", color = "#F7DF1E" },
+  { nombre = "TypeScript", skill = "TypeScript", color = "#4C8DDB" },
+  { nombre = "Python", skill = "Python-Dark", color = "#FFD43B" },
   { nombre = "pytest", generico = "prueba", nota = "pruebas automáticas" },
-  { nombre = "Node.js", skill = "NodeJS-Dark" },
-  { nombre = "FastAPI", skill = "FastAPI" },
-  { nombre = "PostgreSQL", skill = "PostgreSQL-Dark" },
-  { nombre = "Firebase", skill = "Firebase-Dark" },
-  { nombre = "Java", skill = "Java-Dark", nota = "ejercicios" },
-  { nombre = "C#", skill = "CS", nota = "escuela" },
-  { nombre = ".NET", skill = "DotNet", nota = "ASP.NET · escuela" },
-  { nombre = "C++", skill = "CPP" },
-  { nombre = "PHP", skill = "PHP-Dark" },
+  { nombre = "Node.js", skill = "NodeJS-Dark", color = "#6CC24A" },
+  { nombre = "FastAPI", skill = "FastAPI", color = "#1FBFA8" },
+  { nombre = "PostgreSQL", skill = "PostgreSQL-Dark", color = "#5B8DEF" },
+  { nombre = "Firebase", skill = "Firebase-Dark", color = "#FFCA28" },
+  { nombre = "Java", skill = "Java-Dark", nota = "ejercicios", color = "#F89820" },
+  { nombre = "C#", skill = "CS", nota = "escuela", color = "#B57BDE" },
+  { nombre = ".NET", skill = "DotNet", nota = "ASP.NET · escuela", color = "#8B6CF0" },
+  { nombre = "C++", skill = "CPP", color = "#5B9BE0" },
+  { nombre = "PHP", skill = "PHP-Dark", color = "#8C90D8" },
 ]
 
 [[lo_que_se]]
@@ -534,15 +535,15 @@ descripcion = "Para programar, versionar, diseñar, simular redes y desplegar"
 acento = "cian"
 icono = "chip"
 items = [
-  { nombre = "Git", skill = "Git" },
-  { nombre = "GitHub", skill = "Github-Dark" },
-  { nombre = "VS Code", skill = "VSCode-Dark" },
-  { nombre = "Figma", skill = "Figma-Dark" },
-  { nombre = "Arduino", skill = "Arduino" },
-  { nombre = "Microsoft Office", generico = "documento" },
-  { nombre = "Cisco Packet Tracer", generico = "simulador", nota = "simulación de redes" },
-  { nombre = "Vercel", skill = "Vercel-Dark" },
-  { nombre = "Render", generico = "nube", nota = "despliegue" },
+  { nombre = "Git", skill = "Git", color = "#F05032" },
+  { nombre = "GitHub", skill = "Github-Dark", color = "#C9D1D9" },
+  { nombre = "VS Code", skill = "VSCode-Dark", color = "#23A9F2" },
+  { nombre = "Figma", skill = "Figma-Dark", color = "#A259FF" },
+  { nombre = "Arduino", skill = "Arduino", color = "#1FC3C9" },
+  { nombre = "Microsoft Office", generico = "documento", color = "#F25022" },
+  { nombre = "Cisco Packet Tracer", generico = "simulador", nota = "simulación de redes", color = "#2EE6A0" },
+  { nombre = "Vercel", skill = "Vercel-Dark", color = "#E6EDF7" },
+  { nombre = "Render", generico = "nube", nota = "despliegue", color = "#46E3B7" },
   { nombre = "Scripts .bat", generico = "terminal", nota = "automatización en Windows" },
 ]
 
@@ -554,11 +555,11 @@ acento = "ambar"
 icono = "cohete"
 columnas = 6
 items = [
-  { nombre = "React", skill = "React-Dark" },
-  { nombre = "Next.js", skill = "NextJS-Dark" },
-  { nombre = "Tailwind CSS", skill = "TailwindCSS-Dark" },
-  { nombre = "Docker", skill = "Docker" },
-  { nombre = "Azure", skill = "Azure-Dark" },
+  { nombre = "React", skill = "React-Dark", color = "#61DAFB" },
+  { nombre = "Next.js", skill = "NextJS-Dark", color = "#E6EDF7" },
+  { nombre = "Tailwind CSS", skill = "TailwindCSS-Dark", color = "#38BDF8" },
+  { nombre = "Docker", skill = "Docker", color = "#2496ED" },
+  { nombre = "Azure", skill = "Azure-Dark", color = "#3AA0F3" },
   { nombre = "Blue team", generico = "escudo", acento = "esmeralda", nota = "eventos de seguridad" },
 ]
 
@@ -596,7 +597,7 @@ periodo = "2025 – 2026"
 
 [[formacion_tarjetas]]
 icono = "red"
-acento = "cian"
+acento = "esmeralda"
 titulo = ["Redes empresariales,", "seguridad y automatización"]
 detalle = "Cisco NetAcad (CCNAv7) · 4 cursos"
 periodo = "2023 – 2024"
