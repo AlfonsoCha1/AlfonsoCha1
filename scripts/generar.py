@@ -130,9 +130,9 @@ def celda_proyecto(p: dict) -> str:
     destino = p["repo"] if p["visibilidad"] == "publico" and p.get("repo") else p.get("demo") or p.get("repo")
     lineas = [
         '<td width="50%" valign="top">',
-        f'<a href="{esc(destino)}"><img src="assets/proyectos/{p["id"]}.svg" width="100%" alt="Portada de {esc(p["nombre"])}"></a>',
-        f'<p><b>{esc(p["nombre"])}</b><br><sub>{esc(p["categoria"].upper())} · '
-        f'<b>{esc(ESTADO_TEXTO.get(p.get("estado_tipo", ""), ""))}</b> · {esc(p["estado"])}</sub></p>',
+        f'<a href="{esc(destino)}"><img src="assets/proyectos/{p["id"]}.svg" width="100%" '
+        f'alt="{esc(p["nombre"])} — {esc(ESTADO_TEXTO.get(p.get("estado_tipo", ""), ""))}: {esc(p["estado"])}. '
+        f'{esc(", ".join(p.get("tecnologias", [])))}"></a>',
         f'<p>{esc(p["descripcion"])}</p>',
     ]
     if p.get("funcionamiento"):
@@ -142,8 +142,6 @@ def celda_proyecto(p: dict) -> str:
             lineas.append(f'<p><sub>{esc(p["nota"])}</sub></p>')
         lineas.append("</details>")
     lineas.append(f"<p>{enlaces_proyecto(p)}</p>")
-    if p.get("tecnologias"):
-        lineas.append(f"<p>{chips(p['tecnologias'])}</p>")
     lineas.append("</td>")
     return "\n".join(lineas)
 
@@ -177,18 +175,6 @@ def construir_readme(perfil: dict, readme_actual: str) -> str:
     a("<!--\n  ESTE ARCHIVO SE GENERA AUTOMÁTICAMENTE con scripts/generar.py a partir de perfil.toml.\n"
       "  Para cambiar el contenido, edita perfil.toml (guía: docs/MANTENIMIENTO.md).\n-->\n")
     a(f'<p align="center">{imagen("assets/hero.svg", alt_hero)}</p>\n')
-    a('<p align="center">')
-    a(f"  <b>{esc(per['titulo'])}</b> · {esc(per['posgrado'])}<br>")
-    a(f"  {esc(per['ubicacion'])} · {esc(per['idiomas'])}")
-    a("</p>")
-    a('<p align="center">')
-    a("  " + " · ".join([
-        f'<a href="{esc(con["linkedin"])}">LinkedIn</a>',
-        f'<a href="mailto:{esc(con["correo"])}">{esc(con["correo"])}</a>',
-        f'<a href="{esc(con["portafolio"])}">Portafolio</a>',
-        f'<a href="{repos_url}">Repositorios</a>',
-    ]))
-    a("</p>\n")
     a(per["presentacion"].strip() + "\n")
     a(f"**Construyendo ahora:** {per['construyendo']}\n")
     a("<details><summary><b>English summary</b></summary>\n")
@@ -218,22 +204,10 @@ def construir_readme(perfil: dict, readme_actual: str) -> str:
         a("</details>\n")
     a(f'<p>→ <a href="{repos_url}"><b>Ver todos mis repositorios públicos</b></a></p>\n')
 
-    # Áreas
+    # Áreas: las cuatro tarjetas (el detalle de cada área está en experiencia y proyectos)
     a(titulo_seccion("areas") + "\n")
-    nombres_areas = ", ".join(x["titulo"] for x in perfil["areas"])
-    a(f'<p align="center">{imagen("assets/areas.svg", "Áreas: " + nombres_areas)}</p>\n')
-    for area in perfil["areas"]:
-        alt = area["titulo"] + ": " + " ".join(area["puntos"])
-        ruta = "assets/tarjetas/area-" + slug(area["titulo"]) + ".svg"
-        a(f'<p align="center">{imagen(ruta, alt)}</p>')
-    a("")
-    a("<details><summary><b>Ver áreas como texto</b></summary>\n")
-    for area in perfil["areas"]:
-        a(f"**{area['titulo']}**\n")
-        for punto in area["puntos"]:
-            a(f"- {punto}")
-        a("")
-    a("</details>\n")
+    alt_areas = "Áreas: " + "; ".join(f"{x['titulo']}: {' '.join(x['lema'])}" for x in perfil["areas"])
+    a(f'<p align="center">{imagen("assets/areas.svg", alt_areas)}</p>\n')
 
     # Lo que sé: una banda animada por categoría y una caja neón por tecnología
     a(titulo_seccion("loquese") + "\n")
@@ -245,11 +219,6 @@ def construir_readme(perfil: dict, readme_actual: str) -> str:
             alt = it["nombre"] + (f" ({it['nota']})" if it.get("nota") else "")
             cajas.append(imagen(f"assets/tecnologias/{grupo['id']}-{slug(it['nombre'])}.svg", alt, "128"))
         a('<p align="center">\n' + "\n".join(cajas) + "\n</p>\n")
-    a("<details><summary><b>Ver «Lo que sé» como texto</b></summary>\n")
-    for grupo in perfil["lo_que_se"]:
-        nombres = ", ".join(it["nombre"] + (f" ({it['nota']})" if it.get("nota") else "") for it in grupo["items"])
-        a(f"- **{grupo['grupo']}:** {nombres}")
-    a("\n</details>\n")
 
     # Formación y constancias
     a(titulo_seccion("formacion") + "\n")
@@ -257,22 +226,7 @@ def construir_readme(perfil: dict, readme_actual: str) -> str:
     alt_f = "Formación: " + "; ".join(" ".join(t["titulo"]) for t in tarjetas)
     a(f'<p align="center">{imagen("assets/formacion.svg", alt_f)}</p>\n')
     cursos = [x for x in perfil["cursos"] if x.get("publicar", True)]
-    destacados_c = [x for x in cursos if x.get("destacado")]
-    if destacados_c:
-        for i in range(0, len(destacados_c), 2):
-            piezas = []
-            for x in destacados_c[i:i + 2]:
-                img = imagen(f"assets/tarjetas/constancia-{slug(x['nombre'])}.svg",
-                             f"{x['nombre']} — {x['emisor']}, {x['fecha']}", "49%")
-                piezas.append(f'<a href="{esc(x["verificacion"])}">{img}</a>' if x.get("verificacion") else img)
-            a('<p align="center">' + " ".join(piezas) + "</p>")
-        a("")
-    a(f"<details><summary><b>Ver todos mis estudios, cursos y constancias</b> — nombre exacto, emisor, fecha y "
-      f"enlace de verificación ({len(perfil['formacion']) + len(cursos)})</summary>\n")
-    a("**Formación académica**\n")
-    for f in perfil["formacion"]:
-        a(f"- **{f['programa']}** — {f['institucion']} · {f['periodo']} · {f['modalidad']}")
-    a("")
+    a(f"<details><summary><b>Cursos y constancias</b> — con enlaces de verificación ({len(cursos)})</summary>\n")
     grupos_c: dict[str, list] = {}
     for curso in cursos:
         if not curso.get("otros"):
@@ -295,22 +249,16 @@ def construir_readme(perfil: dict, readme_actual: str) -> str:
         for x in adicionales:
             a(linea_curso(x))
         a("")
+    a("<sub>Los cursos de Coursera son cursos en línea sin créditos académicos. Los cursos de Cisco Networking "
+      "Academy son certificados de finalización de curso, no la certificación CCNA.</sub>\n")
     a("</details>\n")
-    a("<sub>Las constancias de Coursera son cursos en línea sin créditos académicos; cada enlace de verificación "
-      "viene de su certificado. Los cursos de Cisco Networking Academy son certificados de finalización de curso, "
-      "no la certificación CCNA.</sub>\n")
 
-    # Experiencia
+    # Experiencia: una sola pieza (línea de tiempo + cajas) y el detalle en un desplegable
     experiencia = visibles(perfil["experiencia"])
     a(titulo_seccion("experiencia") + "\n")
-    alt_t = "Trayectoria: " + " → ".join(f"{e['anio']} {e['empresa_corta']}" for e in reversed(experiencia))
-    a(f'<p align="center">{imagen("assets/trayectoria.svg", alt_t)}</p>\n')
-    for e in experiencia:
-        alt = f"{e['puesto']} en {e['empresa']} ({e['periodo']}, {e['lugar']}): " + " ".join(e["puntos"])
-        ruta = "assets/tarjetas/exp-" + slug(e["empresa_corta"]) + ".svg"
-        a(f'<p align="center">{imagen(ruta, alt)}</p>')
-    a("")
-    a("<details><summary><b>Ver experiencia como texto</b></summary>\n")
+    alt_t = "Experiencia: " + " → ".join(f"{e['anio']} {e['puesto']} en {e['empresa']}" for e in reversed(experiencia))
+    a(f'<p align="center">{imagen("assets/experiencia.svg", alt_t)}</p>\n')
+    a("<details><summary><b>Funciones de cada puesto</b></summary>\n")
     for e in experiencia:
         a(f"**{e['puesto']}** · {e['empresa']}  ")
         a(f"<sub>{esc(e['periodo'])} · {esc(e['lugar'])}</sub>\n")
@@ -326,8 +274,6 @@ def construir_readme(perfil: dict, readme_actual: str) -> str:
             img = imagen("assets/tarjetas/lab-" + slug(lab["nombre"]) + ".svg", f"{lab['nombre']} ({lab['estado']}): {lab['detalle']}")
             a(f'<p align="center"><a href="{esc(lab["enlace"])}">{img}</a></p>' if lab.get("enlace") else f'<p align="center">{img}</p>')
         a("")
-        a("<sub>Mi actividad real es la gráfica de contribuciones que GitHub muestra debajo de este README; "
-          "las cuadrículas animadas de esta página son decorativas.</sub>\n")
 
     # Contacto
     a(titulo_seccion("contacto") + "\n")
@@ -356,28 +302,14 @@ def archivos_generados(perfil: dict, readme_actual: str) -> dict[Path, str]:
             color = it.get("color") or g.P[it.get("acento", grupo["acento"])]
             salida[ASSETS / "tecnologias" / f"{grupo['id']}-{slug(it['nombre'])}.svg"] = g.caja_tecnologia(
                 it, color, i * 7 + j, grupo.get("aprendiendo", grupo["id"] == "aprendiendo"))
-    for tipo, (icono_nombre, acento) in INSIGNIAS.items():
-        salida[ASSETS / "insignias" / f"{tipo}.svg"] = g.insignia(icono_nombre, acento, f"Constancia: {tipo}")
     salida[ASSETS / "formacion.svg"] = g.formacion(perfil["formacion_tarjetas"])
     # Tarjetas neón
     tarjetas = ASSETS / "tarjetas"
-    for i, area in enumerate(perfil["areas"]):
-        lado = area.get("titulo_lineas", [area["titulo"]])[0]
-        salida[tarjetas / f"area-{slug(area['titulo'])}.svg"] = g.tarjeta_neon(
-            area["titulo"], " ".join(area["lema"]), area["puntos"], area["acento"],
-            area.get("acento2", g.PAREJA[area["acento"]]), area["icono"], lado, f"ÁREA 0{i + 1}", "", i)
-    for i, e in enumerate(visibles(perfil["experiencia"])):
-        salida[tarjetas / f"exp-{slug(e['empresa_corta'])}.svg"] = g.tarjeta_neon(
-            e["puesto"], f"{e['empresa']} · {e['lugar']}", e["puntos"], e.get("acento", "coral"),
-            g.PAREJA[e.get("acento", "coral")], e.get("icono", "maletin"), e["empresa_corta"], e["anio"], e["periodo"], i)
-    for i, x in enumerate([c for c in perfil["cursos"] if c.get("publicar", True) and c.get("destacado")]):
-        icono_nombre, acento = INSIGNIAS[x.get("insignia", "otros")]
-        salida[tarjetas / f"constancia-{slug(x['nombre'])}.svg"] = g.tarjeta_constancia(x, acento, icono_nombre, i)
     for i, lab in enumerate(perfil.get("laboratorios", [])):
         salida[tarjetas / f"lab-{slug(lab['nombre'])}.svg"] = g.tarjeta_neon(
             lab["nombre"], "Laboratorio en desarrollo", [lab["detalle"]], "esmeralda", "cian", "matraz",
             "Laboratorio", lab["estado"].upper(), lab["estado"], i)
-    salida[ASSETS / "trayectoria.svg"] = g.trayectoria(visibles(perfil["experiencia"]))
+    salida[ASSETS / "experiencia.svg"] = g.experiencia_cajas(visibles(perfil["experiencia"]))
     for tema in TEMAS:
         for clave, (titulo, nota, icono_nombre, acento, acento2) in SECCIONES.items():
             svg, ancho = g.encabezado(titulo, nota, icono_nombre, acento, acento2, tema)
