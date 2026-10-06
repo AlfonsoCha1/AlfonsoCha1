@@ -6,25 +6,33 @@ No edites `README.md` a mano (se sobrescribe). Edita `perfil.toml` y regenera.
 ## Estructura del repositorio
 
 ```
-perfil.toml                     ← TODOS tus datos (proyectos, experiencia, cursos, contacto)
+perfil.toml                     ← TODOS tus datos (proyectos, tecnologías, experiencia, cursos, contacto)
 README.md                       ← generado (no editar, salvo el bloque MANUAL)
 assets/
-  hero.svg                      ← cabecera animada (terminal + retrato de partículas)
+  hero.svg                      ← cabecera animada: aurora, ciudad, órbitas y retrato de partículas
   hero-estatico.png             ← versión estática para LinkedIn, CV, etc.
+  senal.svg                     ← cuadrícula decorativa de colores con onda luminosa
   areas.svg                     ← tarjetas de Ciberseguridad / Sistemas / Administración
-  senal-oscuro.svg / -claro     ← cuadrícula decorativa animada
+  lo-que-se.svg                 ← panel «Lo que sé» con tus tecnologías
+  formacion.svg                 ← tarjetas doradas de formación
+  trayectoria.svg               ← línea de tiempo de experiencia
   secciones/*.svg               ← encabezados de sección (tema oscuro y claro)
   proyectos/*.svg               ← portadas de los proyectos destacados
-  botones/*.svg                 ← botones de contacto (tema oscuro y claro)
+  botones/*.svg                 ← botones de contacto
   fuente/particulas.json        ← puntos del retrato (sale de tu foto)
 scripts/
-  generar.py                    ← generador (solo Python, sin instalar nada)
+  generar.py                    ← arma el README y guarda todo (solo Python, sin instalar nada)
+  muro_graficos.py              ← dibujo de cada imagen
+  muro_svg.py                   ← paleta de colores, letras e íconos
   fuentes/                      ← letras Space Grotesk y JetBrains Mono como trazos (licencia OFL)
   herramientas/retrato.py       ← convierte una foto en partículas (opcional)
   herramientas/capturar.py      ← crea la imagen estática y un GIF de vista previa (opcional)
 .github/workflows/generar-perfil.yml ← regenera solo cuando cambias perfil.toml en GitHub
-docs/README-anterior.md         ← tu README anterior, por si quieres volver a él
+docs/README-anterior.md         ← tu README original, por si quieres volver a él
 ```
+
+**Colores** (`acento` en perfil.toml): `cian`, `azul`, `violeta`, `magenta`, `verde`, `ambar`.
+Los valores exactos están al inicio de `scripts/muro_svg.py` (diccionario `OSCURO`).
 
 ## Dos formas de actualizar
 
@@ -63,7 +71,7 @@ minúsculas y sin espacios (se usa para el nombre de la portada: `assets/proyect
 | `nota` | Aclaración opcional (servidor gratuito, plataformas probadas, etc.). |
 | `tecnologias` | Lista corta; aparece en la portada y como etiquetas. |
 | `portada` | Dibujo de la portada: `escudo`, `logs`, `ia`, `voz`, `tienda`, `lealtad`, `web`, `menu`, `terminal`. |
-| `acento` | Color: `cian`, `violeta`, `azul`, `verde`, `ambar`. |
+| `acento`, `acento2` | Colores del degradado de la portada: `cian`, `azul`, `violeta`, `magenta`, `verde`, `ambar`. |
 | `destacado` | `true` = sale con portada en la sección principal (se ve mejor en número par). `false` = va a la lista desplegable «Más proyectos». |
 | `orden` | Número menor aparece primero. |
 | `publicar` | `false` lo oculta sin borrarlo. |
@@ -71,13 +79,29 @@ minúsculas y sin espacios (se usa para el nombre de la portada: `assets/proyect
 **Ordenar:** cambia los números de `orden`. **Ocultar:** `publicar = false`.
 **Quitar la portada:** `destacado = false` (el generador borra la portada que sobra).
 
+## «Lo que sé» (panel de tecnologías)
+
+Cada bloque `[[lo_que_se]]` es un grupo con su fila (`fila = 1, 2 o 3`), su color y sus `items`:
+
+```toml
+{ nombre = "Python", glifo = "Py", color = "#FFD43B" }
+```
+
+- `glifo`: las 2–4 letras del distintivo hexagonal. `color`: color del distintivo (hex).
+- Cada fila tiene **9 casillas**. Si agregas una tecnología, cuida que la fila siga sumando 9
+  (puedes mover un grupo a otra fila o crear la fila 4).
+- `aprendiendo = true` en el grupo dibuja borde punteado y la etiqueta «aprendiendo».
+- La tabla de texto debajo del panel sale de `[conocimientos]` (dónde lo has usado).
+
 ## Experiencia, cursos, conocimientos y áreas
 
 - `[[experiencia]]`: puesto, empresa, periodo, lugar y puntos. `publicar = false` la oculta.
-- `[[formacion]]`: estudios académicos.
+  Para la línea de tiempo usa `anio`, `empresa_corta` y `puesto_corto`.
+- `[[formacion]]`: estudios académicos (lista detallada).
+- `[[formacion_tarjetas]]`: las 4 tarjetas doradas (`icono`, `titulo` en dos líneas, `detalle`, `periodo`).
 - `[[cursos]]`: usa el **nombre exacto** del certificado, el emisor y la fecha. Pon el enlace en `verificacion`
-  solo si es una verificación oficial (por ejemplo `coursera.org/verify/...`). `otros = true` lo manda a la lista
-  desplegable «Otras constancias». Un curso o constancia **no** es una certificación profesional: el campo `tipo`
+  solo si es una verificación oficial (por ejemplo `coursera.org/verify/...`). `otros = true` lo manda al bloque
+  «Otras constancias». Un curso o constancia **no** es una certificación profesional: el campo `tipo`
   lo deja claro.
 - `[conocimientos]`: cuatro listas: `trabajo` (usado en empleos), `proyectos`, `aprendiendo` y `herramientas`.
 - `[[areas]]`: las tres tarjetas. `lema` son las dos líneas cortas de la tarjeta; `puntos`, el detalle debajo.
@@ -122,8 +146,8 @@ py scripts\herramientas\capturar.py --gif    # además assets/hero-vista.gif
   WebGL, y no cargan fuentes ni archivos externos.
 - No se puede cambiar la barra lateral, la navegación, los botones ni los repositorios fijados de GitHub: eso no
   es parte del README.
-- Los temas claro/oscuro se resuelven con `<picture>` (función oficial de GitHub). La cabecera, las tarjetas y
-  las portadas son paneles oscuros en ambos temas, a propósito.
+- Los encabezados de sección cambian entre tema claro y oscuro con `<picture>` (función oficial de GitHub).
+  La cabecera, los paneles, las tarjetas y las portadas son oscuros en ambos temas, a propósito.
 - En celulares la tabla de proyectos se ve en dos columnas más angostas.
 
 ### Accesibilidad y reproducción automática
