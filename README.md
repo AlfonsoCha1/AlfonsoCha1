@@ -23,9 +23,9 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 
 </details>
 
-<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/senal-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/senal-claro.svg"><img src="assets/senal-oscuro.svg" width="100%" alt="Cuadrícula decorativa animada (no representa actividad real)"></picture></p>
+<p align="center"><img src="assets/senal.svg" width="100%" alt="Cuadrícula decorativa animada (no representa actividad real)"></p>
 
-<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/proyectos-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/proyectos-claro.svg"><img src="assets/secciones/proyectos-oscuro.svg" width="504" alt="Proyectos destacados"></picture></h3>
+<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/proyectos-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/proyectos-claro.svg"><img src="assets/secciones/proyectos-oscuro.svg" width="552" alt="Proyectos destacados"></picture></h3>
 
 <table>
 <tr>
@@ -120,7 +120,7 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 
 <p>→ <a href="https://github.com/AlfonsoCha1?tab=repositories"><b>Ver todos mis repositorios públicos</b></a></p>
 
-<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/areas-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/areas-claro.svg"><img src="assets/secciones/areas-oscuro.svg" width="268" alt="Áreas"></picture></h3>
+<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/areas-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/areas-claro.svg"><img src="assets/secciones/areas-oscuro.svg" width="316" alt="Áreas"></picture></h3>
 
 <p align="center"><img src="assets/areas.svg" width="100%" alt="Áreas: Ciberseguridad, Sistemas y redes, Administración de tecnología"></p>
 
@@ -142,7 +142,67 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 - Soporte técnico a clientes internacionales e implementación de autenticación biométrica (BBVA Technology).
 - Bases de datos para el seguimiento de resultados de pruebas y respaldos de producción (Marelli).
 
-<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/experiencia-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/experiencia-claro.svg"><img src="assets/secciones/experiencia-oscuro.svg" width="348" alt="Experiencia"></picture></h3>
+<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/loquese-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/loquese-claro.svg"><img src="assets/secciones/loquese-oscuro.svg" width="364" alt="Lo que sé"></picture></h3>
+
+<p align="center"><img src="assets/lo-que-se.svg" width="100%" alt="Lo que sé: HTML5, CSS3, JavaScript, TypeScript, Python, Java, C++, C#, PHP, Linux, Redes, Packet Tracer, AWS, Firebase, Vercel, Render, Git, GitHub, VS Code, Figma, Arduino, Office, React, Next.js, Tailwind, Docker, Azure"></p>
+
+<details><summary><b>Ver como texto, separado por dónde lo he usado</b></summary>
+
+| Dónde | Conocimientos |
+|:--|:--|
+| **En el trabajo** | <code>Soporte técnico</code> <code>Linux (usuarios y credenciales)</code> <code>Switches</code> <code>Cableado estructurado</code> <code>TCP/IP</code> <code>Autenticación biométrica</code> <code>Bases de datos</code> <code>Respaldos</code> <code>Java</code> <code>AWS (soporte)</code> |
+| **En mis proyectos** | <code>Python</code> <code>pytest</code> <code>HTML</code> <code>CSS</code> <code>JavaScript</code> <code>TypeScript</code> <code>Node.js</code> <code>PostgreSQL</code> <code>FastAPI</code> <code>Firebase</code> <code>Git y GitHub</code> <code>C# y ASP.NET (escuela)</code> |
+| **Aprendiendo** | <code>React</code> <code>Next.js</code> <code>Tailwind CSS</code> <code>Docker</code> <code>Azure</code> <code>AWS</code> <code>Blue team</code> |
+| **Herramientas** | <code>VS Code</code> <code>Cisco Packet Tracer</code> <code>Arduino</code> <code>Vercel</code> <code>Render</code> <code>Microsoft Office</code> |
+
+</details>
+
+<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/formacion-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/formacion-claro.svg"><img src="assets/secciones/formacion-oscuro.svg" width="587" alt="Formación y constancias"></picture></h3>
+
+<p align="center"><img src="assets/formacion.svg" width="100%" alt="Formación: Ingeniería en Sistemas Computacionales; Posgrado en Administración de Tecnologías; Redes empresariales, seguridad y automatización; IA generativa y automatización"></p>
+
+<details><summary><b>Ver estudios, cursos y constancias</b> — nombre exacto, emisor, fecha y enlace de verificación (18)</summary>
+
+**Formación académica**
+
+- **Posgrado en Administración de Tecnologías** — Universidad Internacional (UNINTER) · 2025 – 2026 · En línea
+- **Ingeniería en Sistemas Computacionales** — Universidad Internacional (UNINTER) · 2020 – 2024 · Cuernavaca, Morelos
+
+**Redes y sistemas**
+
+- **CCNAv7: Redes empresariales, Seguridad y Automatización** — Cisco Networking Academy · academia UNINTER · dic 2023 · certificado de finalización de curso
+- **CCNAv7: Introducción a Redes** — Cisco Networking Academy · academia UNINTER · ene 2023 · certificado de finalización de curso
+- **CISCO: Redes Empresariales Avanzadas** — UNINTER · nov 2024 · certificado · 81 horas
+- **CISCO: Redes Empresariales, Seguridad y Automatización** — UNINTER · oct 2024 · certificado · 81 horas
+- **OpenSUSE Linux OS Fundamentals** — EDUCBA · Coursera · sep 2025 · curso en línea · [verificar](https://coursera.org/verify/D66JI5C6CMUL)
+
+**Desarrollo e inteligencia artificial**
+
+- **Diplomado en Inteligencia Artificial Generativa y Automatización** — Top Learning Online · sep 2025 · diplomado · 112 horas
+- **Introduction to Git and GitHub** — Google · Coursera · abr 2025 · curso en línea · [verificar](https://coursera.org/verify/85AUMO3S7G8Y)
+- **Java (nivel 3)** — TR Network · feb 2026 · constancia
+- **Curso de programación en Python** — Asociación de Robótica Aplicada y Ciencias de la Tecnología · ene 2022 · reconocimiento · 16 horas
+- **Curso de Robótica Aplicada, nivel avanzado** — Asociación de Robótica Aplicada y Ciencias de la Tecnología · jun – oct 2021 · reconocimiento · 60 horas
+
+**Gestión y metodologías ágiles**
+
+- **Scrum Master Certification: Scrum Methodologies** — LearnQuest · Coursera · jun 2025 · curso en línea · [verificar](https://coursera.org/verify/L4123WTS5IIU)
+- **Introduction to Scrum Master Training** — LearnQuest · Coursera · jul 2025 · curso en línea · [verificar](https://coursera.org/verify/J2GU682X9PGQ)
+
+**Otras constancias**
+
+- **Comunicación Digital con Medios Enriquecidos** — UNINTER · oct 2023 · certificado · 54 horas
+- **Comunicación Web Interactiva** — UNINTER · nov 2022 · certificado · 54 horas
+- **Ofimática** — UNINTER · dic 2021 · certificado · 81 horas
+- **3.ª Presentación de Proyectos** — UNINTER · ESCAT · may 2024 · reconocimiento por participación
+
+</details>
+
+<sub>Las constancias de Coursera son cursos en línea sin créditos académicos; cada enlace de verificación viene de su certificado. Los cursos de Cisco Networking Academy son certificados de finalización de curso, no la certificación CCNA.</sub>
+
+<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/experiencia-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/experiencia-claro.svg"><img src="assets/secciones/experiencia-oscuro.svg" width="396" alt="Experiencia"></picture></h3>
+
+<p align="center"><img src="assets/trayectoria.svg" width="100%" alt="Trayectoria: 2021 SEDAGRO → 2023 – 2024 Junta de Conciliación → 2025 BBVA Technology → 2026 Marelli"></p>
 
 **Técnico de Pruebas** · Marelli  
 <sub>2026 · Tepotzotlán, Estado de México</sub>
@@ -172,68 +232,20 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 - Diseño e instalación de cableado estructurado hacia switches de red; ponchado de cables.
 - Diagnóstico de fallas de conectividad y configuración de impresoras y periféricos.
 
-<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/conocimientos-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/conocimientos-claro.svg"><img src="assets/secciones/conocimientos-oscuro.svg" width="392" alt="Conocimientos"></picture></h3>
-
-| Dónde | Conocimientos |
-|:--|:--|
-| **En el trabajo** | <code>Soporte técnico</code> <code>Linux (usuarios y credenciales)</code> <code>Switches</code> <code>Cableado estructurado</code> <code>TCP/IP</code> <code>Autenticación biométrica</code> <code>Bases de datos</code> <code>Respaldos</code> <code>Java</code> <code>AWS (soporte)</code> |
-| **En mis proyectos** | <code>Python</code> <code>pytest</code> <code>HTML</code> <code>CSS</code> <code>JavaScript</code> <code>TypeScript</code> <code>Node.js</code> <code>PostgreSQL</code> <code>FastAPI</code> <code>Firebase</code> <code>Git y GitHub</code> <code>C# y ASP.NET (escuela)</code> |
-| **Aprendiendo** | <code>React</code> <code>Next.js</code> <code>Tailwind CSS</code> <code>Docker</code> <code>Azure</code> <code>AWS</code> <code>Blue team</code> |
-| **Herramientas** | <code>VS Code</code> <code>Cisco Packet Tracer</code> <code>Arduino</code> <code>Vercel</code> <code>Render</code> <code>Microsoft Office</code> |
-
-<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/formacion-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/formacion-claro.svg"><img src="assets/secciones/formacion-oscuro.svg" width="539" alt="Formación y constancias"></picture></h3>
-
-**Formación académica**
-
-- **Posgrado en Administración de Tecnologías** — Universidad Internacional (UNINTER) · 2025 – 2026 · En línea
-- **Ingeniería en Sistemas Computacionales** — Universidad Internacional (UNINTER) · 2020 – 2024 · Cuernavaca, Morelos
-
-**Redes y sistemas**
-
-- **CCNAv7: Redes empresariales, Seguridad y Automatización** — Cisco Networking Academy · academia UNINTER · dic 2023 · certificado de finalización de curso
-- **CCNAv7: Introducción a Redes** — Cisco Networking Academy · academia UNINTER · ene 2023 · certificado de finalización de curso
-- **CISCO: Redes Empresariales Avanzadas** — UNINTER · nov 2024 · certificado · 81 horas
-- **CISCO: Redes Empresariales, Seguridad y Automatización** — UNINTER · oct 2024 · certificado · 81 horas
-- **OpenSUSE Linux OS Fundamentals** — EDUCBA · Coursera · sep 2025 · curso en línea · [verificar](https://coursera.org/verify/D66JI5C6CMUL)
-
-**Desarrollo e inteligencia artificial**
-
-- **Diplomado en Inteligencia Artificial Generativa y Automatización** — Top Learning Online · sep 2025 · diplomado · 112 horas
-- **Introduction to Git and GitHub** — Google · Coursera · abr 2025 · curso en línea · [verificar](https://coursera.org/verify/85AUMO3S7G8Y)
-- **Java (nivel 3)** — TR Network · feb 2026 · constancia
-- **Curso de programación en Python** — Asociación de Robótica Aplicada y Ciencias de la Tecnología · ene 2022 · reconocimiento · 16 horas
-- **Curso de Robótica Aplicada, nivel avanzado** — Asociación de Robótica Aplicada y Ciencias de la Tecnología · jun – oct 2021 · reconocimiento · 60 horas
-
-**Gestión y metodologías ágiles**
-
-- **Scrum Master Certification: Scrum Methodologies** — LearnQuest · Coursera · jun 2025 · curso en línea · [verificar](https://coursera.org/verify/L4123WTS5IIU)
-- **Introduction to Scrum Master Training** — LearnQuest · Coursera · jul 2025 · curso en línea · [verificar](https://coursera.org/verify/J2GU682X9PGQ)
-
-<details><summary><b>Otras constancias</b> (4)</summary>
-
-- **Comunicación Digital con Medios Enriquecidos** — UNINTER · oct 2023 · certificado · 54 horas
-- **Comunicación Web Interactiva** — UNINTER · nov 2022 · certificado · 54 horas
-- **Ofimática** — UNINTER · dic 2021 · certificado · 81 horas
-- **3.ª Presentación de Proyectos** — UNINTER · ESCAT · may 2024 · reconocimiento por participación
-
-</details>
-
-<sub>Las constancias de Coursera son cursos en línea sin créditos académicos; cada enlace de verificación viene de su certificado. Los cursos de Cisco Networking Academy son certificados de finalización de curso, no la certificación CCNA.</sub>
-
-<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/laboratorios-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/laboratorios-claro.svg"><img src="assets/secciones/laboratorios-oscuro.svg" width="584" alt="Laboratorios en desarrollo"></picture></h3>
+<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/laboratorios-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/laboratorios-claro.svg"><img src="assets/secciones/laboratorios-oscuro.svg" width="632" alt="Laboratorios en desarrollo"></picture></h3>
 
 - **[Cybersecurity Python Lab · siguientes entregas](https://github.com/AlfonsoCha1/Tipos-de-Proyectos/tree/main/ciberseguridad)** <sub>`pendiente`</sub> — Laboratorio de códigos 2FA (TOTP), analizador de correos con indicadores de phishing, verificador de archivos sospechosos, checklist de seguridad y seis herramientas más.
 - **[ALBA · etapa 2](https://github.com/AlfonsoCha1/Herramientas_cyberseguridad)** <sub>`pendiente`</sub> — Diagnóstico de sistemas en modo de solo lectura, flujo de BitLocker y recuperación de memorias USB.
 
 <sub>Mi actividad real es la gráfica de contribuciones que GitHub muestra debajo de este README; las cuadrículas animadas de esta página son decorativas.</sub>
 
-<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/contacto-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/contacto-claro.svg"><img src="assets/secciones/contacto-oscuro.svg" width="321" alt="Contacto"></picture></h3>
+<h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/contacto-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/contacto-claro.svg"><img src="assets/secciones/contacto-oscuro.svg" width="369" alt="Contacto"></picture></h3>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/alfonso-chavarin/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/botones/linkedin-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/botones/linkedin-claro.svg"><img src="assets/botones/linkedin-oscuro.svg" width="196" alt="LinkedIn"></picture></a>
-  <a href="mailto:alfonso.chavarin@hotmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/botones/correo-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/botones/correo-claro.svg"><img src="assets/botones/correo-oscuro.svg" width="196" alt="Correo"></picture></a>
-  <a href="https://portafolio-original-tau.vercel.app/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/botones/portafolio-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/botones/portafolio-claro.svg"><img src="assets/botones/portafolio-oscuro.svg" width="196" alt="Portafolio"></picture></a>
-  <a href="https://github.com/AlfonsoCha1?tab=repositories"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/botones/repositorios-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/botones/repositorios-claro.svg"><img src="assets/botones/repositorios-oscuro.svg" width="196" alt="Repositorios"></picture></a>
+  <a href="https://www.linkedin.com/in/alfonso-chavarin/"><img src="assets/botones/linkedin.svg" width="200" alt="LinkedIn"></a>
+  <a href="mailto:alfonso.chavarin@hotmail.com"><img src="assets/botones/correo.svg" width="200" alt="Correo"></a>
+  <a href="https://portafolio-original-tau.vercel.app/"><img src="assets/botones/portafolio.svg" width="200" alt="Portafolio"></a>
+  <a href="https://github.com/AlfonsoCha1?tab=repositories"><img src="assets/botones/repositorios.svg" width="200" alt="Repositorios"></a>
 </p>
 
 <!-- MANUAL:INICIO -->
