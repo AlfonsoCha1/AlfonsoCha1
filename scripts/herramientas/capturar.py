@@ -47,7 +47,9 @@ def main():
 
     with sync_playwright() as pw:
         nav = pw.chromium.launch()
-        pagina = nav.new_page(viewport={"width": 1200, "height": 540}, device_scale_factor=1)
+        import re
+        ancho, alto = map(int, re.search(r'viewBox="0 0 (\d+) (\d+)"', HERO.read_text(encoding="utf-8")).groups())
+        pagina = nav.new_page(viewport={"width": ancho, "height": alto}, device_scale_factor=1)
         abrir(pagina, HERO)
         # Estática: rostro formado y textos visibles (segundo 4 del ciclo)
         Image.open(io.BytesIO(en_segundo(pagina, 4.0))).save(salida / "hero-estatico.png", optimize=True)
@@ -65,7 +67,7 @@ def main():
                 img = Image.open(io.BytesIO(en_segundo(pagina, 2.2 + i / fps))).convert("RGBA")
                 fondo = Image.new("RGBA", img.size, "#0d1117")
                 img = Image.alpha_composite(fondo, img).convert("RGB")
-                cuadros.append(img.resize((600, 270), Image.LANCZOS))
+                cuadros.append(img.resize((ancho // 2, alto // 2), Image.LANCZOS))
             ruta = salida / "hero-vista.gif"
             paleta = cuadros[len(cuadros) // 5].quantize(colors=128, method=Image.Quantize.MEDIANCUT)
             convertidos = [c.quantize(palette=paleta, dither=Image.Dither.NONE) for c in cuadros]

@@ -52,7 +52,7 @@ portafolio = "https://portafolio-original-tau.vercel.app/"
 # ══════════════════════════════════════════════════════════════════════
 #  PROYECTOS
 #  portada: escudo | logs | ia | voz | tienda | lealtad | web | menu | terminal
-#  acento:  cian | violeta | azul | verde | ambar
+#  acento / acento2:  cian | azul | violeta | magenta | verde | ambar
 # ══════════════════════════════════════════════════════════════════════
 
 [[proyectos]]
@@ -66,6 +66,7 @@ repo = "https://github.com/AlfonsoCha1/Herramientas_cyberseguridad"
 demo = ""
 portada = "escudo"
 acento = "cian"
+acento2 = "azul"
 destacado = true
 orden = 1
 publicar = true
@@ -91,6 +92,7 @@ repo = "https://github.com/AlfonsoCha1/Tipos-de-Proyectos/tree/main/cibersegurid
 demo = ""
 portada = "logs"
 acento = "verde"
+acento2 = "cian"
 destacado = true
 orden = 2
 publicar = true
@@ -116,6 +118,7 @@ repo = ""
 demo = "https://ia-sophya.vercel.app/"
 portada = "ia"
 acento = "violeta"
+acento2 = "magenta"
 destacado = true
 orden = 3
 publicar = true
@@ -140,6 +143,7 @@ repo = ""
 demo = "https://english-speaking-coach-nine.vercel.app/"
 portada = "voz"
 acento = "azul"
+acento2 = "cian"
 destacado = true
 orden = 4
 publicar = true
@@ -162,7 +166,8 @@ visibilidad = "privado"
 repo = ""
 demo = "https://smuckys-bychavamon.vercel.app/"
 portada = "tienda"
-acento = "ambar"
+acento = "magenta"
+acento2 = "violeta"
 destacado = true
 orden = 5
 publicar = true
@@ -185,7 +190,8 @@ visibilidad = "publico"
 repo = "https://github.com/AlfonsoCha1/Chavarin_-_Said"
 demo = "https://chavarin-said-lealtad.onrender.com/"
 portada = "lealtad"
-acento = "cian"
+acento = "verde"
+acento2 = "cian"
 destacado = true
 orden = 6
 publicar = true
@@ -362,7 +368,10 @@ puntos = [
 
 [[experiencia]]
 empresa = "Marelli"
+empresa_corta = "Marelli"
 puesto = "Técnico de Pruebas"
+puesto_corto = "Técnico de Pruebas"
+anio = "2026"
 periodo = "2026"
 lugar = "Tepotzotlán, Estado de México"
 publicar = true
@@ -374,7 +383,10 @@ puntos = [
 
 [[experiencia]]
 empresa = "BBVA Technology America"
+empresa_corta = "BBVA Technology"
 puesto = "Técnico de Soporte e Implementación TI"
+puesto_corto = "Soporte e implementación TI"
+anio = "2025"
 periodo = "2025"
 lugar = "Ciudad de México · clientes en Colombia, Venezuela y España"
 publicar = true
@@ -387,7 +399,10 @@ puntos = [
 
 [[experiencia]]
 empresa = "Junta de Conciliación y Arbitraje"
+empresa_corta = "Junta de Conciliación"
 puesto = "Técnico en TI (servicio social)"
+puesto_corto = "Técnico en TI"
+anio = "2023 – 2024"
 periodo = "2023 – 2024"
 lugar = "Cuernavaca, Morelos"
 publicar = true
@@ -399,7 +414,10 @@ puntos = [
 
 [[experiencia]]
 empresa = "Secretaría de Desarrollo Agropecuario (SEDAGRO)"
+empresa_corta = "SEDAGRO"
 puesto = "Practicante en TI"
+puesto_corto = "Practicante en TI"
+anio = "2021"
 periodo = "2021"
 lugar = "Cuernavaca, Morelos"
 publicar = true
@@ -410,7 +428,10 @@ puntos = [
 
 [[experiencia]]
 empresa = "Hayward and Burgers Camping"
+empresa_corta = "Hayward and Burgers"
 puesto = "Asistente de Mantenimiento"
+puesto_corto = "Mantenimiento"
+anio = "2024"
 periodo = "2024"
 lugar = "Boston, EUA"
 publicar = false
@@ -427,6 +448,77 @@ aprendiendo = ["React", "Next.js", "Tailwind CSS", "Docker", "Azure", "AWS", "Bl
 herramientas = ["VS Code", "Cisco Packet Tracer", "Arduino", "Vercel", "Render", "Microsoft Office"]
 
 # ══════════════════════════════════════════════════════════════════════
+#  LO QUE SÉ · panel de tecnologías (imagen assets/lo-que-se.svg)
+#  Cada fila tiene 9 casillas. glifo = letras del distintivo (2–4 letras).
+#  color = color del distintivo. aprendiendo = true → borde punteado.
+#  Para agregar una tecnología, añádela a «items» del grupo que quieras
+#  (cuida que cada fila sume 9; si no, mueve un grupo a otra fila).
+# ══════════════════════════════════════════════════════════════════════
+
+[[lo_que_se]]
+grupo = "Lenguajes y web"
+fila = 1
+acento = "cian"
+items = [
+  { nombre = "HTML5", glifo = "HTML", color = "#E9603A" },
+  { nombre = "CSS3", glifo = "CSS", color = "#3B82F6" },
+  { nombre = "JavaScript", glifo = "JS", color = "#F7DF1E" },
+  { nombre = "TypeScript", glifo = "TS", color = "#4C8DDB" },
+  { nombre = "Python", glifo = "Py", color = "#FFD43B" },
+  { nombre = "Java", glifo = "Java", color = "#F89820" },
+  { nombre = "C++", glifo = "C++", color = "#5B9BE0" },
+  { nombre = "C#", glifo = "C#", color = "#B57BDE" },
+  { nombre = "PHP", glifo = "PHP", color = "#8C90D8" },
+]
+
+[[lo_que_se]]
+grupo = "Sistemas, redes y nube"
+fila = 2
+acento = "violeta"
+items = [
+  { nombre = "Linux", glifo = "$_", color = "#FCC624" },
+  { nombre = "Redes", glifo = "NET", color = "#22C3EE" },
+  { nombre = "Packet Tracer", glifo = "PT", color = "#1BA0D7" },
+  { nombre = "AWS", glifo = "AWS", color = "#FF9900" },
+  { nombre = "Firebase", glifo = "FB", color = "#FFCA28" },
+  { nombre = "Vercel", glifo = "VC", color = "#E6EDF7" },
+  { nombre = "Render", glifo = "RN", color = "#46E3B7" },
+]
+
+[[lo_que_se]]
+grupo = "Control de versiones"
+fila = 2
+acento = "azul"
+items = [
+  { nombre = "Git", glifo = "git", color = "#F05032" },
+  { nombre = "GitHub", glifo = "GH", color = "#C9D1D9" },
+]
+
+[[lo_que_se]]
+grupo = "Herramientas"
+fila = 3
+acento = "ambar"
+items = [
+  { nombre = "VS Code", glifo = "{ }", color = "#23A9F2" },
+  { nombre = "Figma", glifo = "Fg", color = "#A259FF" },
+  { nombre = "Arduino", glifo = "ARD", color = "#1FC3C9" },
+  { nombre = "Office", glifo = "Of", color = "#F25022" },
+]
+
+[[lo_que_se]]
+grupo = "Aprendiendo"
+fila = 3
+acento = "verde"
+aprendiendo = true
+items = [
+  { nombre = "React", glifo = "Re", color = "#61DAFB" },
+  { nombre = "Next.js", glifo = "Nx", color = "#E6EDF7" },
+  { nombre = "Tailwind", glifo = "Tw", color = "#38BDF8" },
+  { nombre = "Docker", glifo = "Dk", color = "#2496ED" },
+  { nombre = "Azure", glifo = "Az", color = "#3AA0F3" },
+]
+
+# ══════════════════════════════════════════════════════════════════════
 #  FORMACIÓN ACADÉMICA
 # ══════════════════════════════════════════════════════════════════════
 
@@ -441,6 +533,32 @@ programa = "Ingeniería en Sistemas Computacionales"
 institucion = "Universidad Internacional (UNINTER)"
 periodo = "2020 – 2024"
 modalidad = "Cuernavaca, Morelos"
+
+# ── Tarjetas doradas de formación (imagen assets/formacion.svg) ───────
+# icono: birrete | grafica | escudo | ia | laptop | chip
+[[formacion_tarjetas]]
+icono = "birrete"
+titulo = ["Ingeniería en Sistemas", "Computacionales"]
+detalle = "UNINTER · Cuernavaca, Morelos"
+periodo = "2020 – 2024"
+
+[[formacion_tarjetas]]
+icono = "grafica"
+titulo = ["Posgrado en Administración", "de Tecnologías"]
+detalle = "UNINTER · en línea"
+periodo = "2025 – 2026"
+
+[[formacion_tarjetas]]
+icono = "escudo"
+titulo = ["Redes empresariales,", "seguridad y automatización"]
+detalle = "Cisco NetAcad (CCNAv7) · 4 cursos"
+periodo = "2023 – 2024"
+
+[[formacion_tarjetas]]
+icono = "ia"
+titulo = ["IA generativa", "y automatización"]
+detalle = "Diplomado · Top Learning · 112 h"
+periodo = "2025"
 
 # ══════════════════════════════════════════════════════════════════════
 #  CURSOS Y CONSTANCIAS
