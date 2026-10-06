@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import math
 import random
+from pathlib import Path
 
 from muro_svg import (
     OSCURO, PAREJA, SIN_MOVIMIENTO, TEMAS, Fuente, Lienzo, brillo, cuadros, degradado,
@@ -494,6 +495,46 @@ def chip_estado(lz: Lienzo, estado: str, detalle: str, x_der: float, y: float, t
             + lz.texto("monob", texto, x + 28, y + 18.5, tam, mezclar(color, "#FFFFFF", .35), .5)[0])
 
 
+# ── Texto neón: copia desenfocada que pulsa suavemente + texto nítido en tono claro ──
+
+NEON_FILTRO = ('<filter id="nb" x="-8%" y="-80%" width="116%" height="260%" color-interpolation-filters="sRGB">'
+               '<feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="a"/>'
+               '<feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>'
+               '<feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="a"/></feMerge></filter>')
+NEON_CSS = ".ng{animation:ng 3.8s ease-in-out infinite}@keyframes ng{0%,100%{opacity:.6}50%{opacity:1}}"
+
+
+def tono(color: str, t: float = .55) -> str:
+    """Versión clara del color (para letras sobre fondo oscuro)."""
+    return mezclar(color, "#FFFFFF", t)
+
+
+def neon(lz: Lienzo, clave: str, texto: str, x: float, y: float, tam: float, color: str,
+         ancla: str = "start", espaciado: float = 0.0, retraso: float = 0.0, pulso: bool = True) -> tuple[str, float]:
+    if NEON_FILTRO not in lz.defs:
+        lz.defs.append(NEON_FILTRO)
+        lz.estilos.append(NEON_CSS)
+    brillo_, ancho = lz.texto(clave, texto, x, y, tam, color, espaciado, ancla)
+    nitido, _ = lz.texto(clave, texto, x, y, tam, tono(color), espaciado, ancla)
+    clase = f' class="ng" style="animation-delay:-{num(retraso)}s"' if pulso else ' opacity=".7"'
+    return f'<g filter="url(#nb)"{clase}>{brillo_}</g>{nitido}', ancho
+
+
+def envolver(texto: str, clave: str, tam: float, ancho: float) -> list[str]:
+    """Parte un texto en líneas que caben en `ancho` píxeles."""
+    lineas, actual = [], ""
+    for palabra in texto.split():
+        prueba = f"{actual} {palabra}".strip()
+        if Fuente.de(clave).ancho(prueba, tam) <= ancho or not actual:
+            actual = prueba
+        else:
+            lineas.append(actual)
+            actual = palabra
+    if actual:
+        lineas.append(actual)
+    return lineas
+
+
 # ═════════════════════════════════════════════════════════════════════════════
 #  ENCABEZADOS DE SECCIÓN
 # ═════════════════════════════════════════════════════════════════════════════
@@ -514,7 +555,8 @@ def encabezado(titulo: str, nota: str, icono_nombre: str, acento: str, acento2: 
         f'<rect x="2" y="6" width="40" height="40" rx="11" fill="url(#eb)"/>',
         f'<rect x="2" y="6" width="40" height="40" rx="11" fill="none" stroke="#fff" stroke-opacity=".35"/>',
         icono(icono_nombre, 10, 14, 24, "#fff", 2.1),
-        lz.texto("titulo", titulo.upper(), x_t, 34, tam, T["texto"], espaciado=espaciado)[0],
+        (neon(lz, "titulo", titulo.upper(), x_t, 34, tam, c1, espaciado=espaciado)[0] if tema == "oscuro"
+         else lz.texto("titulo", titulo.upper(), x_t, 34, tam, T["texto"], espaciado=espaciado)[0]),
         f'<rect x="{num(x1)}" y="24" width="{largo}" height="3" rx="1.5" fill="url(#el)" fill-opacity=".45"/>',
         f'<g clip-path="url(#ec)"><rect class="mv" x="{num(x1 - 50)}" y="24" width="50" height="3" fill="#fff" fill-opacity=".9"/></g>',
         f'<rect x="{num(x1 + largo + 4)}" y="21.5" width="8" height="8" rx="2" fill="{c2}"/>',
@@ -626,9 +668,9 @@ def areas(perfil: dict) -> str:
         tam = min(lz.ajustar("titulo", l, ancho - 44, 24) for l in lineas)
         for j, linea in enumerate(lineas):
             yy = 214 - (len(lineas) - 1 - j) * 28
-            lz.add(lz.texto("titulo", linea, x + 22, yy, tam, P["texto"])[0])
+            lz.add(neon(lz, "titulo", linea, x + 22, yy, tam, c1, retraso=i * 0.9)[0])
         for j, linea in enumerate(area["lema"]):
-            lz.add(lz.texto("texto", linea, x + 22, 246 + j * 22, lz.ajustar("texto", linea, ancho - 44, 15), P["suave"])[0])
+            lz.add(lz.texto("texto", linea, x + 22, 246 + j * 22, lz.ajustar("texto", linea, ancho - 44, 15), tono(c1, .68))[0])
         lz.add(f'<rect x="{num(x + 22)}" y="226" width="34" height="3" rx="1.5" fill="{c1}"/>')
     lz.defs.append('<linearGradient id="brl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
                    '<stop offset=".5" stop-color="#fff" stop-opacity=".07"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>')
@@ -679,8 +721,8 @@ def banda_categoria(grupo: dict, indice: int) -> str:
         f'style="animation-delay:-{num(indice * 1.7)}s"/>',
         f'<path d="{hexagono(58, 44, 27)}" fill="{c1}" fill-opacity=".18" stroke="{c1}" stroke-width="2.2"/>',
         icono(grupo["icono"], 45, 31, 26, mezclar(c1, "#FFFFFF", .3), 2.1),
-        lz.texto("titulo", grupo["grupo"], 108, 41, 23, P["texto"])[0],
-        lz.texto("texto", grupo["descripcion"], 108, 66, 15, P["suave"])[0],
+        neon(lz, "titulo", grupo["grupo"], 108, 41, 23, c1, retraso=indice * 1.1)[0],
+        lz.texto("texto", grupo["descripcion"], 108, 66, 15, tono(c1, .66))[0],
     )
     etiqueta = f"{n} {'elemento' if n == 1 else 'elementos'}"
     ancho = Fuente.de("monob").ancho(etiqueta, 13, .5) + 30
@@ -764,8 +806,8 @@ def formacion(tarjetas: list[dict]) -> str:
                f'<rect x="{num(x + 22)}" y="54" width="28" height="3" rx="1.5" fill="{c1}"/>')
         tam = min(lz.ajustar("titulo", linea, ancho - 40, 21) for linea in t["titulo"])
         for j, linea in enumerate(t["titulo"]):
-            lz.add(lz.texto("titulo", linea, x + 22, 182 + j * 26, tam, "#FFF7E8")[0])
-        lz.add(lz.texto("texto", t["detalle"], x + 22, 254, lz.ajustar("texto", t["detalle"], ancho - 40, 14.5), "#D9DEEE")[0],
+            lz.add(neon(lz, "titulo", linea, x + 22, 182 + j * 26, tam, c1, retraso=i * 0.9)[0])
+        lz.add(lz.texto("texto", t["detalle"], x + 22, 254, lz.ajustar("texto", t["detalle"], ancho - 40, 14.5), tono(c1, .66))[0],
                lz.texto("mono", t["periodo"], x + 22, 278, 12.5, mezclar(c1, "#FFFFFF", .2))[0])
     lz.estilos.append(
         ".fsw{animation:fsw 9s cubic-bezier(.5,0,.3,1) infinite}"
@@ -811,10 +853,10 @@ def trayectoria(experiencia: list[dict]) -> str:
                icono(e.get("icono", "maletin"), x - 11, yl - 11, 22, mezclar(c, "#FFFFFF", .25), 2),
                lz.texto("monob", e["anio"], x, yl - 44, 15, c, 1, "middle")[0])
         tam = lz.ajustar("titulo", e["empresa_corta"], paso - 24 if len(puntos) > 1 else 300, 19)
-        lz.add(lz.texto("titulo", e["empresa_corta"], x, yl + 60, tam, P["texto"], ancla="middle")[0])
+        lz.add(neon(lz, "titulo", e["empresa_corta"], x, yl + 60, tam, c, ancla="middle", retraso=i * 0.9)[0])
         puesto = e.get("puesto_corto", e["puesto"])
         tam_p = lz.ajustar("mono", puesto, paso - 20 if len(puntos) > 1 else 300, 12.5)
-        lz.add(lz.texto("mono", puesto, x, yl + 84, tam_p, P["suave"], ancla="middle")[0])
+        lz.add(lz.texto("mono", puesto, x, yl + 84, tam_p, tono(c, .62), ancla="middle")[0])
     lz.add(f'<rect x=".75" y=".75" width="{W - 1.5}" height="{H - 1.5}" rx="18" fill="none" stroke="url(#ylb)" stroke-opacity=".55" stroke-width="1.5"/></g>')
     lz.estilos.append(
         f".yp{{animation:yp 6s ease-in-out infinite}}@keyframes yp{{0%{{transform:translateX(0);opacity:0}}10%{{opacity:1}}"
@@ -971,10 +1013,10 @@ def portada(proyecto: dict, indice: int) -> str:
     if tam < 27 and " — " in nombre:
         l1, l2 = nombre.split(" — ", 1)
         tam = min(lz.ajustar("titulo", l1, 300, 29), lz.ajustar("titulo", l2, 300, 29))
-        lz.add(lz.texto("titulo", l1, 26, 222, tam, "#FFFFFF")[0],
-               lz.texto("titulo", l2, 26, 222 + tam * 1.08, tam, mezclar(c1, "#FFFFFF", .45))[0])
+        lz.add(neon(lz, "titulo", l1, 26, 222, tam, c1)[0],
+               lz.texto("titulo", l2, 26, 222 + tam * 1.08, tam, tono(c2, .4))[0])
     else:
-        lz.add(lz.texto("titulo", nombre, 26, 236, tam, "#FFFFFF")[0])
+        lz.add(neon(lz, "titulo", nombre, 26, 236, tam, c1)[0])
     tecnologias = "  ·  ".join(proyecto.get("tecnologias", []))
     if tecnologias:
         lz.add(lz.texto("mono", tecnologias, 28, 280, lz.ajustar("mono", tecnologias, 300, 12.5), "#C3CDEA")[0])
@@ -1012,5 +1054,167 @@ def boton(texto: str, icono_nombre: str, acento: str) -> str:
         icono(icono_nombre, 18, 17, 24, "#fff", 2),
         lz.texto("texto", texto, 62, 36, 18, "#EEF3FF")[0],
         f'<path d="M{W - 34} 36L{W - 24} 26M{W - 32} 26H{W - 24}V34" fill="none" stroke="{c1}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+    )
+    return lz.armar()
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  TARJETAS NEÓN (experiencia, detalle de áreas y laboratorios)
+#  Caja animada: borde con una luz que la recorre, título neón y texto en tono claro.
+# ═════════════════════════════════════════════════════════════════════════════
+
+def tarjeta_neon(titulo: str, subtitulo: str, puntos: list[str], acento: str, acento2: str, icono_nombre: str,
+                 lado_titulo: str, lado_sub: str, chip: str = "", indice: int = 0) -> str:
+    W = 1200
+    c1, c2 = P[acento], P[acento2]
+    izq = 250
+    x_t = izq + 40
+    ancho_t = W - x_t - 40
+    tam_p, alto_linea = 17, 27
+    bloques = [envolver(pt, "texto", tam_p, ancho_t - 26) for pt in puntos]
+    y_sub = 92 if subtitulo else 62
+    y0 = y_sub + 40
+    H = max(210, int(y0 + sum(len(b) for b in bloques) * alto_linea + (len(bloques) - 1) * 8 + 26))
+    lz = Lienzo(W, H, titulo, (subtitulo + ". " if subtitulo else "") + " ".join(puntos))
+    lz.defs.append(
+        f'<clipPath id="tc"><rect width="{W}" height="{H}" rx="18"/></clipPath>'
+        + degradado("tf", ["#060A1E", mezclar("#060A1E", c1, .10), "#0A0B24"], 1, 1)
+        + f'<linearGradient id="tl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{c1}" stop-opacity=".32"/>'
+          f'<stop offset="1" stop-color="{c2}" stop-opacity=".08"/></linearGradient>'
+        + degradado("tb", [c1, c2], 1, 1) + brillo("tg", c1, .5) + brillo("tg2", c2, .2)
+    )
+    cx, cy = izq / 2, H / 2 - 22
+    lz.add(
+        f'<g clip-path="url(#tc)"><rect width="{W}" height="{H}" fill="url(#tf)"/>',
+        f'<rect width="{izq}" height="{H}" fill="url(#tl)"/>',
+        f'<circle cx="{num(cx)}" cy="{num(cy)}" r="150" fill="url(#tg)"/>',
+        f'<circle cx="{W - 120}" cy="0" r="260" fill="url(#tg2)"/>',
+        f'<path d="M{izq} 0V{H}" stroke="{c1}" stroke-opacity=".45"/></g>',
+        f'<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="17" fill="none" stroke="url(#tb)" stroke-opacity=".5" stroke-width="1.5"/>',
+        f'<rect class="tr" x="1" y="1" width="{W - 2}" height="{H - 2}" rx="17" fill="none" stroke="{tono(c1, .25)}" '
+        f'stroke-width="2.6" stroke-linecap="round" pathLength="1000" stroke-dasharray="110 890" style="animation-delay:-{num(indice * 1.7)}s"/>',
+        f'<path class="tp" d="{hexagono(cx, cy, 46)}" fill="none" stroke="{c1}" stroke-opacity=".6" stroke-dasharray="5 6" style="animation-delay:-{num(indice)}s"/>',
+        f'<path d="{hexagono(cx, cy, 36)}" fill="#0A1230" stroke="{c1}" stroke-width="2.6"/>',
+        f'<path d="{hexagono(cx, cy, 36)}" fill="{c1}" fill-opacity=".16"/>',
+        icono(icono_nombre, cx - 17, cy - 17, 34, tono(c1, .3), 2.2),
+    )
+    tam_l = lz.ajustar("titulo", lado_titulo, izq - 30, 20)
+    lz.add(neon(lz, "titulo", lado_titulo, cx, cy + 78, tam_l, c1, ancla="middle", retraso=indice * 0.8)[0],
+           lz.texto("monob", lado_sub, cx, cy + 104, 13.5, tono(c1, .3), 1, "middle")[0])
+    tam_t = lz.ajustar("titulo", titulo, ancho_t - (170 if chip else 0), 27)
+    lz.add(neon(lz, "titulo", titulo, x_t, 58, tam_t, c1, retraso=indice * 0.8 + .4)[0])
+    if subtitulo:
+        lz.add(lz.texto("texto", subtitulo, x_t, y_sub, lz.ajustar("texto", subtitulo, ancho_t, 17), tono(c2, .5))[0])
+    if chip:
+        ancho_c = Fuente.de("monob").ancho(chip, 13, .5) + 30
+        lz.add(f'<rect x="{num(W - 36 - ancho_c)}" y="34" width="{num(ancho_c)}" height="30" rx="15" fill="{c1}" fill-opacity=".14" stroke="{c1}" stroke-opacity=".85"/>',
+               lz.texto("monob", chip, W - 36 - ancho_c / 2, 54, 13, tono(c1, .35), .5, "middle")[0])
+    y = y0
+    for bloque in bloques:
+        lz.add(f'<path d="M{x_t} {y - 6}l5 -5 5 5 -5 5Z" fill="{c1}"/>')
+        for linea in bloque:
+            lz.add(lz.texto("texto", linea, x_t + 24, y, tam_p, tono(c1, .74))[0])
+            y += alto_linea
+        y += 8
+    lz.estilos.append(
+        ".tr{animation:tr 7s linear infinite}@keyframes tr{to{stroke-dashoffset:-1000}}"
+        ".tp{transform-box:fill-box;transform-origin:center;animation:tp 4s ease-in-out infinite}"
+        "@keyframes tp{0%,100%{opacity:.35;transform:scale(.94)}50%{opacity:1;transform:scale(1.06)}}"
+        + SIN_MOVIMIENTO
+    )
+    return lz.armar()
+
+
+def tarjeta_constancia(curso: dict, acento: str, icono_nombre: str, indice: int) -> str:
+    """Constancia destacada como tarjeta neón (590×150). Si tiene verificación, la imagen va enlazada."""
+    W, H = 590, 150
+    c1 = P[acento]
+    c2 = P[PAREJA[acento]]
+    lz = Lienzo(W, H, curso["nombre"], f"{curso['emisor']} · {curso['fecha']} · {curso['tipo']}")
+    lz.defs.append(
+        f'<clipPath id="cc"><rect width="{W}" height="{H}" rx="16"/></clipPath>'
+        + degradado("cf", ["#060A1E", mezclar("#060A1E", c1, .14)], 1, 1) + degradado("cb", [c1, c2], 1, 1)
+        + brillo("cg", c1, .5)
+    )
+    lz.add(f'<g clip-path="url(#cc)"><rect width="{W}" height="{H}" fill="url(#cf)"/>',
+           f'<circle cx="62" cy="75" r="110" fill="url(#cg)"/></g>',
+           f'<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="15" fill="none" stroke="url(#cb)" stroke-opacity=".55" stroke-width="1.5"/>',
+           f'<rect class="tr" x="1" y="1" width="{W - 2}" height="{H - 2}" rx="15" fill="none" stroke="{tono(c1, .25)}" '
+           f'stroke-width="2.4" stroke-linecap="round" pathLength="1000" stroke-dasharray="120 880" style="animation-delay:-{num(indice * 1.3)}s"/>',
+           f'<path d="{hexagono(62, 75, 36)}" fill="#0A1230" stroke="{c1}" stroke-width="2.6"/>',
+           f'<path d="{hexagono(62, 75, 36)}" fill="{c1}" fill-opacity=".16"/>',
+           icono(icono_nombre, 45, 58, 34, tono(c1, .3), 2.2))
+    lineas = envolver(curso["nombre"], "titulo", 18, 330)[:2]
+    for j, linea in enumerate(lineas):
+        lz.add(neon(lz, "titulo", linea, 118, 44 + j * 24, 18, c1, retraso=indice * .7)[0])
+    y = 44 + len(lineas) * 24 + 8
+    lz.add(lz.texto("texto", f"{curso['emisor']} · {curso['fecha']}", 118, y,
+                    lz.ajustar("texto", f"{curso['emisor']} · {curso['fecha']}", 440, 14.5), tono(c1, .7))[0],
+           lz.texto("mono", curso["tipo"], 118, y + 22, lz.ajustar("mono", curso["tipo"], 330, 12), tono(c2, .45))[0])
+    chip = "VERIFICAR" if curso.get("verificacion") else "CONSTANCIA PDF"
+    ancho_c = Fuente.de("monob").ancho(chip, 11.5, .5) + 26
+    lz.add(f'<rect x="{num(W - 22 - ancho_c)}" y="18" width="{num(ancho_c)}" height="26" rx="13" fill="{c1}" '
+           f'fill-opacity="{.22 if curso.get("verificacion") else .08}" stroke="{c1}" stroke-opacity=".8"/>',
+           lz.texto("monob", chip, W - 22 - ancho_c / 2, 35.5, 11.5, tono(c1, .35), .5, "middle")[0])
+    lz.estilos.append(".tr{animation:tr 8s linear infinite}@keyframes tr{to{stroke-dashoffset:-1000}}" + SIN_MOVIMIENTO)
+    return lz.armar()
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  CAJAS DE TECNOLOGÍA (logo + nombre neón en el color de la tecnología)
+#  Los logotipos vienen de skill-icons (MIT) y se incrustan desde scripts/iconos-skill/.
+# ═════════════════════════════════════════════════════════════════════════════
+
+ICONOS_SKILL = Path(__file__).resolve().parent / "iconos-skill"
+
+
+def _logo_incrustado(nombre: str, x: float, y: float, lado: float) -> str:
+    import re
+    svg = (ICONOS_SKILL / f"{nombre}.svg").read_text(encoding="utf-8")
+    interior = re.sub(r"^\s*<svg[^>]*>", "", svg.strip())
+    interior = re.sub(r"</svg>\s*$", "", interior)
+    xlink = ' xmlns:xlink="http://www.w3.org/1999/xlink"' if "xlink:" in interior else ""
+    return (f'<svg x="{num(x)}" y="{num(y)}" width="{num(lado)}" height="{num(lado)}" viewBox="0 0 256 256" fill="none"{xlink}>'
+            f'{interior}</svg>')
+
+
+def caja_tecnologia(item: dict, color: str, indice: int, aprendiendo: bool = False) -> str:
+    W, H = 168, 172
+    c = color
+    lz = Lienzo(W, H, item["nombre"], item.get("nota", ""))
+    lz.defs.append(f'<clipPath id="zc"><rect width="{W}" height="{H}" rx="18"/></clipPath>'
+                   + brillo("zg", c, .45)
+                   + f'<linearGradient id="zf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{mezclar("#070B1E", c, .16)}"/>'
+                     f'<stop offset="1" stop-color="#070B1E"/></linearGradient>')
+    lz.add(f'<g clip-path="url(#zc)"><rect width="{W}" height="{H}" fill="url(#zf)"/>',
+           f'<circle cx="{W / 2}" cy="56" r="74" fill="url(#zg)"/></g>')
+    borde = ' stroke-dasharray="7 5"' if aprendiendo else ""
+    lz.add(f'<rect x="1.5" y="1.5" width="{W - 3}" height="{H - 3}" rx="16.5" fill="none" stroke="{c}" stroke-opacity=".7" stroke-width="1.6"{borde}/>',
+           f'<rect class="zr" x="1.5" y="1.5" width="{W - 3}" height="{H - 3}" rx="16.5" fill="none" stroke="{tono(c, .3)}" stroke-width="2.4" '
+           f'stroke-linecap="round" pathLength="1000" stroke-dasharray="90 910" style="animation-delay:-{num((indice * 1.37) % 9)}s"/>')
+    lado = 70
+    if item.get("skill"):
+        logo = _logo_incrustado(item["skill"], W / 2 - lado / 2, 20, lado)
+    else:
+        k = lado / 256
+        logo = (f'<g transform="translate({num(W / 2 - lado / 2)} 20)"><rect width="{lado}" height="{lado}" rx="{num(60 * k)}" fill="#242938"/>'
+                + icono(item["generico"], 58 * k, 58 * k, 140 * k, tono(c, .15), 2.0) + "</g>")
+    dur = 3.6 + (indice % 5) * 0.45
+    lz.add(f'<g class="zf" style="animation-duration:{num(dur)}s;animation-delay:-{num((indice * .83) % dur)}s">{logo}</g>')
+    nombre = item["nombre"]
+    lineas = envolver(nombre, "titulo", 16, W - 18)
+    if len(lineas) > 2:
+        lineas = [nombre]
+    tam = min(lz.ajustar("titulo", l, W - 16, 16) for l in lineas)
+    y = 118 if len(lineas) == 1 else 112
+    for j, linea in enumerate(lineas):
+        lz.add(neon(lz, "titulo", linea, W / 2, y + j * 19, tam, c, ancla="middle", retraso=(indice * .61) % 3.8)[0])
+    nota = item.get("nota") or ("aprendiendo" if aprendiendo else "")
+    if nota:
+        lz.add(lz.texto("mono", nota, W / 2, H - 16, lz.ajustar("mono", nota, W - 16, 11), tono(c, .45), ancla="middle")[0])
+    lz.estilos.append(
+        ".zr{animation:zr 9s linear infinite}@keyframes zr{to{stroke-dashoffset:-1000}}"
+        ".zf{animation-name:zf;animation-iteration-count:infinite;animation-timing-function:ease-in-out;animation-direction:alternate}"
+        "@keyframes zf{from{transform:translateY(0)}to{transform:translateY(-4px)}}" + SIN_MOVIMIENTO
     )
     return lz.armar()
