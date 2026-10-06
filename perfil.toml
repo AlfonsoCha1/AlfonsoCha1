@@ -52,7 +52,9 @@ portafolio = "https://portafolio-original-tau.vercel.app/"
 # ══════════════════════════════════════════════════════════════════════
 #  PROYECTOS
 #  portada: escudo | logs | ia | voz | tienda | lealtad | web | menu | terminal
-#  acento / acento2:  cian | azul | violeta | magenta | verde | ambar
+#  acento / acento2:  esmeralda | cian | azul | violeta | magenta | ambar | dorado | coral
+#  estado_tipo (estado real): disponible | laboratorio | beta | demo | desarrollo
+#  etiqueta: detalle corto que acompaña al estado en la portada (opcional)
 # ══════════════════════════════════════════════════════════════════════
 
 [[proyectos]]
@@ -60,13 +62,14 @@ id = "alba"
 nombre = "ALBA — Mi Kit Técnico"
 categoria = "Ciberseguridad"
 estado = "v0.1.0 · primer módulo operativo"
-etiqueta = "v0.1 · operativo"
+estado_tipo = "disponible"
+etiqueta = "v0.1"
 visibilidad = "publico"
 repo = "https://github.com/AlfonsoCha1/Herramientas_cyberseguridad"
 demo = ""
 portada = "escudo"
-acento = "cian"
-acento2 = "azul"
+acento = "esmeralda"
+acento2 = "cian"
 destacado = true
 orden = 1
 publicar = true
@@ -86,13 +89,14 @@ id = "cyber-lab"
 nombre = "Cybersecurity Python Lab"
 categoria = "Ciberseguridad · laboratorio"
 estado = "4 de 14 herramientas disponibles"
-etiqueta = "4/14 disponibles"
+estado_tipo = "laboratorio"
+etiqueta = "4/14"
 visibilidad = "publico"
 repo = "https://github.com/AlfonsoCha1/Tipos-de-Proyectos/tree/main/ciberseguridad"
 demo = ""
 portada = "logs"
-acento = "verde"
-acento2 = "cian"
+acento = "cian"
+acento2 = "esmeralda"
 destacado = true
 orden = 2
 publicar = true
@@ -112,7 +116,8 @@ id = "sophya"
 nombre = "SOPHYA — Asistente de IA"
 categoria = "IA aplicada"
 estado = "Beta gratuita · requiere cuenta"
-etiqueta = "beta"
+estado_tipo = "beta"
+etiqueta = "gratuita"
 visibilidad = "privado"
 repo = ""
 demo = "https://ia-sophya.vercel.app/"
@@ -136,14 +141,15 @@ tecnologias = ["Python", "FastAPI", "JavaScript"]
 id = "english-coach"
 nombre = "English Speaking Coach"
 categoria = "IA aplicada · voz"
-estado = "En línea"
+estado = "Demo en línea · entrevista de trabajo completa"
+estado_tipo = "demo"
 etiqueta = "en línea"
 visibilidad = "privado"
 repo = ""
 demo = "https://english-speaking-coach-nine.vercel.app/"
 portada = "voz"
 acento = "azul"
-acento2 = "cian"
+acento2 = "violeta"
 destacado = true
 orden = 4
 publicar = true
@@ -151,23 +157,25 @@ descripcion = "Practica inglés hablando con un coach de IA: te escucha, te corr
 funcionamiento = [
   "Eliges un escenario: entrevista de trabajo, conversación cotidiana, viajes, reuniones, presentaciones o negocios.",
   "Ajustas el nivel (A2 a C1), el estilo de corrección (Profesor o Conversación fluida) y la duración (Corta o Completa).",
-  "Toda la práctica es por voz, sin escribir.",
+  "Toda la práctica es por voz, sin escribir; al final recibes tus 3 errores principales con ejercicios.",
+  "Un agente de IA decide cada turno; el código funciona con Groq, OpenAI o Anthropic usando una clave propia.",
 ]
 nota = "Código privado: el enlace lleva a la aplicación."
-tecnologias = ["Aplicación web", "Voz", "IA"]
+tecnologias = ["TypeScript", "Next.js", "Web Speech API", "IA generativa"]
 
 [[proyectos]]
 id = "smuckys"
 nombre = "Smucky's by Chavamon"
 categoria = "E-commerce"
 estado = "Tienda en línea"
+estado_tipo = "disponible"
 etiqueta = "en línea"
 visibilidad = "privado"
 repo = ""
 demo = "https://smuckys-bychavamon.vercel.app/"
 portada = "tienda"
-acento = "magenta"
-acento2 = "violeta"
+acento = "coral"
+acento2 = "magenta"
 destacado = true
 orden = 5
 publicar = true
@@ -185,13 +193,14 @@ id = "lealtad"
 nombre = "Chavarín & Said — Lealtad"
 categoria = "Full stack"
 estado = "Demostración funcional · base para pilotos"
-etiqueta = "demo funcional"
+estado_tipo = "demo"
+etiqueta = "funcional"
 visibilidad = "publico"
 repo = "https://github.com/AlfonsoCha1/Chavarin_-_Said"
 demo = "https://chavarin-said-lealtad.onrender.com/"
 portada = "lealtad"
-acento = "verde"
-acento2 = "cian"
+acento = "ambar"
+acento2 = "dorado"
 destacado = true
 orden = 6
 publicar = true
@@ -326,13 +335,15 @@ publicar = false
 descripcion = "Portafolio de analista SOC (en preparación)."
 
 # ══════════════════════════════════════════════════════════════════════
-#  ÁREAS (las tres tarjetas y su detalle)
+#  ÁREAS (cuatro tarjetas del mismo tamaño y su detalle)
+#  icono: escudo | red | gestion | codigo · titulo_lineas: título partido en dos líneas (opcional)
 # ══════════════════════════════════════════════════════════════════════
 
 [[areas]]
 titulo = "Ciberseguridad"
 lema = ["Defensa, análisis de registros", "y revisión segura de proyectos"]
-acento = "cian"
+acento = "esmeralda"
+acento2 = "cian"
 icono = "escudo"
 puntos = [
   "Herramientas defensivas en Python: análisis de logs, detección de accesos repetidos y búsqueda de secretos expuestos (ALBA y Cybersecurity Python Lab).",
@@ -343,7 +354,8 @@ puntos = [
 [[areas]]
 titulo = "Sistemas y redes"
 lema = ["Conectividad, switches,", "cableado estructurado y Linux"]
-acento = "violeta"
+acento = "cian"
+acento2 = "azul"
 icono = "red"
 puntos = [
   "Diagnóstico de conectividad en más de 50 estaciones de trabajo y configuración de switches (Junta de Conciliación y Arbitraje).",
@@ -353,13 +365,27 @@ puntos = [
 
 [[areas]]
 titulo = "Administración de tecnología"
+titulo_lineas = ["Administración", "de tecnología"]
 lema = ["Soporte TI, datos y gestión", "de proyectos tecnológicos"]
 acento = "ambar"
+acento2 = "dorado"
 icono = "gestion"
 puntos = [
   "Posgrado en Administración de Tecnologías (UNINTER).",
   "Soporte técnico a clientes internacionales e implementación de autenticación biométrica (BBVA Technology).",
   "Bases de datos para el seguimiento de resultados de pruebas y respaldos de producción (Marelli).",
+]
+
+[[areas]]
+titulo = "Desarrollo e IA"
+lema = ["Aplicaciones web y asistentes", "con inteligencia artificial"]
+acento = "violeta"
+acento2 = "magenta"
+icono = "codigo"
+puntos = [
+  "Aplicaciones con IA: SOPHYA (asistente en beta) y English Speaking Coach (tutor de inglés por voz, demo en línea).",
+  "Desarrollo web: tienda en línea Smucky's y plataforma de lealtad Chavarín & Said (demo funcional).",
+  "Diplomado en Inteligencia Artificial Generativa y Automatización (Top Learning).",
 ]
 
 # ══════════════════════════════════════════════════════════════════════
@@ -368,6 +394,8 @@ puntos = [
 
 [[experiencia]]
 empresa = "Marelli"
+acento = "coral"
+icono = "fabrica"
 empresa_corta = "Marelli"
 puesto = "Técnico de Pruebas"
 puesto_corto = "Técnico de Pruebas"
@@ -383,6 +411,8 @@ puntos = [
 
 [[experiencia]]
 empresa = "BBVA Technology America"
+acento = "violeta"
+icono = "banco"
 empresa_corta = "BBVA Technology"
 puesto = "Técnico de Soporte e Implementación TI"
 puesto_corto = "Soporte e implementación TI"
@@ -399,6 +429,8 @@ puntos = [
 
 [[experiencia]]
 empresa = "Junta de Conciliación y Arbitraje"
+acento = "cian"
+icono = "balanza"
 empresa_corta = "Junta de Conciliación"
 puesto = "Técnico en TI (servicio social)"
 puesto_corto = "Técnico en TI"
@@ -414,6 +446,8 @@ puntos = [
 
 [[experiencia]]
 empresa = "Secretaría de Desarrollo Agropecuario (SEDAGRO)"
+acento = "esmeralda"
+icono = "hoja"
 empresa_corta = "SEDAGRO"
 puesto = "Practicante en TI"
 puesto_corto = "Practicante en TI"
@@ -428,6 +462,8 @@ puntos = [
 
 [[experiencia]]
 empresa = "Hayward and Burgers Camping"
+acento = "ambar"
+icono = "maletin"
 empresa_corta = "Hayward and Burgers"
 puesto = "Asistente de Mantenimiento"
 puesto_corto = "Mantenimiento"
@@ -438,84 +474,92 @@ publicar = false
 puntos = ["Mantenimiento general de instalaciones en un entorno de habla inglesa."]
 
 # ══════════════════════════════════════════════════════════════════════
-#  CONOCIMIENTOS · separados por dónde los has usado
-# ══════════════════════════════════════════════════════════════════════
-
-[conocimientos]
-trabajo = ["Soporte técnico", "Linux (usuarios y credenciales)", "Switches", "Cableado estructurado", "TCP/IP", "Autenticación biométrica", "Bases de datos", "Respaldos", "Java", "AWS (soporte)"]
-proyectos = ["Python", "pytest", "HTML", "CSS", "JavaScript", "TypeScript", "Node.js", "PostgreSQL", "FastAPI", "Firebase", "Git y GitHub", "C# y ASP.NET (escuela)"]
-aprendiendo = ["React", "Next.js", "Tailwind CSS", "Docker", "Azure", "AWS", "Blue team"]
-herramientas = ["VS Code", "Cisco Packet Tracer", "Arduino", "Vercel", "Render", "Microsoft Office"]
-
-# ══════════════════════════════════════════════════════════════════════
-#  LO QUE SÉ · panel de tecnologías (imagen assets/lo-que-se.svg)
-#  Cada fila tiene 9 casillas. glifo = letras del distintivo (2–4 letras).
-#  color = color del distintivo. aprendiendo = true → borde punteado.
-#  Para agregar una tecnología, añádela a «items» del grupo que quieras
-#  (cuida que cada fila sume 9; si no, mueve un grupo a otra fila).
+#  LO QUE SÉ · cuatro categorías, cada una con su banda animada y sus íconos
+#  Cada elemento lleva UNO de estos dos campos:
+#    skill    = nombre del ícono oficial en skill-icons (ej. "Python-Dark");
+#               lista completa: github.com/tandpfun/skill-icons/tree/main/icons
+#    generico = ícono propio del muro cuando la tecnología no tiene logotipo
+#               (auriculares, switch, cable, capas, huella, basedatos, respaldo,
+#                prueba, simulador, documento, nube, terminal, escudo, red...)
+#  nota = texto pequeño debajo del nombre (opcional) · columnas = íconos por fila
 # ══════════════════════════════════════════════════════════════════════
 
 [[lo_que_se]]
-grupo = "Lenguajes y web"
-fila = 1
-acento = "cian"
+id = "experiencia"
+grupo = "Experiencia laboral"
+descripcion = "Lo que he usado en mis empleos: BBVA Technology, Marelli y dependencias de gobierno"
+acento = "coral"
+icono = "maletin"
 items = [
-  { nombre = "HTML5", glifo = "HTML", color = "#E9603A" },
-  { nombre = "CSS3", glifo = "CSS", color = "#3B82F6" },
-  { nombre = "JavaScript", glifo = "JS", color = "#F7DF1E" },
-  { nombre = "TypeScript", glifo = "TS", color = "#4C8DDB" },
-  { nombre = "Python", glifo = "Py", color = "#FFD43B" },
-  { nombre = "Java", glifo = "Java", color = "#F89820" },
-  { nombre = "C++", glifo = "C++", color = "#5B9BE0" },
-  { nombre = "C#", glifo = "C#", color = "#B57BDE" },
-  { nombre = "PHP", glifo = "PHP", color = "#8C90D8" },
+  { nombre = "Soporte técnico", generico = "auriculares", nota = "primer nivel e internacional" },
+  { nombre = "Linux", skill = "Linux-Dark", nota = "usuarios y credenciales" },
+  { nombre = "Switches y redes", generico = "switch", nota = "configuración" },
+  { nombre = "Cableado estructurado", generico = "cable" },
+  { nombre = "TCP/IP", generico = "capas" },
+  { nombre = "Autenticación biométrica", generico = "huella", nota = "Face ID y huella" },
+  { nombre = "Bases de datos", generico = "basedatos", nota = "seguimiento de pruebas" },
+  { nombre = "Respaldos", generico = "respaldo", nota = "datos de producción" },
+  { nombre = "Java", skill = "Java-Dark", nota = "asistente digital" },
+  { nombre = "AWS", skill = "AWS-Dark", nota = "soporte de infraestructura" },
 ]
 
 [[lo_que_se]]
-grupo = "Sistemas, redes y nube"
-fila = 2
+id = "proyectos"
+grupo = "Tecnologías en mis proyectos"
+descripcion = "Lenguajes, frameworks y bases de datos que uso en mis proyectos y estudios"
 acento = "violeta"
+icono = "codigo"
 items = [
-  { nombre = "Linux", glifo = "$_", color = "#FCC624" },
-  { nombre = "Redes", glifo = "NET", color = "#22C3EE" },
-  { nombre = "Packet Tracer", glifo = "PT", color = "#1BA0D7" },
-  { nombre = "AWS", glifo = "AWS", color = "#FF9900" },
-  { nombre = "Firebase", glifo = "FB", color = "#FFCA28" },
-  { nombre = "Vercel", glifo = "VC", color = "#E6EDF7" },
-  { nombre = "Render", glifo = "RN", color = "#46E3B7" },
+  { nombre = "HTML5", skill = "HTML" },
+  { nombre = "CSS3", skill = "CSS" },
+  { nombre = "JavaScript", skill = "JavaScript" },
+  { nombre = "TypeScript", skill = "TypeScript" },
+  { nombre = "Python", skill = "Python-Dark" },
+  { nombre = "pytest", generico = "prueba", nota = "pruebas automáticas" },
+  { nombre = "Node.js", skill = "NodeJS-Dark" },
+  { nombre = "FastAPI", skill = "FastAPI" },
+  { nombre = "PostgreSQL", skill = "PostgreSQL-Dark" },
+  { nombre = "Firebase", skill = "Firebase-Dark" },
+  { nombre = "Java", skill = "Java-Dark", nota = "ejercicios" },
+  { nombre = "C#", skill = "CS", nota = "escuela" },
+  { nombre = ".NET", skill = "DotNet", nota = "ASP.NET · escuela" },
+  { nombre = "C++", skill = "CPP" },
+  { nombre = "PHP", skill = "PHP-Dark" },
 ]
 
 [[lo_que_se]]
-grupo = "Control de versiones"
-fila = 2
-acento = "azul"
-items = [
-  { nombre = "Git", glifo = "git", color = "#F05032" },
-  { nombre = "GitHub", glifo = "GH", color = "#C9D1D9" },
-]
-
-[[lo_que_se]]
+id = "herramientas"
 grupo = "Herramientas"
-fila = 3
-acento = "ambar"
+descripcion = "Para programar, versionar, diseñar, simular redes y desplegar"
+acento = "cian"
+icono = "chip"
 items = [
-  { nombre = "VS Code", glifo = "{ }", color = "#23A9F2" },
-  { nombre = "Figma", glifo = "Fg", color = "#A259FF" },
-  { nombre = "Arduino", glifo = "ARD", color = "#1FC3C9" },
-  { nombre = "Office", glifo = "Of", color = "#F25022" },
+  { nombre = "Git", skill = "Git" },
+  { nombre = "GitHub", skill = "Github-Dark" },
+  { nombre = "VS Code", skill = "VSCode-Dark" },
+  { nombre = "Figma", skill = "Figma-Dark" },
+  { nombre = "Arduino", skill = "Arduino" },
+  { nombre = "Microsoft Office", generico = "documento" },
+  { nombre = "Cisco Packet Tracer", generico = "simulador", nota = "simulación de redes" },
+  { nombre = "Vercel", skill = "Vercel-Dark" },
+  { nombre = "Render", generico = "nube", nota = "despliegue" },
+  { nombre = "Scripts .bat", generico = "terminal", nota = "automatización en Windows" },
 ]
 
 [[lo_que_se]]
-grupo = "Aprendiendo"
-fila = 3
-acento = "verde"
-aprendiendo = true
+id = "aprendiendo"
+grupo = "Actualmente aprendiendo"
+descripcion = "Lo que estoy estudiando ahora"
+acento = "ambar"
+icono = "cohete"
+columnas = 6
 items = [
-  { nombre = "React", glifo = "Re", color = "#61DAFB" },
-  { nombre = "Next.js", glifo = "Nx", color = "#E6EDF7" },
-  { nombre = "Tailwind", glifo = "Tw", color = "#38BDF8" },
-  { nombre = "Docker", glifo = "Dk", color = "#2496ED" },
-  { nombre = "Azure", glifo = "Az", color = "#3AA0F3" },
+  { nombre = "React", skill = "React-Dark" },
+  { nombre = "Next.js", skill = "NextJS-Dark" },
+  { nombre = "Tailwind CSS", skill = "TailwindCSS-Dark" },
+  { nombre = "Docker", skill = "Docker" },
+  { nombre = "Azure", skill = "Azure-Dark" },
+  { nombre = "Blue team", generico = "escudo", acento = "esmeralda", nota = "eventos de seguridad" },
 ]
 
 # ══════════════════════════════════════════════════════════════════════
@@ -534,28 +578,32 @@ institucion = "Universidad Internacional (UNINTER)"
 periodo = "2020 – 2024"
 modalidad = "Cuernavaca, Morelos"
 
-# ── Tarjetas doradas de formación (imagen assets/formacion.svg) ───────
-# icono: birrete | grafica | escudo | ia | laptop | chip
+# ── Tarjetas de formación (imagen assets/formacion.svg) ────────────────
+# icono: birrete | grafica | red | escudo | ia | laptop | chip · acento: color propio de la tarjeta
 [[formacion_tarjetas]]
 icono = "birrete"
+acento = "ambar"
 titulo = ["Ingeniería en Sistemas", "Computacionales"]
 detalle = "UNINTER · Cuernavaca, Morelos"
 periodo = "2020 – 2024"
 
 [[formacion_tarjetas]]
 icono = "grafica"
+acento = "dorado"
 titulo = ["Posgrado en Administración", "de Tecnologías"]
 detalle = "UNINTER · en línea"
 periodo = "2025 – 2026"
 
 [[formacion_tarjetas]]
-icono = "escudo"
+icono = "red"
+acento = "cian"
 titulo = ["Redes empresariales,", "seguridad y automatización"]
 detalle = "Cisco NetAcad (CCNAv7) · 4 cursos"
 periodo = "2023 – 2024"
 
 [[formacion_tarjetas]]
 icono = "ia"
+acento = "violeta"
 titulo = ["IA generativa", "y automatización"]
 detalle = "Diplomado · Top Learning · 112 h"
 periodo = "2025"
@@ -564,12 +612,16 @@ periodo = "2025"
 #  CURSOS Y CONSTANCIAS
 #  tipo: diplomado | certificado de curso | constancia | reconocimiento
 #  verificacion: enlace oficial (si existe). grupo: título del bloque.
-#  otros = true → va dentro de «Otras constancias» (lista desplegable)
+#  otros = true → va al bloque «Otras constancias»
+#  destacado = true → aparece en la tabla visible con su insignia
+#  insignia: redes | linux | ia | gestion | desarrollo | otros
 # ══════════════════════════════════════════════════════════════════════
 
 [[cursos]]
 grupo = "Redes y sistemas"
 nombre = "CCNAv7: Redes empresariales, Seguridad y Automatización"
+destacado = true
+insignia = "redes"
 emisor = "Cisco Networking Academy · academia UNINTER"
 fecha = "dic 2023"
 tipo = "certificado de finalización de curso"
@@ -588,6 +640,8 @@ publicar = true
 [[cursos]]
 grupo = "Redes y sistemas"
 nombre = "CISCO: Redes Empresariales Avanzadas"
+destacado = true
+insignia = "redes"
 emisor = "UNINTER"
 fecha = "nov 2024"
 tipo = "certificado · 81 horas"
@@ -606,6 +660,8 @@ publicar = true
 [[cursos]]
 grupo = "Redes y sistemas"
 nombre = "OpenSUSE Linux OS Fundamentals"
+destacado = true
+insignia = "linux"
 emisor = "EDUCBA · Coursera"
 fecha = "sep 2025"
 tipo = "curso en línea"
@@ -615,6 +671,8 @@ publicar = true
 [[cursos]]
 grupo = "Desarrollo e inteligencia artificial"
 nombre = "Diplomado en Inteligencia Artificial Generativa y Automatización"
+destacado = true
+insignia = "ia"
 emisor = "Top Learning Online"
 fecha = "sep 2025"
 tipo = "diplomado · 112 horas"
@@ -624,6 +682,8 @@ publicar = true
 [[cursos]]
 grupo = "Desarrollo e inteligencia artificial"
 nombre = "Introduction to Git and GitHub"
+destacado = true
+insignia = "desarrollo"
 emisor = "Google · Coursera"
 fecha = "abr 2025"
 tipo = "curso en línea"
@@ -660,6 +720,8 @@ publicar = true
 [[cursos]]
 grupo = "Gestión y metodologías ágiles"
 nombre = "Scrum Master Certification: Scrum Methodologies"
+destacado = true
+insignia = "gestion"
 emisor = "LearnQuest · Coursera"
 fecha = "jun 2025"
 tipo = "curso en línea"

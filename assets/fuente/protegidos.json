@@ -1,0 +1,8 @@
+{
+  "descripcion": "Huellas SHA-256 de los elementos animados protegidos (versión aprobada del 5 de octubre de 2026). Las comprueba scripts/protegidos.py; generar.py no escribe nada si cambian.",
+  "huellas": {
+    "hero.svg (sin textos de enfoque)": "fe39d0b145f9e56a222f073436985b8cb237b9be6b7c4ce8b270fbeaa04f229c",
+    "senal.svg": "13b17c1c53b2f6da462b71e2c42bfc551606f972a667d1005ffb6b1e155da95b",
+    "fuente/particulas.json": "8b396bdec2105e190cad0fee0e7349aebf97d66ad6d14c2a190373c867069c1c"
+  }
+}
