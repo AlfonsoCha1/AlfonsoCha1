@@ -23,6 +23,8 @@ OSCURO = {
     "cian": "#22D3EE", "azul": "#3B82F6", "violeta": "#8B5CF6",
     "magenta": "#E14FD0", "verde": "#34D399", "ambar": "#F5B544",
     "rojo": "#F87171",
+    # Colores con intención (sección por sección)
+    "esmeralda": "#2EE6A0", "coral": "#FF7A66", "dorado": "#FFC857",
 }
 CLARO = {
     "fondo": "#FFFFFF", "panel": "#F6F8FB", "panel2": "#EEF2F7",
@@ -31,13 +33,15 @@ CLARO = {
     "cian": "#0E7490", "azul": "#1D4ED8", "violeta": "#6D28D9",
     "magenta": "#A21CAF", "verde": "#047857", "ambar": "#B45309",
     "rojo": "#B91C1C",
+    "esmeralda": "#047857", "coral": "#C2410C", "dorado": "#A16207",
 }
 TEMAS = {"oscuro": OSCURO, "claro": CLARO}
 
 # Segundo color de cada acento, para degradados (acento → acento2)
 PAREJA = {
     "cian": "azul", "azul": "violeta", "violeta": "magenta",
-    "magenta": "ambar", "verde": "cian", "ambar": "magenta",
+    "magenta": "ambar", "verde": "cian", "ambar": "coral",
+    "esmeralda": "cian", "coral": "ambar", "dorado": "ambar",
 }
 
 SIN_MOVIMIENTO = "@media (prefers-reduced-motion:reduce){*{animation:none!important}}"
@@ -245,6 +249,31 @@ ICONOS = {
              '<path d="m10 11-2 2 2 2M14 11l2 2-2 2"/>',
     "servidor": '<rect x="4" y="3" width="16" height="6" rx="1.5"/><rect x="4" y="10" width="16" height="6" rx="1.5"/>'
                 '<path d="M8 6h.01M8 13h.01M12 20h8M4 20h4M8 16v4"/>',
+    "codigo": '<path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>',
+    "hoja": '<path d="M5 20C5 11 10 5 20 4c-.5 10-6.5 15.5-15 16Z"/><path d="M5 20 13 12"/>',
+    "balanza": '<path d="M12 3v17M8 21h8M5 7h14M12 3v4"/><path d="M2.5 14 5 7.5 7.5 14a2.5 2.5 0 0 1-5 0ZM16.5 14 19 7.5l2.5 6.5a2.5 2.5 0 0 1-5 0Z"/>',
+    "banco": '<path d="M3 9 12 4l9 5M4 10h16M6 10v8M10 10v8M14 10v8M18 10v8M3 20.5h18"/>',
+    "fabrica": '<path d="M3 21V10l5 3V10l5 3V10l5 3V4h3v17Z"/><path d="M7 17h2M12 17h2M17 17h2"/>',
+    "auriculares": '<path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/>'
+                   '<rect x="17" y="14" width="4" height="6" rx="1.5"/><path d="M19 20c0 1.3-2.2 2-5 2h-1"/>',
+    "switch": '<rect x="2.5" y="8" width="19" height="8" rx="1.5"/><path d="M6 12h.01M9 12h.01M12 12h.01M15 12h.01M18 12h.01M7 8V5M12 8V5M17 8V5M7 16v3M17 16v3"/>',
+    "cable": '<path d="M6 3v4M10 3v4M4 7h8v5a4 4 0 0 1-8 0Z"/><path d="M8 16v1.5A4.5 4.5 0 0 0 12.5 22h1a4.5 4.5 0 0 0 4.5-4.5V8a3 3 0 0 1 3-3"/>',
+    "capas": '<rect x="4" y="3" width="16" height="4.5" rx="1"/><rect x="4" y="9.75" width="16" height="4.5" rx="1"/>'
+             '<rect x="4" y="16.5" width="16" height="4.5" rx="1"/><path d="M7.5 5.25h.01M7.5 12h.01M7.5 18.75h.01"/>',
+    "huella": '<path d="M12 11v3a6 6 0 0 1-1.5 4M8.5 11a3.5 3.5 0 0 1 7 0v2M5.8 15.5a11 11 0 0 0 .7-4.5 5.5 5.5 0 0 1 11 0c0 3-.5 6-2 8.5'
+              'M19.6 9A8 8 0 0 0 4.4 9M11 21.5a5 5 0 0 1-2.5-1.5"/>',
+    "basedatos": '<ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v13c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-13'
+                 'M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/>',
+    "respaldo": '<path d="M4 13a8 8 0 1 0 2.4-5.7M4 3.5v4.5h4.5"/><path d="M12 8.5v4.5l3 2"/>',
+    "prueba": '<path d="M9 3h6M10 3v6L5 18.5A1.6 1.6 0 0 0 6.4 21h11.2a1.6 1.6 0 0 0 1.4-2.5L14 9V3"/><path d="m9 15.5 2 2 4-4"/>',
+    "simulador": '<rect x="3" y="3.5" width="18" height="12.5" rx="1.5"/><path d="M8 20.5h8M12 16v4.5"/><circle cx="7.5" cy="10" r="1.6"/>'
+                 '<circle cx="16" cy="7.5" r="1.6"/><circle cx="15.5" cy="12.5" r="1.6"/><path d="m9 9.6 5.5-1.6M9 10.6l5 1.5"/>',
+    "documento": '<path d="M6 2.5h8l5 5V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1Z"/><path d="M14 2.5V8h5M8 13h8M8 17h8M8 9h3"/>',
+    "nube": '<path d="M7 18.5a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9.5Z"/><path d="M12 15.5V11m-2.5 2.5L12 11l2.5 2.5"/>',
+    "terminal": '<rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="m6.5 9 3 3-3 3M12 15h5"/>',
+    "cohete": '<path d="M12 2.5c3.5 2 5.5 6 5 11l-2.5 3h-5L7 13.5c-.5-5 1.5-9 5-11Z"/><circle cx="12" cy="9.5" r="2"/>'
+              '<path d="M9.5 16.5 7 21M14.5 16.5 17 21M7 13.5 4 15.5l1.5 3M17 13.5l3 2-1.5 3"/>',
+    "estrella": '<path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6l-5.4 2.9 1.2-6-4.5-4.2 6.1-.7Z"/>',
 }
 
 
