@@ -1,0 +1,614 @@
+# ══════════════════════════════════════════════════════════════════════
+#  perfil.toml · Datos de tu muro de GitHub (el README de tu perfil)
+#
+#  1. Edita este archivo (desde tu computadora o desde github.com).
+#  2. Genera el README y las imágenes:
+#        python scripts/generar.py
+#     Si lo editas en github.com, la acción «Generar perfil» lo hace sola.
+#
+#  Reglas rápidas
+#    publicar = false  → oculta el elemento sin borrarlo
+#    orden = 1, 2, 3…  → número menor aparece primero
+#    destacado = true  → el proyecto sale con portada en la sección principal
+#    visibilidad = "privado" → no se enlaza el código, solo su página (demo)
+#  Guía completa: docs/MANTENIMIENTO.md
+# ══════════════════════════════════════════════════════════════════════
+
+[persona]
+nombre = "Alfonso"
+apellido = "Chavarín"
+nombre_completo = "José Alfonso Chavarín Montoya"
+usuario = "AlfonsoCha1"
+titulo = "Ingeniero en Sistemas Computacionales"
+posgrado = "Posgrado en Administración de Tecnologías"
+ubicacion = "Cuernavaca, Morelos, México"
+idiomas = "Español nativo · Inglés B2"
+# Las tres áreas principales (colores: cian, violeta y ámbar en la cabecera)
+enfoque = ["Ciberseguridad", "Sistemas y redes", "Administración de tecnología"]
+complementos = ["Soporte TI", "Desarrollo web", "Automatización e IA aplicada"]
+presentacion = """
+Soy Ingeniero en Sistemas Computacionales con posgrado en Administración de Tecnologías. \
+Mi experiencia está en soporte e implementación de TI, redes y bases de datos: di soporte a clientes \
+internacionales en BBVA Technology, resolví problemas de conectividad y configuré switches en dependencias \
+de gobierno, y en manufactura desarrollé y administré bases de datos de resultados de pruebas. \
+Hoy enfoco mis proyectos en la ciberseguridad defensiva, con herramientas en Python para revisar la seguridad \
+de proyectos y analizar registros.\
+"""
+construyendo = "ALBA, un kit local para revisar la seguridad de proyectos, y nuevas herramientas para mi laboratorio de ciberseguridad en Python."
+resumen_ingles = """
+Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Management. \
+Hands-on experience in IT support and implementation (BBVA Technology, international clients), \
+networking (government agencies) and production test databases (Marelli). \
+I am currently building defensive security tools in Python: ALBA, a local project security reviewer, \
+and a cybersecurity lab focused on log analysis. Spanish (native) · English (B2).\
+"""
+frase = "Technology is not only about building things, but about solving real problems with useful solutions."
+
+[contacto]
+linkedin = "https://www.linkedin.com/in/alfonso-chavarin/"
+correo = "alfonso.chavarin@hotmail.com"
+portafolio = "https://portafolio-original-tau.vercel.app/"
+
+# ══════════════════════════════════════════════════════════════════════
+#  PROYECTOS
+#  portada: escudo | logs | ia | voz | tienda | lealtad | web | menu | terminal
+#  acento:  cian | violeta | azul | verde | ambar
+# ══════════════════════════════════════════════════════════════════════
+
+[[proyectos]]
+id = "alba"
+nombre = "ALBA — Mi Kit Técnico"
+categoria = "Ciberseguridad"
+estado = "v0.1.0 · primer módulo operativo"
+etiqueta = "v0.1 · operativo"
+visibilidad = "publico"
+repo = "https://github.com/AlfonsoCha1/Herramientas_cyberseguridad"
+demo = ""
+portada = "escudo"
+acento = "cian"
+destacado = true
+orden = 1
+publicar = true
+descripcion = "Aplicación local en español para revisar la seguridad de proyectos web y Node.js y aprender mientras lo haces. Funciona sin internet y solo usa la biblioteca estándar de Python."
+funcionamiento = [
+  "Eliges una carpeta (o el proyecto ficticio del laboratorio) y antes de empezar ves el alcance: qué va a leer, siempre en modo de solo lectura.",
+  "Busca secretos expuestos (16 reglas específicas + 1 genérica), configuraciones peligrosas (CORS, TLS, eval/exec, cookies, Docker) y dependencias con avisos conocidos. Si tienes Gitleaks, lo usa como segundo detector.",
+  "Cada hallazgo separa hechos, indicios e hipótesis. Los secretos nunca se muestran completos: prefijo, longitud y huella HMAC.",
+  "Propone correcciones acotadas con vista previa, aprobación ligada al cambio exacto, respaldo, verificación y reversión.",
+  "Exporta informes en HTML, Markdown y JSON.",
+]
+nota = "Probado en Ubuntu 24.04 (base de Linux Mint 22). Windows y macOS: prototipo. El resto del kit está diseñado y marcado como pendiente."
+tecnologias = ["Python (stdlib)", "Linux", "Gitleaks", "HTML/CSS/JS"]
+
+[[proyectos]]
+id = "cyber-lab"
+nombre = "Cybersecurity Python Lab"
+categoria = "Ciberseguridad · laboratorio"
+estado = "4 de 14 herramientas disponibles"
+etiqueta = "4/14 disponibles"
+visibilidad = "publico"
+repo = "https://github.com/AlfonsoCha1/Tipos-de-Proyectos/tree/main/ciberseguridad"
+demo = ""
+portada = "logs"
+acento = "verde"
+destacado = true
+orden = 2
+publicar = true
+descripcion = "Laboratorio de ciberseguridad defensiva en Python: herramientas pequeñas e independientes, cada una con código, datos sintéticos, pruebas automáticas y guía. Son herramientas de aprendizaje, no productos para producción."
+funcionamiento = [
+  "08 · Generador de reportes: convierte eventos JSON, JSON Lines o CSV en reportes Markdown y HTML, y lista las filas que no pudo usar.",
+  "09 · Contador de intentos de login: cuenta accesos exitosos y fallidos por usuario e IP en registros de OpenSSH y otros formatos.",
+  "11 · Buscador en logs: busca palabras, IPs, rangos de red (CIDR) y fechas con líneas de contexto, sin cargar el archivo completo.",
+  "12 · Detector de múltiples accesos: alerta cuando una cuenta o IP acumula demasiados fallos en una ventana de tiempo, con evidencia.",
+  "Un menú (python menu.py) ejecuta las demostraciones y las pruebas de cada herramienta.",
+]
+nota = "Las otras 10 herramientas se publican por entregas."
+tecnologias = ["Python", "pytest", "Análisis de logs", "Regex"]
+
+[[proyectos]]
+id = "sophya"
+nombre = "SOPHYA — Asistente de IA"
+categoria = "IA aplicada"
+estado = "Beta gratuita · requiere cuenta"
+etiqueta = "beta"
+visibilidad = "privado"
+repo = ""
+demo = "https://ia-sophya.vercel.app/"
+portada = "ia"
+acento = "violeta"
+destacado = true
+orden = 3
+publicar = true
+descripcion = "Asistente de inteligencia artificial en español, en beta gratuita. Ayuda a investigar, redactar, analizar datos y pensar ideas de negocio."
+funcionamiento = [
+  "Chat con memoria dentro de la conversación y entre sesiones; la memoria se puede exportar.",
+  "Voz: dictado y respuestas habladas.",
+  "Investigación web y modo de trabajo autónomo.",
+  "Herramientas de correo y agenda, y búsqueda de empleo.",
+]
+nota = "Código privado: el enlace lleva a la aplicación."
+tecnologias = ["Python", "FastAPI", "JavaScript"]
+
+[[proyectos]]
+id = "english-coach"
+nombre = "English Speaking Coach"
+categoria = "IA aplicada · voz"
+estado = "En línea"
+etiqueta = "en línea"
+visibilidad = "privado"
+repo = ""
+demo = "https://english-speaking-coach-nine.vercel.app/"
+portada = "voz"
+acento = "azul"
+destacado = true
+orden = 4
+publicar = true
+descripcion = "Practica inglés hablando con un coach de IA: te escucha, te corrige y te hace repetir las palabras difíciles."
+funcionamiento = [
+  "Eliges un escenario: entrevista de trabajo, conversación cotidiana, viajes, reuniones, presentaciones o negocios.",
+  "Ajustas el nivel (A2 a C1), el estilo de corrección (Profesor o Conversación fluida) y la duración (Corta o Completa).",
+  "Toda la práctica es por voz, sin escribir.",
+]
+nota = "Código privado: el enlace lleva a la aplicación."
+tecnologias = ["Aplicación web", "Voz", "IA"]
+
+[[proyectos]]
+id = "smuckys"
+nombre = "Smucky's by Chavamon"
+categoria = "E-commerce"
+estado = "Tienda en línea"
+etiqueta = "en línea"
+visibilidad = "privado"
+repo = ""
+demo = "https://smuckys-bychavamon.vercel.app/"
+portada = "tienda"
+acento = "ambar"
+destacado = true
+orden = 5
+publicar = true
+descripcion = "Tienda en línea de mi marca de ropa deportiva y casual: playeras, blusas, playeras sin mangas y shorts deportivos."
+funcionamiento = [
+  "Catálogo por categorías con carrito de compras y favoritos.",
+  "Cuenta de cliente con pedidos, entregas y devoluciones.",
+  "Pago con tarjeta de crédito o débito y Mercado Pago; pago con Stripe.",
+]
+nota = "Código privado: el enlace lleva a la tienda."
+tecnologias = ["HTML", "CSS", "JavaScript", "Firebase", "FastAPI"]
+
+[[proyectos]]
+id = "lealtad"
+nombre = "Chavarín & Said — Lealtad"
+categoria = "Full stack"
+estado = "Demostración funcional · base para pilotos"
+etiqueta = "demo funcional"
+visibilidad = "publico"
+repo = "https://github.com/AlfonsoCha1/Chavarin_-_Said"
+demo = "https://chavarin-said-lealtad.onrender.com/"
+portada = "lealtad"
+acento = "cian"
+destacado = true
+orden = 6
+publicar = true
+descripcion = "Plataforma de tarjetas de puntos o sellos para pequeños negocios de comida, tiendas y servicios (nombre provisional). Todavía no está lista para negocios reales."
+funcionamiento = [
+  "Directorio de negocios con categorías y búsqueda.",
+  "Registro de clientes con un QR de mostrador por sucursal; tarjeta web e impresa.",
+  "Paneles para cliente, empleado, dueño y administración; los tickets repetidos se rechazan.",
+  "La demo usa negocios y personas ficticios.",
+]
+nota = "La demo está en un servidor gratuito: puede tardar alrededor de un minuto en despertar."
+tecnologias = ["TypeScript", "Node.js", "PostgreSQL", "Docker"]
+
+# ── Más proyectos (sin portada; aparecen en la lista desplegable) ─────
+
+[[proyectos]]
+id = "portafolio"
+nombre = "Portafolio web"
+categoria = "Web"
+estado = "En línea"
+visibilidad = "publico"
+repo = "https://github.com/AlfonsoCha1/portafolio-original"
+demo = "https://portafolio-original-tau.vercel.app/"
+destacado = false
+orden = 10
+publicar = true
+descripcion = "Mi sitio personal con experiencia, proyectos y CV descargable."
+
+[[proyectos]]
+id = "restaurante"
+nombre = "Restaurante Smucky's"
+categoria = "Práctica web"
+estado = "En línea"
+visibilidad = "publico"
+repo = "https://github.com/AlfonsoCha1/PROYECTO-INTERLIGENCIA-ARTIFICIAL"
+demo = "https://proyecto-interligencia-artificial.vercel.app/"
+destacado = false
+orden = 11
+publicar = true
+descripcion = "Sitio de restaurante con menú por categorías, pedidos y reservaciones."
+
+[[proyectos]]
+id = "tipos-bash"
+nombre = "Tipos-bash"
+categoria = "Automatización"
+estado = "Scripts"
+visibilidad = "publico"
+repo = "https://github.com/AlfonsoCha1/Tipos-bash"
+demo = ""
+destacado = false
+orden = 12
+publicar = true
+descripcion = "Scripts .bat para Windows: limpieza automática de archivos temporales y organizador de archivos de producción."
+
+[[proyectos]]
+id = "java"
+nombre = "Java"
+categoria = "Ejercicios"
+estado = "Ejercicios"
+visibilidad = "publico"
+repo = "https://github.com/AlfonsoCha1/Java"
+demo = ""
+destacado = false
+orden = 20
+publicar = true
+descripcion = "Ejercicios de Java: condicionales, bucles, juego de adivinar el número y sistema de descuentos."
+
+[[proyectos]]
+id = "escuela"
+nombre = "ESCUELA"
+categoria = "Ejercicios"
+estado = "Escolar"
+visibilidad = "publico"
+repo = "https://github.com/AlfonsoCha1/ESCUELA"
+demo = ""
+destacado = false
+orden = 21
+publicar = true
+descripcion = "Prácticas escolares en C# y ASP.NET Web Forms."
+
+[[proyectos]]
+id = "suma"
+nombre = "SUMA"
+categoria = "Ejercicios"
+estado = "Escolar"
+visibilidad = "publico"
+repo = "https://github.com/AlfonsoCha1/SUMA"
+demo = ""
+destacado = false
+orden = 22
+publicar = true
+descripcion = "Ejercicio básico en C# y ASP.NET."
+
+[[proyectos]]
+id = "proyectos-web"
+nombre = "PROYECTOS"
+categoria = "Ejercicios"
+estado = "Ejercicios"
+visibilidad = "publico"
+repo = "https://github.com/AlfonsoCha1/PROYECTOS"
+demo = ""
+destacado = false
+orden = 23
+publicar = true
+descripcion = "Ejercicios de HTML, CSS y JavaScript."
+
+[[proyectos]]
+id = "portafolios-anteriores"
+nombre = "Versiones anteriores del portafolio"
+categoria = "Web"
+estado = "Archivo"
+visibilidad = "publico"
+repo = "https://github.com/AlfonsoCha1/portafolio-alfonso"
+demo = ""
+destacado = false
+orden = 30
+publicar = true
+descripcion = "portafolio-alfonso, Portafolio y Portafolio_Original: versiones previas de mi sitio personal."
+
+# Ocultos hasta confirmar qué se puede mostrar
+[[proyectos]]
+id = "soc-portfolio"
+nombre = "soc-analyst-portfolio"
+categoria = "Ciberseguridad"
+estado = "Repositorio creado, sin contenido"
+visibilidad = "publico"
+repo = "https://github.com/AlfonsoCha1/soc-analyst-portfolio"
+demo = ""
+destacado = false
+orden = 40
+publicar = false
+descripcion = "Portafolio de analista SOC (en preparación)."
+
+# ══════════════════════════════════════════════════════════════════════
+#  ÁREAS (las tres tarjetas y su detalle)
+# ══════════════════════════════════════════════════════════════════════
+
+[[areas]]
+titulo = "Ciberseguridad"
+lema = ["Defensa, análisis de registros", "y revisión segura de proyectos"]
+acento = "cian"
+icono = "escudo"
+puntos = [
+  "Herramientas defensivas en Python: análisis de logs, detección de accesos repetidos y búsqueda de secretos expuestos (ALBA y Cybersecurity Python Lab).",
+  "Seguridad de red vista en CCNAv7: mitigación de amenazas, listas de control de acceso (ACL) y acceso administrativo seguro.",
+  "Aprendiendo: blue team y análisis de eventos de seguridad.",
+]
+
+[[areas]]
+titulo = "Sistemas y redes"
+lema = ["Conectividad, switches,", "cableado estructurado y Linux"]
+acento = "violeta"
+icono = "red"
+puntos = [
+  "Diagnóstico de conectividad en más de 50 estaciones de trabajo y configuración de switches (Junta de Conciliación y Arbitraje).",
+  "Diseño e instalación de cableado estructurado, ponchado y configuración de periféricos (SEDAGRO).",
+  "Gestión de usuarios y credenciales en Linux (BBVA Technology).",
+]
+
+[[areas]]
+titulo = "Administración de tecnología"
+lema = ["Soporte TI, datos y gestión", "de proyectos tecnológicos"]
+acento = "ambar"
+icono = "gestion"
+puntos = [
+  "Posgrado en Administración de Tecnologías (UNINTER).",
+  "Soporte técnico a clientes internacionales e implementación de autenticación biométrica (BBVA Technology).",
+  "Bases de datos para el seguimiento de resultados de pruebas y respaldos de producción (Marelli).",
+]
+
+# ══════════════════════════════════════════════════════════════════════
+#  EXPERIENCIA
+# ══════════════════════════════════════════════════════════════════════
+
+[[experiencia]]
+empresa = "Marelli"
+puesto = "Técnico de Pruebas"
+periodo = "2026"
+lugar = "Tepotzotlán, Estado de México"
+publicar = true
+puntos = [
+  "Pruebas funcionales a tarjetas electrónicas en varias etapas: manufactura, antes de la entrega al cliente y verificación posterior.",
+  "Desarrollo y administración de bases de datos para el seguimiento de resultados y de materiales reparados.",
+  "Respaldo de la información de las máquinas de prueba.",
+]
+
+[[experiencia]]
+empresa = "BBVA Technology America"
+puesto = "Técnico de Soporte e Implementación TI"
+periodo = "2025"
+lugar = "Ciudad de México · clientes en Colombia, Venezuela y España"
+publicar = true
+puntos = [
+  "Soporte técnico a clientes internacionales en un equipo de dos personas.",
+  "Implementación de autenticación biométrica (Face ID y huella digital) para usuarios bancarios.",
+  "Gestión y actualización de credenciales de usuario en Linux.",
+  "Apoyo en el desarrollo en Java del asistente digital de la aplicación bancaria y en servicios de AWS para soporte de infraestructura.",
+]
+
+[[experiencia]]
+empresa = "Junta de Conciliación y Arbitraje"
+puesto = "Técnico en TI (servicio social)"
+periodo = "2023 – 2024"
+lugar = "Cuernavaca, Morelos"
+publicar = true
+puntos = [
+  "Diagnóstico y solución de problemas de conectividad en más de 50 estaciones de trabajo.",
+  "Configuración y gestión de switches; mantenimiento preventivo y correctivo de equipos.",
+  "Soporte técnico de primer nivel en hardware y software.",
+]
+
+[[experiencia]]
+empresa = "Secretaría de Desarrollo Agropecuario (SEDAGRO)"
+puesto = "Practicante en TI"
+periodo = "2021"
+lugar = "Cuernavaca, Morelos"
+publicar = true
+puntos = [
+  "Diseño e instalación de cableado estructurado hacia switches de red; ponchado de cables.",
+  "Diagnóstico de fallas de conectividad y configuración de impresoras y periféricos.",
+]
+
+[[experiencia]]
+empresa = "Hayward and Burgers Camping"
+puesto = "Asistente de Mantenimiento"
+periodo = "2024"
+lugar = "Boston, EUA"
+publicar = false
+puntos = ["Mantenimiento general de instalaciones en un entorno de habla inglesa."]
+
+# ══════════════════════════════════════════════════════════════════════
+#  CONOCIMIENTOS · separados por dónde los has usado
+# ══════════════════════════════════════════════════════════════════════
+
+[conocimientos]
+trabajo = ["Soporte técnico", "Linux (usuarios y credenciales)", "Switches", "Cableado estructurado", "TCP/IP", "Autenticación biométrica", "Bases de datos", "Respaldos", "Java", "AWS (soporte)"]
+proyectos = ["Python", "pytest", "HTML", "CSS", "JavaScript", "TypeScript", "Node.js", "PostgreSQL", "FastAPI", "Firebase", "Git y GitHub", "C# y ASP.NET (escuela)"]
+aprendiendo = ["React", "Next.js", "Tailwind CSS", "Docker", "Azure", "AWS", "Blue team"]
+herramientas = ["VS Code", "Cisco Packet Tracer", "Arduino", "Vercel", "Render", "Microsoft Office"]
+
+# ══════════════════════════════════════════════════════════════════════
+#  FORMACIÓN ACADÉMICA
+# ══════════════════════════════════════════════════════════════════════
+
+[[formacion]]
+programa = "Posgrado en Administración de Tecnologías"
+institucion = "Universidad Internacional (UNINTER)"
+periodo = "2025 – 2026"
+modalidad = "En línea"
+
+[[formacion]]
+programa = "Ingeniería en Sistemas Computacionales"
+institucion = "Universidad Internacional (UNINTER)"
+periodo = "2020 – 2024"
+modalidad = "Cuernavaca, Morelos"
+
+# ══════════════════════════════════════════════════════════════════════
+#  CURSOS Y CONSTANCIAS
+#  tipo: diplomado | certificado de curso | constancia | reconocimiento
+#  verificacion: enlace oficial (si existe). grupo: título del bloque.
+#  otros = true → va dentro de «Otras constancias» (lista desplegable)
+# ══════════════════════════════════════════════════════════════════════
+
+[[cursos]]
+grupo = "Redes y sistemas"
+nombre = "CCNAv7: Redes empresariales, Seguridad y Automatización"
+emisor = "Cisco Networking Academy · academia UNINTER"
+fecha = "dic 2023"
+tipo = "certificado de finalización de curso"
+verificacion = ""
+publicar = true
+
+[[cursos]]
+grupo = "Redes y sistemas"
+nombre = "CCNAv7: Introducción a Redes"
+emisor = "Cisco Networking Academy · academia UNINTER"
+fecha = "ene 2023"
+tipo = "certificado de finalización de curso"
+verificacion = ""
+publicar = true
+
+[[cursos]]
+grupo = "Redes y sistemas"
+nombre = "CISCO: Redes Empresariales Avanzadas"
+emisor = "UNINTER"
+fecha = "nov 2024"
+tipo = "certificado · 81 horas"
+verificacion = ""
+publicar = true
+
+[[cursos]]
+grupo = "Redes y sistemas"
+nombre = "CISCO: Redes Empresariales, Seguridad y Automatización"
+emisor = "UNINTER"
+fecha = "oct 2024"
+tipo = "certificado · 81 horas"
+verificacion = ""
+publicar = true
+
+[[cursos]]
+grupo = "Redes y sistemas"
+nombre = "OpenSUSE Linux OS Fundamentals"
+emisor = "EDUCBA · Coursera"
+fecha = "sep 2025"
+tipo = "curso en línea"
+verificacion = "https://coursera.org/verify/D66JI5C6CMUL"
+publicar = true
+
+[[cursos]]
+grupo = "Desarrollo e inteligencia artificial"
+nombre = "Diplomado en Inteligencia Artificial Generativa y Automatización"
+emisor = "Top Learning Online"
+fecha = "sep 2025"
+tipo = "diplomado · 112 horas"
+verificacion = ""
+publicar = true
+
+[[cursos]]
+grupo = "Desarrollo e inteligencia artificial"
+nombre = "Introduction to Git and GitHub"
+emisor = "Google · Coursera"
+fecha = "abr 2025"
+tipo = "curso en línea"
+verificacion = "https://coursera.org/verify/85AUMO3S7G8Y"
+publicar = true
+
+[[cursos]]
+grupo = "Desarrollo e inteligencia artificial"
+nombre = "Java (nivel 3)"
+emisor = "TR Network"
+fecha = "feb 2026"
+tipo = "constancia"
+verificacion = ""
+publicar = true
+
+[[cursos]]
+grupo = "Desarrollo e inteligencia artificial"
+nombre = "Curso de programación en Python"
+emisor = "Asociación de Robótica Aplicada y Ciencias de la Tecnología"
+fecha = "ene 2022"
+tipo = "reconocimiento · 16 horas"
+verificacion = ""
+publicar = true
+
+[[cursos]]
+grupo = "Desarrollo e inteligencia artificial"
+nombre = "Curso de Robótica Aplicada, nivel avanzado"
+emisor = "Asociación de Robótica Aplicada y Ciencias de la Tecnología"
+fecha = "jun – oct 2021"
+tipo = "reconocimiento · 60 horas"
+verificacion = ""
+publicar = true
+
+[[cursos]]
+grupo = "Gestión y metodologías ágiles"
+nombre = "Scrum Master Certification: Scrum Methodologies"
+emisor = "LearnQuest · Coursera"
+fecha = "jun 2025"
+tipo = "curso en línea"
+verificacion = "https://coursera.org/verify/L4123WTS5IIU"
+publicar = true
+
+[[cursos]]
+grupo = "Gestión y metodologías ágiles"
+nombre = "Introduction to Scrum Master Training"
+emisor = "LearnQuest · Coursera"
+fecha = "jul 2025"
+tipo = "curso en línea"
+verificacion = "https://coursera.org/verify/J2GU682X9PGQ"
+publicar = true
+
+[[cursos]]
+grupo = "Otras constancias"
+otros = true
+nombre = "Comunicación Digital con Medios Enriquecidos"
+emisor = "UNINTER"
+fecha = "oct 2023"
+tipo = "certificado · 54 horas"
+verificacion = ""
+publicar = true
+
+[[cursos]]
+grupo = "Otras constancias"
+otros = true
+nombre = "Comunicación Web Interactiva"
+emisor = "UNINTER"
+fecha = "nov 2022"
+tipo = "certificado · 54 horas"
+verificacion = ""
+publicar = true
+
+[[cursos]]
+grupo = "Otras constancias"
+otros = true
+nombre = "Ofimática"
+emisor = "UNINTER"
+fecha = "dic 2021"
+tipo = "certificado · 81 horas"
+verificacion = ""
+publicar = true
+
+[[cursos]]
+grupo = "Otras constancias"
+otros = true
+nombre = "3.ª Presentación de Proyectos"
+emisor = "UNINTER · ESCAT"
+fecha = "may 2024"
+tipo = "reconocimiento por participación"
+verificacion = ""
+publicar = true
+
+# ══════════════════════════════════════════════════════════════════════
+#  LABORATORIOS Y PROYECTOS EN DESARROLLO
+# ══════════════════════════════════════════════════════════════════════
+
+[[laboratorios]]
+nombre = "Cybersecurity Python Lab · siguientes entregas"
+detalle = "Laboratorio de códigos 2FA (TOTP), analizador de correos con indicadores de phishing, verificador de archivos sospechosos, checklist de seguridad y seis herramientas más."
+enlace = "https://github.com/AlfonsoCha1/Tipos-de-Proyectos/tree/main/ciberseguridad"
+estado = "pendiente"
+
+[[laboratorios]]
+nombre = "ALBA · etapa 2"
+detalle = "Diagnóstico de sistemas en modo de solo lectura, flujo de BitLocker y recuperación de memorias USB."
+enlace = "https://github.com/AlfonsoCha1/Herramientas_cyberseguridad"
+estado = "pendiente"
