@@ -31,7 +31,7 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 <tr>
 <td width="50%" valign="top">
 <a href="https://github.com/AlfonsoCha1/Herramientas_cyberseguridad"><img src="assets/proyectos/alba.svg" width="100%" alt="Portada de ALBA — Mi Kit Técnico"></a>
-<p><b>ALBA — Mi Kit Técnico</b><br><sub>CIBERSEGURIDAD · v0.1.0 · primer módulo operativo</sub></p>
+<p><b>ALBA — Mi Kit Técnico</b><br><sub>CIBERSEGURIDAD · <b>Disponible</b> · v0.1.0 · primer módulo operativo</sub></p>
 <p>Aplicación local en español para revisar la seguridad de proyectos web y Node.js y aprender mientras lo haces. Funciona sin internet y solo usa la biblioteca estándar de Python.</p>
 <details><summary><b>Cómo funciona</b></summary>
 <ul><li>Eliges una carpeta (o el proyecto ficticio del laboratorio) y antes de empezar ves el alcance: qué va a leer, siempre en modo de solo lectura.</li><li>Busca secretos expuestos (16 reglas específicas + 1 genérica), configuraciones peligrosas (CORS, TLS, eval/exec, cookies, Docker) y dependencias con avisos conocidos. Si tienes Gitleaks, lo usa como segundo detector.</li><li>Cada hallazgo separa hechos, indicios e hipótesis. Los secretos nunca se muestran completos: prefijo, longitud y huella HMAC.</li><li>Propone correcciones acotadas con vista previa, aprobación ligada al cambio exacto, respaldo, verificación y reversión.</li><li>Exporta informes en HTML, Markdown y JSON.</li></ul>
@@ -42,7 +42,7 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 </td>
 <td width="50%" valign="top">
 <a href="https://github.com/AlfonsoCha1/Tipos-de-Proyectos/tree/main/ciberseguridad"><img src="assets/proyectos/cyber-lab.svg" width="100%" alt="Portada de Cybersecurity Python Lab"></a>
-<p><b>Cybersecurity Python Lab</b><br><sub>CIBERSEGURIDAD · LABORATORIO · 4 de 14 herramientas disponibles</sub></p>
+<p><b>Cybersecurity Python Lab</b><br><sub>CIBERSEGURIDAD · LABORATORIO · <b>Laboratorio</b> · 4 de 14 herramientas disponibles</sub></p>
 <p>Laboratorio de ciberseguridad defensiva en Python: herramientas pequeñas e independientes, cada una con código, datos sintéticos, pruebas automáticas y guía. Son herramientas de aprendizaje, no productos para producción.</p>
 <details><summary><b>Cómo funciona</b></summary>
 <ul><li>08 · Generador de reportes: convierte eventos JSON, JSON Lines o CSV en reportes Markdown y HTML, y lista las filas que no pudo usar.</li><li>09 · Contador de intentos de login: cuenta accesos exitosos y fallidos por usuario e IP en registros de OpenSSH y otros formatos.</li><li>11 · Buscador en logs: busca palabras, IPs, rangos de red (CIDR) y fechas con líneas de contexto, sin cargar el archivo completo.</li><li>12 · Detector de múltiples accesos: alerta cuando una cuenta o IP acumula demasiados fallos en una ventana de tiempo, con evidencia.</li><li>Un menú (python menu.py) ejecuta las demostraciones y las pruebas de cada herramienta.</li></ul>
@@ -55,7 +55,7 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 <tr>
 <td width="50%" valign="top">
 <a href="https://ia-sophya.vercel.app/"><img src="assets/proyectos/sophya.svg" width="100%" alt="Portada de SOPHYA — Asistente de IA"></a>
-<p><b>SOPHYA — Asistente de IA</b><br><sub>IA APLICADA · Beta gratuita · requiere cuenta</sub></p>
+<p><b>SOPHYA — Asistente de IA</b><br><sub>IA APLICADA · <b>Beta</b> · Beta gratuita · requiere cuenta</sub></p>
 <p>Asistente de inteligencia artificial en español, en beta gratuita. Ayuda a investigar, redactar, analizar datos y pensar ideas de negocio.</p>
 <details><summary><b>Cómo funciona</b></summary>
 <ul><li>Chat con memoria dentro de la conversación y entre sesiones; la memoria se puede exportar.</li><li>Voz: dictado y respuestas habladas.</li><li>Investigación web y modo de trabajo autónomo.</li><li>Herramientas de correo y agenda, y búsqueda de empleo.</li></ul>
@@ -66,20 +66,20 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 </td>
 <td width="50%" valign="top">
 <a href="https://english-speaking-coach-nine.vercel.app/"><img src="assets/proyectos/english-coach.svg" width="100%" alt="Portada de English Speaking Coach"></a>
-<p><b>English Speaking Coach</b><br><sub>IA APLICADA · VOZ · En línea</sub></p>
+<p><b>English Speaking Coach</b><br><sub>IA APLICADA · VOZ · <b>Demo</b> · Demo en línea · entrevista de trabajo completa</sub></p>
 <p>Practica inglés hablando con un coach de IA: te escucha, te corrige y te hace repetir las palabras difíciles.</p>
 <details><summary><b>Cómo funciona</b></summary>
-<ul><li>Eliges un escenario: entrevista de trabajo, conversación cotidiana, viajes, reuniones, presentaciones o negocios.</li><li>Ajustas el nivel (A2 a C1), el estilo de corrección (Profesor o Conversación fluida) y la duración (Corta o Completa).</li><li>Toda la práctica es por voz, sin escribir.</li></ul>
+<ul><li>Eliges un escenario: entrevista de trabajo, conversación cotidiana, viajes, reuniones, presentaciones o negocios.</li><li>Ajustas el nivel (A2 a C1), el estilo de corrección (Profesor o Conversación fluida) y la duración (Corta o Completa).</li><li>Toda la práctica es por voz, sin escribir; al final recibes tus 3 errores principales con ejercicios.</li><li>Un agente de IA decide cada turno; el código funciona con Groq, OpenAI o Anthropic usando una clave propia.</li></ul>
 <p><sub>Código privado: el enlace lleva a la aplicación.</sub></p>
 </details>
 <p><a href="https://english-speaking-coach-nine.vercel.app/"><b>Visitar sitio</b></a> · <sub>código privado</sub></p>
-<p><code>Aplicación web</code> <code>Voz</code> <code>IA</code></p>
+<p><code>TypeScript</code> <code>Next.js</code> <code>Web Speech API</code> <code>IA generativa</code></p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <a href="https://smuckys-bychavamon.vercel.app/"><img src="assets/proyectos/smuckys.svg" width="100%" alt="Portada de Smucky&#x27;s by Chavamon"></a>
-<p><b>Smucky&#x27;s by Chavamon</b><br><sub>E-COMMERCE · Tienda en línea</sub></p>
+<p><b>Smucky&#x27;s by Chavamon</b><br><sub>E-COMMERCE · <b>Disponible</b> · Tienda en línea</sub></p>
 <p>Tienda en línea de mi marca de ropa deportiva y casual: playeras, blusas, playeras sin mangas y shorts deportivos.</p>
 <details><summary><b>Cómo funciona</b></summary>
 <ul><li>Catálogo por categorías con carrito de compras y favoritos.</li><li>Cuenta de cliente con pedidos, entregas y devoluciones.</li><li>Pago con tarjeta de crédito o débito y Mercado Pago; pago con Stripe.</li></ul>
@@ -90,7 +90,7 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 </td>
 <td width="50%" valign="top">
 <a href="https://github.com/AlfonsoCha1/Chavarin_-_Said"><img src="assets/proyectos/lealtad.svg" width="100%" alt="Portada de Chavarín &amp; Said — Lealtad"></a>
-<p><b>Chavarín &amp; Said — Lealtad</b><br><sub>FULL STACK · Demostración funcional · base para pilotos</sub></p>
+<p><b>Chavarín &amp; Said — Lealtad</b><br><sub>FULL STACK · <b>Demo</b> · Demostración funcional · base para pilotos</sub></p>
 <p>Plataforma de tarjetas de puntos o sellos para pequeños negocios de comida, tiendas y servicios (nombre provisional). Todavía no está lista para negocios reales.</p>
 <details><summary><b>Cómo funciona</b></summary>
 <ul><li>Directorio de negocios con categorías y búsqueda.</li><li>Registro de clientes con un QR de mostrador por sucursal; tarjeta web e impresa.</li><li>Paneles para cliente, empleado, dueño y administración; los tickets repetidos se rechazan.</li><li>La demo usa negocios y personas ficticios.</li></ul>
@@ -122,7 +122,7 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/areas-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/areas-claro.svg"><img src="assets/secciones/areas-oscuro.svg" width="316" alt="Áreas"></picture></h3>
 
-<p align="center"><img src="assets/areas.svg" width="100%" alt="Áreas: Ciberseguridad, Sistemas y redes, Administración de tecnología"></p>
+<p align="center"><img src="assets/areas.svg" width="100%" alt="Áreas: Ciberseguridad, Sistemas y redes, Administración de tecnología, Desarrollo e IA"></p>
 
 **Ciberseguridad**
 
@@ -142,26 +142,106 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 - Soporte técnico a clientes internacionales e implementación de autenticación biométrica (BBVA Technology).
 - Bases de datos para el seguimiento de resultados de pruebas y respaldos de producción (Marelli).
 
+**Desarrollo e IA**
+
+- Aplicaciones con IA: SOPHYA (asistente en beta) y English Speaking Coach (tutor de inglés por voz, demo en línea).
+- Desarrollo web: tienda en línea Smucky's y plataforma de lealtad Chavarín & Said (demo funcional).
+- Diplomado en Inteligencia Artificial Generativa y Automatización (Top Learning).
+
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/loquese-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/loquese-claro.svg"><img src="assets/secciones/loquese-oscuro.svg" width="364" alt="Lo que sé"></picture></h3>
 
-<p align="center"><img src="assets/lo-que-se.svg" width="100%" alt="Lo que sé: HTML5, CSS3, JavaScript, TypeScript, Python, Java, C++, C#, PHP, Linux, Redes, Packet Tracer, AWS, Firebase, Vercel, Render, Git, GitHub, VS Code, Figma, Arduino, Office, React, Next.js, Tailwind, Docker, Azure"></p>
+<p align="center"><img src="assets/loquese/experiencia.svg" width="100%" alt="Experiencia laboral: Lo que he usado en mis empleos: BBVA Technology, Marelli y dependencias de gobierno"></p>
 
-<details><summary><b>Ver como texto, separado por dónde lo he usado</b></summary>
+<table align="center">
+<tr>
+<td align="center" width="20%"><img src="assets/iconos/soporte-tecnico.svg" width="48" height="48" alt=""><br><b>Soporte técnico</b><br><sub>primer nivel e internacional</sub></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Linux-Dark.svg" width="48" height="48" alt=""><br><b>Linux</b><br><sub>usuarios y credenciales</sub></td>
+<td align="center" width="20%"><img src="assets/iconos/switches-y-redes.svg" width="48" height="48" alt=""><br><b>Switches y redes</b><br><sub>configuración</sub></td>
+<td align="center" width="20%"><img src="assets/iconos/cableado-estructurado.svg" width="48" height="48" alt=""><br><b>Cableado estructurado</b></td>
+<td align="center" width="20%"><img src="assets/iconos/tcp-ip.svg" width="48" height="48" alt=""><br><b>TCP/IP</b></td>
+</tr>
+<tr>
+<td align="center" width="20%"><img src="assets/iconos/autenticacion-biometrica.svg" width="48" height="48" alt=""><br><b>Autenticación biométrica</b><br><sub>Face ID y huella</sub></td>
+<td align="center" width="20%"><img src="assets/iconos/bases-de-datos.svg" width="48" height="48" alt=""><br><b>Bases de datos</b><br><sub>seguimiento de pruebas</sub></td>
+<td align="center" width="20%"><img src="assets/iconos/respaldos.svg" width="48" height="48" alt=""><br><b>Respaldos</b><br><sub>datos de producción</sub></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Java-Dark.svg" width="48" height="48" alt=""><br><b>Java</b><br><sub>asistente digital</sub></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/AWS-Dark.svg" width="48" height="48" alt=""><br><b>AWS</b><br><sub>soporte de infraestructura</sub></td>
+</tr>
+</table>
 
-| Dónde | Conocimientos |
-|:--|:--|
-| **En el trabajo** | <code>Soporte técnico</code> <code>Linux (usuarios y credenciales)</code> <code>Switches</code> <code>Cableado estructurado</code> <code>TCP/IP</code> <code>Autenticación biométrica</code> <code>Bases de datos</code> <code>Respaldos</code> <code>Java</code> <code>AWS (soporte)</code> |
-| **En mis proyectos** | <code>Python</code> <code>pytest</code> <code>HTML</code> <code>CSS</code> <code>JavaScript</code> <code>TypeScript</code> <code>Node.js</code> <code>PostgreSQL</code> <code>FastAPI</code> <code>Firebase</code> <code>Git y GitHub</code> <code>C# y ASP.NET (escuela)</code> |
-| **Aprendiendo** | <code>React</code> <code>Next.js</code> <code>Tailwind CSS</code> <code>Docker</code> <code>Azure</code> <code>AWS</code> <code>Blue team</code> |
-| **Herramientas** | <code>VS Code</code> <code>Cisco Packet Tracer</code> <code>Arduino</code> <code>Vercel</code> <code>Render</code> <code>Microsoft Office</code> |
+<p align="center"><img src="assets/loquese/proyectos.svg" width="100%" alt="Tecnologías en mis proyectos: Lenguajes, frameworks y bases de datos que uso en mis proyectos y estudios"></p>
 
-</details>
+<table align="center">
+<tr>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/HTML.svg" width="48" height="48" alt=""><br><b>HTML5</b></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/CSS.svg" width="48" height="48" alt=""><br><b>CSS3</b></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/JavaScript.svg" width="48" height="48" alt=""><br><b>JavaScript</b></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/TypeScript.svg" width="48" height="48" alt=""><br><b>TypeScript</b></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Python-Dark.svg" width="48" height="48" alt=""><br><b>Python</b></td>
+</tr>
+<tr>
+<td align="center" width="20%"><img src="assets/iconos/pytest.svg" width="48" height="48" alt=""><br><b>pytest</b><br><sub>pruebas automáticas</sub></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/NodeJS-Dark.svg" width="48" height="48" alt=""><br><b>Node.js</b></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/FastAPI.svg" width="48" height="48" alt=""><br><b>FastAPI</b></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/PostgreSQL-Dark.svg" width="48" height="48" alt=""><br><b>PostgreSQL</b></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Firebase-Dark.svg" width="48" height="48" alt=""><br><b>Firebase</b></td>
+</tr>
+<tr>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Java-Dark.svg" width="48" height="48" alt=""><br><b>Java</b><br><sub>ejercicios</sub></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/CS.svg" width="48" height="48" alt=""><br><b>C#</b><br><sub>escuela</sub></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/DotNet.svg" width="48" height="48" alt=""><br><b>.NET</b><br><sub>ASP.NET · escuela</sub></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/CPP.svg" width="48" height="48" alt=""><br><b>C++</b></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/PHP-Dark.svg" width="48" height="48" alt=""><br><b>PHP</b></td>
+</tr>
+</table>
+
+<p align="center"><img src="assets/loquese/herramientas.svg" width="100%" alt="Herramientas: Para programar, versionar, diseñar, simular redes y desplegar"></p>
+
+<table align="center">
+<tr>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Git.svg" width="48" height="48" alt=""><br><b>Git</b></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Github-Dark.svg" width="48" height="48" alt=""><br><b>GitHub</b></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/VSCode-Dark.svg" width="48" height="48" alt=""><br><b>VS Code</b></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Figma-Dark.svg" width="48" height="48" alt=""><br><b>Figma</b></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Arduino.svg" width="48" height="48" alt=""><br><b>Arduino</b></td>
+</tr>
+<tr>
+<td align="center" width="20%"><img src="assets/iconos/microsoft-office.svg" width="48" height="48" alt=""><br><b>Microsoft Office</b></td>
+<td align="center" width="20%"><img src="assets/iconos/cisco-packet-tracer.svg" width="48" height="48" alt=""><br><b>Cisco Packet Tracer</b><br><sub>simulación de redes</sub></td>
+<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Vercel-Dark.svg" width="48" height="48" alt=""><br><b>Vercel</b></td>
+<td align="center" width="20%"><img src="assets/iconos/render.svg" width="48" height="48" alt=""><br><b>Render</b><br><sub>despliegue</sub></td>
+<td align="center" width="20%"><img src="assets/iconos/scripts-bat.svg" width="48" height="48" alt=""><br><b>Scripts .bat</b><br><sub>automatización en Windows</sub></td>
+</tr>
+</table>
+
+<p align="center"><img src="assets/loquese/aprendiendo.svg" width="100%" alt="Actualmente aprendiendo: Lo que estoy estudiando ahora"></p>
+
+<table align="center">
+<tr>
+<td align="center" width="16%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/React-Dark.svg" width="48" height="48" alt=""><br><b>React</b></td>
+<td align="center" width="16%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/NextJS-Dark.svg" width="48" height="48" alt=""><br><b>Next.js</b></td>
+<td align="center" width="16%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/TailwindCSS-Dark.svg" width="48" height="48" alt=""><br><b>Tailwind CSS</b></td>
+<td align="center" width="16%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Docker.svg" width="48" height="48" alt=""><br><b>Docker</b></td>
+<td align="center" width="16%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Azure-Dark.svg" width="48" height="48" alt=""><br><b>Azure</b></td>
+<td align="center" width="16%"><img src="assets/iconos/blue-team.svg" width="48" height="48" alt=""><br><b>Blue team</b><br><sub>eventos de seguridad</sub></td>
+</tr>
+</table>
 
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/formacion-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/formacion-claro.svg"><img src="assets/secciones/formacion-oscuro.svg" width="587" alt="Formación y constancias"></picture></h3>
 
 <p align="center"><img src="assets/formacion.svg" width="100%" alt="Formación: Ingeniería en Sistemas Computacionales; Posgrado en Administración de Tecnologías; Redes empresariales, seguridad y automatización; IA generativa y automatización"></p>
 
-<details><summary><b>Ver estudios, cursos y constancias</b> — nombre exacto, emisor, fecha y enlace de verificación (18)</summary>
+<table>
+<tr><th></th><th align="left">Constancia destacada</th><th align="left">Emisor · fecha</th><th align="left">Verificación</th></tr>
+<tr><td align="center" width="56"><img src="assets/insignias/redes.svg" width="44" height="44" alt=""></td><td><b>CCNAv7: Redes empresariales, Seguridad y Automatización</b><br><sub>certificado de finalización de curso</sub></td><td>Cisco Networking Academy · academia UNINTER<br><sub>dic 2023</sub></td><td><sub>constancia en PDF</sub></td></tr>
+<tr><td align="center" width="56"><img src="assets/insignias/redes.svg" width="44" height="44" alt=""></td><td><b>CISCO: Redes Empresariales Avanzadas</b><br><sub>certificado · 81 horas</sub></td><td>UNINTER<br><sub>nov 2024</sub></td><td><sub>constancia en PDF</sub></td></tr>
+<tr><td align="center" width="56"><img src="assets/insignias/linux.svg" width="44" height="44" alt=""></td><td><b>OpenSUSE Linux OS Fundamentals</b><br><sub>curso en línea</sub></td><td>EDUCBA · Coursera<br><sub>sep 2025</sub></td><td><a href="https://coursera.org/verify/D66JI5C6CMUL"><b>verificar</b></a></td></tr>
+<tr><td align="center" width="56"><img src="assets/insignias/ia.svg" width="44" height="44" alt=""></td><td><b>Diplomado en Inteligencia Artificial Generativa y Automatización</b><br><sub>diplomado · 112 horas</sub></td><td>Top Learning Online<br><sub>sep 2025</sub></td><td><sub>constancia en PDF</sub></td></tr>
+<tr><td align="center" width="56"><img src="assets/insignias/desarrollo.svg" width="44" height="44" alt=""></td><td><b>Introduction to Git and GitHub</b><br><sub>curso en línea</sub></td><td>Google · Coursera<br><sub>abr 2025</sub></td><td><a href="https://coursera.org/verify/85AUMO3S7G8Y"><b>verificar</b></a></td></tr>
+<tr><td align="center" width="56"><img src="assets/insignias/gestion.svg" width="44" height="44" alt=""></td><td><b>Scrum Master Certification: Scrum Methodologies</b><br><sub>curso en línea</sub></td><td>LearnQuest · Coursera<br><sub>jun 2025</sub></td><td><a href="https://coursera.org/verify/L4123WTS5IIU"><b>verificar</b></a></td></tr>
+</table>
+
+<details><summary><b>Ver todos mis estudios, cursos y constancias</b> — nombre exacto, emisor, fecha y enlace de verificación (18)</summary>
 
 **Formación académica**
 

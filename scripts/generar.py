@@ -29,6 +29,7 @@ from xml.etree import ElementTree
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import muro_graficos as g  # noqa: E402
+import protegidos  # noqa: E402
 from muro_svg import FALTANTES, TEMAS, esc  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parents[1]
@@ -40,24 +41,36 @@ PARTICULAS = ASSETS / "fuente" / "particulas.json"
 MANUAL_INI = "<!-- MANUAL:INICIO -->"
 MANUAL_FIN = "<!-- MANUAL:FIN -->"
 
-# clave: (título, descripción, ícono, acento)
+# clave: (título, descripción, ícono, acento, acento2) — cada sección con su propio color
 SECCIONES = {
-    "proyectos": ("Proyectos destacados", "Proyectos con enlaces reales", "carpeta", "cian"),
-    "areas": ("Áreas", "Ciberseguridad, sistemas y administración de tecnología", "objetivo", "violeta"),
-    "loquese": ("Lo que sé", "Tecnologías que uso y que estoy aprendiendo", "chip", "azul"),
-    "formacion": ("Formación y constancias", "Estudios, cursos y constancias", "birrete", "ambar"),
-    "experiencia": ("Experiencia", "Trayectoria profesional", "maletin", "verde"),
-    "laboratorios": ("Laboratorios en desarrollo", "Lo que sigue", "matraz", "magenta"),
-    "contacto": ("Contacto", "Enlaces de contacto", "antena", "cian"),
+    "proyectos": ("Proyectos destacados", "Proyectos con enlaces reales", "carpeta", "violeta", "magenta"),
+    "areas": ("Áreas", "Ciberseguridad, sistemas y redes, administración de tecnología, desarrollo e IA", "objetivo", "cian", "esmeralda"),
+    "loquese": ("Lo que sé", "Tecnologías por experiencia, proyectos, herramientas y aprendizaje", "chip", "azul", "violeta"),
+    "formacion": ("Formación y constancias", "Estudios, cursos y constancias", "birrete", "ambar", "dorado"),
+    "experiencia": ("Experiencia", "Trayectoria profesional", "maletin", "coral", "ambar"),
+    "laboratorios": ("Laboratorios en desarrollo", "Lo que sigue", "matraz", "esmeralda", "cian"),
+    "contacto": ("Contacto", "Enlaces de contacto", "antena", "cian", "violeta"),
 }
 
 # clave, texto, ícono, acento
 BOTONES = [
     ("linkedin", "LinkedIn", "perfil", "azul"),
-    ("correo", "Correo", "correo", "cian"),
+    ("correo", "Correo", "correo", "coral"),
     ("portafolio", "Portafolio", "web", "violeta"),
-    ("repositorios", "Repositorios", "repos", "verde"),
+    ("repositorios", "Repositorios", "repos", "esmeralda"),
 ]
+
+# Íconos de tecnologías: skill-icons (licencia MIT, github.com/tandpfun/skill-icons), fijados a un commit
+# para que no cambien solos. Se muestran como imágenes enlazadas; no se copian al repositorio.
+SKILL_ICONS = "https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/{}.svg"
+
+# Insignias de la tabla de constancias: tipo → (ícono, acento)
+INSIGNIAS = {
+    "redes": ("red", "cian"), "linux": ("terminal", "cian"), "ia": ("ia", "violeta"),
+    "gestion": ("gestion", "ambar"), "desarrollo": ("codigo", "violeta"), "otros": ("documento", "coral"),
+}
+
+ESTADO_TEXTO = {"disponible": "Disponible", "laboratorio": "Laboratorio", "beta": "Beta", "demo": "Demo", "desarrollo": "En desarrollo"}
 
 ANCHOS_ENCABEZADO: dict[str, int] = {}
 
@@ -79,6 +92,18 @@ def imagen(ruta: str, alt: str, ancho: str = "100%") -> str:
 def titulo_seccion(clave: str) -> str:
     titulo = SECCIONES[clave][0]
     return f'<h3>{imagen_tema(f"assets/secciones/{clave}", titulo, str(ANCHOS_ENCABEZADO.get(clave, 400)))}</h3>'
+
+
+def slug(texto: str) -> str:
+    import unicodedata
+    base = unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode().lower()
+    return "".join(c if c.isalnum() else "-" for c in base).strip("-").replace("--", "-")
+
+
+def icono_item(item: dict) -> str:
+    if item.get("skill"):
+        return SKILL_ICONS.format(item["skill"])
+    return f"assets/iconos/{slug(item['nombre'])}.svg"
 
 
 def visibles(lista):
@@ -106,7 +131,8 @@ def celda_proyecto(p: dict) -> str:
     lineas = [
         '<td width="50%" valign="top">',
         f'<a href="{esc(destino)}"><img src="assets/proyectos/{p["id"]}.svg" width="100%" alt="Portada de {esc(p["nombre"])}"></a>',
-        f'<p><b>{esc(p["nombre"])}</b><br><sub>{esc(p["categoria"].upper())} · {esc(p["estado"])}</sub></p>',
+        f'<p><b>{esc(p["nombre"])}</b><br><sub>{esc(p["categoria"].upper())} · '
+        f'<b>{esc(ESTADO_TEXTO.get(p.get("estado_tipo", ""), ""))}</b> · {esc(p["estado"])}</sub></p>',
         f'<p>{esc(p["descripcion"])}</p>',
     ]
     if p.get("funcionamiento"):
@@ -202,20 +228,22 @@ def construir_readme(perfil: dict, readme_actual: str) -> str:
             a(f"- {punto}")
         a("")
 
-    # Lo que sé
-    grupos = perfil["lo_que_se"]
+    # Lo que sé: una banda animada por categoría y los íconos de cada tecnología
     a(titulo_seccion("loquese") + "\n")
-    todos = ", ".join(it["nombre"] for gr in grupos for it in gr["items"])
-    a(f'<p align="center">{imagen("assets/lo-que-se.svg", "Lo que sé: " + todos)}</p>\n')
-    c = perfil["conocimientos"]
-    a("<details><summary><b>Ver como texto, separado por dónde lo he usado</b></summary>\n")
-    a("| Dónde | Conocimientos |")
-    a("|:--|:--|")
-    a(f"| **En el trabajo** | {chips(c['trabajo'])} |")
-    a(f"| **En mis proyectos** | {chips(c['proyectos'])} |")
-    a(f"| **Aprendiendo** | {chips(c['aprendiendo'])} |")
-    a(f"| **Herramientas** | {chips(c['herramientas'])} |")
-    a("\n</details>\n")
+    for grupo in perfil["lo_que_se"]:
+        ruta_banda = f"assets/loquese/{grupo['id']}.svg"
+        a(f'<p align="center">{imagen(ruta_banda, grupo["grupo"] + ": " + grupo["descripcion"])}</p>\n')
+        columnas = grupo.get("columnas", 5)
+        items = grupo["items"]
+        a('<table align="center">')
+        for i in range(0, len(items), columnas):
+            a("<tr>")
+            for it in items[i:i + columnas]:
+                nota = f'<br><sub>{esc(it["nota"])}</sub>' if it.get("nota") else ""
+                a(f'<td align="center" width="{100 // columnas}%"><img src="{icono_item(it)}" width="48" height="48" alt="">'
+                  f'<br><b>{esc(it["nombre"])}</b>{nota}</td>')
+            a("</tr>")
+        a("</table>\n")
 
     # Formación y constancias
     a(titulo_seccion("formacion") + "\n")
@@ -223,7 +251,17 @@ def construir_readme(perfil: dict, readme_actual: str) -> str:
     alt_f = "Formación: " + "; ".join(" ".join(t["titulo"]) for t in tarjetas)
     a(f'<p align="center">{imagen("assets/formacion.svg", alt_f)}</p>\n')
     cursos = [x for x in perfil["cursos"] if x.get("publicar", True)]
-    a(f"<details><summary><b>Ver estudios, cursos y constancias</b> — nombre exacto, emisor, fecha y "
+    destacados_c = [x for x in cursos if x.get("destacado")]
+    if destacados_c:
+        a("<table>")
+        a('<tr><th></th><th align="left">Constancia destacada</th><th align="left">Emisor · fecha</th><th align="left">Verificación</th></tr>')
+        for x in destacados_c:
+            verif = f'<a href="{esc(x["verificacion"])}"><b>verificar</b></a>' if x.get("verificacion") else "<sub>constancia en PDF</sub>"
+            a(f'<tr><td align="center" width="56"><img src="assets/insignias/{x.get("insignia", "otros")}.svg" width="44" height="44" alt=""></td>'
+              f'<td><b>{esc(x["nombre"])}</b><br><sub>{esc(x["tipo"])}</sub></td>'
+              f'<td>{esc(x["emisor"])}<br><sub>{esc(x["fecha"])}</sub></td><td>{verif}</td></tr>')
+        a("</table>\n")
+    a(f"<details><summary><b>Ver todos mis estudios, cursos y constancias</b> — nombre exacto, emisor, fecha y "
       f"enlace de verificación ({len(perfil['formacion']) + len(cursos)})</summary>\n")
     a("**Formación académica**\n")
     for f in perfil["formacion"]:
@@ -299,12 +337,19 @@ def archivos_generados(perfil: dict, readme_actual: str) -> dict[Path, str]:
     salida[ASSETS / "hero.svg"] = g.hero(perfil, particulas)
     salida[ASSETS / "senal.svg"] = g.senal()
     salida[ASSETS / "areas.svg"] = g.areas(perfil)
-    salida[ASSETS / "lo-que-se.svg"] = g.lo_que_se(perfil["lo_que_se"])
+    for i, grupo in enumerate(perfil["lo_que_se"]):
+        salida[ASSETS / "loquese" / f"{grupo['id']}.svg"] = g.banda_categoria(grupo, i)
+        for it in grupo["items"]:
+            if not it.get("skill"):
+                salida[ASSETS / "iconos" / f"{slug(it['nombre'])}.svg"] = g.icono_generico(
+                    it["nombre"], it["generico"], it.get("acento", grupo["acento"]))
+    for tipo, (icono_nombre, acento) in INSIGNIAS.items():
+        salida[ASSETS / "insignias" / f"{tipo}.svg"] = g.insignia(icono_nombre, acento, f"Constancia: {tipo}")
     salida[ASSETS / "formacion.svg"] = g.formacion(perfil["formacion_tarjetas"])
     salida[ASSETS / "trayectoria.svg"] = g.trayectoria(visibles(perfil["experiencia"]))
     for tema in TEMAS:
-        for clave, (titulo, nota, icono_nombre, acento) in SECCIONES.items():
-            svg, ancho = g.encabezado(titulo, nota, icono_nombre, acento, tema)
+        for clave, (titulo, nota, icono_nombre, acento, acento2) in SECCIONES.items():
+            svg, ancho = g.encabezado(titulo, nota, icono_nombre, acento, acento2, tema)
             ANCHOS_ENCABEZADO[clave] = ancho
             salida[ASSETS / "secciones" / f"{clave}-{tema}.svg"] = svg
     for clave, texto, icono_nombre, acento in BOTONES:
@@ -317,11 +362,16 @@ def archivos_generados(perfil: dict, readme_actual: str) -> dict[Path, str]:
             ElementTree.fromstring(contenido)
         except ElementTree.ParseError as error:
             raise SystemExit(f"SVG inválido en {ruta.name}: {error}")
+    # Elementos protegidos: rostro holográfico, AC, partículas, cuadro HUD y cuadrícula
+    cambios = protegidos.comprobar(salida[ASSETS / "hero.svg"], salida[ASSETS / "senal.svg"], PARTICULAS.read_bytes())
+    if cambios:
+        raise SystemExit("Detenido: esto cambiaría elementos protegidos (" + ", ".join(cambios) + "). "
+                         "No se escribió nada. Revisa scripts/protegidos.py.")
     salida[README] = construir_readme(perfil, readme_actual)
     return salida
 
 
-CARPETAS_GENERADAS = ["proyectos", "secciones", "botones"]  # lo que sobre ahí se borra
+CARPETAS_GENERADAS = ["proyectos", "secciones", "botones", "loquese", "iconos", "insignias"]  # lo que sobre ahí se borra
 
 
 def sobrantes(salida: dict[Path, str]) -> list[Path]:
