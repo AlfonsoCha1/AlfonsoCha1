@@ -124,6 +124,13 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 
 <p align="center"><img src="assets/areas.svg" width="100%" alt="Áreas: Ciberseguridad, Sistemas y redes, Administración de tecnología, Desarrollo e IA"></p>
 
+<p align="center"><img src="assets/tarjetas/area-ciberseguridad.svg" width="100%" alt="Ciberseguridad: Herramientas defensivas en Python: análisis de logs, detección de accesos repetidos y búsqueda de secretos expuestos (ALBA y Cybersecurity Python Lab). Seguridad de red vista en CCNAv7: mitigación de amenazas, listas de control de acceso (ACL) y acceso administrativo seguro. Aprendiendo: blue team y análisis de eventos de seguridad."></p>
+<p align="center"><img src="assets/tarjetas/area-sistemas-y-redes.svg" width="100%" alt="Sistemas y redes: Diagnóstico de conectividad en más de 50 estaciones de trabajo y configuración de switches (Junta de Conciliación y Arbitraje). Diseño e instalación de cableado estructurado, ponchado y configuración de periféricos (SEDAGRO). Gestión de usuarios y credenciales en Linux (BBVA Technology)."></p>
+<p align="center"><img src="assets/tarjetas/area-administracion-de-tecnologia.svg" width="100%" alt="Administración de tecnología: Posgrado en Administración de Tecnologías (UNINTER). Soporte técnico a clientes internacionales e implementación de autenticación biométrica (BBVA Technology). Bases de datos para el seguimiento de resultados de pruebas y respaldos de producción (Marelli)."></p>
+<p align="center"><img src="assets/tarjetas/area-desarrollo-e-ia.svg" width="100%" alt="Desarrollo e IA: Aplicaciones con IA: SOPHYA (asistente en beta) y English Speaking Coach (tutor de inglés por voz, demo en línea). Desarrollo web: tienda en línea Smucky&#x27;s y plataforma de lealtad Chavarín &amp; Said (demo funcional). Diplomado en Inteligencia Artificial Generativa y Automatización (Top Learning)."></p>
+
+<details><summary><b>Ver áreas como texto</b></summary>
+
 **Ciberseguridad**
 
 - Herramientas defensivas en Python: análisis de logs, detección de accesos repetidos y búsqueda de secretos expuestos (ALBA y Cybersecurity Python Lab).
@@ -148,98 +155,87 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 - Desarrollo web: tienda en línea Smucky's y plataforma de lealtad Chavarín & Said (demo funcional).
 - Diplomado en Inteligencia Artificial Generativa y Automatización (Top Learning).
 
+</details>
+
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/loquese-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/loquese-claro.svg"><img src="assets/secciones/loquese-oscuro.svg" width="364" alt="Lo que sé"></picture></h3>
 
 <p align="center"><img src="assets/loquese/experiencia.svg" width="100%" alt="Experiencia laboral: Lo que he usado en mis empleos: BBVA Technology, Marelli y dependencias de gobierno"></p>
 
-<table align="center">
-<tr>
-<td align="center" width="20%"><img src="assets/iconos/soporte-tecnico.svg" width="48" height="48" alt=""><br><b>Soporte técnico</b><br><sub>primer nivel e internacional</sub></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Linux-Dark.svg" width="48" height="48" alt=""><br><b>Linux</b><br><sub>usuarios y credenciales</sub></td>
-<td align="center" width="20%"><img src="assets/iconos/switches-y-redes.svg" width="48" height="48" alt=""><br><b>Switches y redes</b><br><sub>configuración</sub></td>
-<td align="center" width="20%"><img src="assets/iconos/cableado-estructurado.svg" width="48" height="48" alt=""><br><b>Cableado estructurado</b></td>
-<td align="center" width="20%"><img src="assets/iconos/tcp-ip.svg" width="48" height="48" alt=""><br><b>TCP/IP</b></td>
-</tr>
-<tr>
-<td align="center" width="20%"><img src="assets/iconos/autenticacion-biometrica.svg" width="48" height="48" alt=""><br><b>Autenticación biométrica</b><br><sub>Face ID y huella</sub></td>
-<td align="center" width="20%"><img src="assets/iconos/bases-de-datos.svg" width="48" height="48" alt=""><br><b>Bases de datos</b><br><sub>seguimiento de pruebas</sub></td>
-<td align="center" width="20%"><img src="assets/iconos/respaldos.svg" width="48" height="48" alt=""><br><b>Respaldos</b><br><sub>datos de producción</sub></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Java-Dark.svg" width="48" height="48" alt=""><br><b>Java</b><br><sub>asistente digital</sub></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/AWS-Dark.svg" width="48" height="48" alt=""><br><b>AWS</b><br><sub>soporte de infraestructura</sub></td>
-</tr>
-</table>
+<p align="center">
+<img src="assets/tecnologias/experiencia-soporte-tecnico.svg" width="128" alt="Soporte técnico (primer nivel e internacional)">
+<img src="assets/tecnologias/experiencia-linux.svg" width="128" alt="Linux (usuarios y credenciales)">
+<img src="assets/tecnologias/experiencia-switches-y-redes.svg" width="128" alt="Switches y redes (configuración)">
+<img src="assets/tecnologias/experiencia-cableado-estructurado.svg" width="128" alt="Cableado estructurado">
+<img src="assets/tecnologias/experiencia-tcp-ip.svg" width="128" alt="TCP/IP">
+<img src="assets/tecnologias/experiencia-autenticacion-biometrica.svg" width="128" alt="Autenticación biométrica (Face ID y huella)">
+<img src="assets/tecnologias/experiencia-bases-de-datos.svg" width="128" alt="Bases de datos (seguimiento de pruebas)">
+<img src="assets/tecnologias/experiencia-respaldos.svg" width="128" alt="Respaldos (datos de producción)">
+<img src="assets/tecnologias/experiencia-java.svg" width="128" alt="Java (asistente digital)">
+<img src="assets/tecnologias/experiencia-aws.svg" width="128" alt="AWS (soporte de infraestructura)">
+</p>
 
 <p align="center"><img src="assets/loquese/proyectos.svg" width="100%" alt="Tecnologías en mis proyectos: Lenguajes, frameworks y bases de datos que uso en mis proyectos y estudios"></p>
 
-<table align="center">
-<tr>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/HTML.svg" width="48" height="48" alt=""><br><b>HTML5</b></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/CSS.svg" width="48" height="48" alt=""><br><b>CSS3</b></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/JavaScript.svg" width="48" height="48" alt=""><br><b>JavaScript</b></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/TypeScript.svg" width="48" height="48" alt=""><br><b>TypeScript</b></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Python-Dark.svg" width="48" height="48" alt=""><br><b>Python</b></td>
-</tr>
-<tr>
-<td align="center" width="20%"><img src="assets/iconos/pytest.svg" width="48" height="48" alt=""><br><b>pytest</b><br><sub>pruebas automáticas</sub></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/NodeJS-Dark.svg" width="48" height="48" alt=""><br><b>Node.js</b></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/FastAPI.svg" width="48" height="48" alt=""><br><b>FastAPI</b></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/PostgreSQL-Dark.svg" width="48" height="48" alt=""><br><b>PostgreSQL</b></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Firebase-Dark.svg" width="48" height="48" alt=""><br><b>Firebase</b></td>
-</tr>
-<tr>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Java-Dark.svg" width="48" height="48" alt=""><br><b>Java</b><br><sub>ejercicios</sub></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/CS.svg" width="48" height="48" alt=""><br><b>C#</b><br><sub>escuela</sub></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/DotNet.svg" width="48" height="48" alt=""><br><b>.NET</b><br><sub>ASP.NET · escuela</sub></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/CPP.svg" width="48" height="48" alt=""><br><b>C++</b></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/PHP-Dark.svg" width="48" height="48" alt=""><br><b>PHP</b></td>
-</tr>
-</table>
+<p align="center">
+<img src="assets/tecnologias/proyectos-html5.svg" width="128" alt="HTML5">
+<img src="assets/tecnologias/proyectos-css3.svg" width="128" alt="CSS3">
+<img src="assets/tecnologias/proyectos-javascript.svg" width="128" alt="JavaScript">
+<img src="assets/tecnologias/proyectos-typescript.svg" width="128" alt="TypeScript">
+<img src="assets/tecnologias/proyectos-python.svg" width="128" alt="Python">
+<img src="assets/tecnologias/proyectos-pytest.svg" width="128" alt="pytest (pruebas automáticas)">
+<img src="assets/tecnologias/proyectos-node-js.svg" width="128" alt="Node.js">
+<img src="assets/tecnologias/proyectos-fastapi.svg" width="128" alt="FastAPI">
+<img src="assets/tecnologias/proyectos-postgresql.svg" width="128" alt="PostgreSQL">
+<img src="assets/tecnologias/proyectos-firebase.svg" width="128" alt="Firebase">
+<img src="assets/tecnologias/proyectos-java.svg" width="128" alt="Java (ejercicios)">
+<img src="assets/tecnologias/proyectos-c.svg" width="128" alt="C# (escuela)">
+<img src="assets/tecnologias/proyectos-net.svg" width="128" alt=".NET (ASP.NET · escuela)">
+<img src="assets/tecnologias/proyectos-c.svg" width="128" alt="C++">
+<img src="assets/tecnologias/proyectos-php.svg" width="128" alt="PHP">
+</p>
 
 <p align="center"><img src="assets/loquese/herramientas.svg" width="100%" alt="Herramientas: Para programar, versionar, diseñar, simular redes y desplegar"></p>
 
-<table align="center">
-<tr>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Git.svg" width="48" height="48" alt=""><br><b>Git</b></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Github-Dark.svg" width="48" height="48" alt=""><br><b>GitHub</b></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/VSCode-Dark.svg" width="48" height="48" alt=""><br><b>VS Code</b></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Figma-Dark.svg" width="48" height="48" alt=""><br><b>Figma</b></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Arduino.svg" width="48" height="48" alt=""><br><b>Arduino</b></td>
-</tr>
-<tr>
-<td align="center" width="20%"><img src="assets/iconos/microsoft-office.svg" width="48" height="48" alt=""><br><b>Microsoft Office</b></td>
-<td align="center" width="20%"><img src="assets/iconos/cisco-packet-tracer.svg" width="48" height="48" alt=""><br><b>Cisco Packet Tracer</b><br><sub>simulación de redes</sub></td>
-<td align="center" width="20%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Vercel-Dark.svg" width="48" height="48" alt=""><br><b>Vercel</b></td>
-<td align="center" width="20%"><img src="assets/iconos/render.svg" width="48" height="48" alt=""><br><b>Render</b><br><sub>despliegue</sub></td>
-<td align="center" width="20%"><img src="assets/iconos/scripts-bat.svg" width="48" height="48" alt=""><br><b>Scripts .bat</b><br><sub>automatización en Windows</sub></td>
-</tr>
-</table>
+<p align="center">
+<img src="assets/tecnologias/herramientas-git.svg" width="128" alt="Git">
+<img src="assets/tecnologias/herramientas-github.svg" width="128" alt="GitHub">
+<img src="assets/tecnologias/herramientas-vs-code.svg" width="128" alt="VS Code">
+<img src="assets/tecnologias/herramientas-figma.svg" width="128" alt="Figma">
+<img src="assets/tecnologias/herramientas-arduino.svg" width="128" alt="Arduino">
+<img src="assets/tecnologias/herramientas-microsoft-office.svg" width="128" alt="Microsoft Office">
+<img src="assets/tecnologias/herramientas-cisco-packet-tracer.svg" width="128" alt="Cisco Packet Tracer (simulación de redes)">
+<img src="assets/tecnologias/herramientas-vercel.svg" width="128" alt="Vercel">
+<img src="assets/tecnologias/herramientas-render.svg" width="128" alt="Render (despliegue)">
+<img src="assets/tecnologias/herramientas-scripts-bat.svg" width="128" alt="Scripts .bat (automatización en Windows)">
+</p>
 
 <p align="center"><img src="assets/loquese/aprendiendo.svg" width="100%" alt="Actualmente aprendiendo: Lo que estoy estudiando ahora"></p>
 
-<table align="center">
-<tr>
-<td align="center" width="16%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/React-Dark.svg" width="48" height="48" alt=""><br><b>React</b></td>
-<td align="center" width="16%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/NextJS-Dark.svg" width="48" height="48" alt=""><br><b>Next.js</b></td>
-<td align="center" width="16%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/TailwindCSS-Dark.svg" width="48" height="48" alt=""><br><b>Tailwind CSS</b></td>
-<td align="center" width="16%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Docker.svg" width="48" height="48" alt=""><br><b>Docker</b></td>
-<td align="center" width="16%"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/Azure-Dark.svg" width="48" height="48" alt=""><br><b>Azure</b></td>
-<td align="center" width="16%"><img src="assets/iconos/blue-team.svg" width="48" height="48" alt=""><br><b>Blue team</b><br><sub>eventos de seguridad</sub></td>
-</tr>
-</table>
+<p align="center">
+<img src="assets/tecnologias/aprendiendo-react.svg" width="128" alt="React">
+<img src="assets/tecnologias/aprendiendo-next-js.svg" width="128" alt="Next.js">
+<img src="assets/tecnologias/aprendiendo-tailwind-css.svg" width="128" alt="Tailwind CSS">
+<img src="assets/tecnologias/aprendiendo-docker.svg" width="128" alt="Docker">
+<img src="assets/tecnologias/aprendiendo-azure.svg" width="128" alt="Azure">
+<img src="assets/tecnologias/aprendiendo-blue-team.svg" width="128" alt="Blue team (eventos de seguridad)">
+</p>
+
+<details><summary><b>Ver «Lo que sé» como texto</b></summary>
+
+- **Experiencia laboral:** Soporte técnico (primer nivel e internacional), Linux (usuarios y credenciales), Switches y redes (configuración), Cableado estructurado, TCP/IP, Autenticación biométrica (Face ID y huella), Bases de datos (seguimiento de pruebas), Respaldos (datos de producción), Java (asistente digital), AWS (soporte de infraestructura)
+- **Tecnologías en mis proyectos:** HTML5, CSS3, JavaScript, TypeScript, Python, pytest (pruebas automáticas), Node.js, FastAPI, PostgreSQL, Firebase, Java (ejercicios), C# (escuela), .NET (ASP.NET · escuela), C++, PHP
+- **Herramientas:** Git, GitHub, VS Code, Figma, Arduino, Microsoft Office, Cisco Packet Tracer (simulación de redes), Vercel, Render (despliegue), Scripts .bat (automatización en Windows)
+- **Actualmente aprendiendo:** React, Next.js, Tailwind CSS, Docker, Azure, Blue team (eventos de seguridad)
+
+</details>
 
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/formacion-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/formacion-claro.svg"><img src="assets/secciones/formacion-oscuro.svg" width="587" alt="Formación y constancias"></picture></h3>
 
 <p align="center"><img src="assets/formacion.svg" width="100%" alt="Formación: Ingeniería en Sistemas Computacionales; Posgrado en Administración de Tecnologías; Redes empresariales, seguridad y automatización; IA generativa y automatización"></p>
 
-<table>
-<tr><th></th><th align="left">Constancia destacada</th><th align="left">Emisor · fecha</th><th align="left">Verificación</th></tr>
-<tr><td align="center" width="56"><img src="assets/insignias/redes.svg" width="44" height="44" alt=""></td><td><b>CCNAv7: Redes empresariales, Seguridad y Automatización</b><br><sub>certificado de finalización de curso</sub></td><td>Cisco Networking Academy · academia UNINTER<br><sub>dic 2023</sub></td><td><sub>constancia en PDF</sub></td></tr>
-<tr><td align="center" width="56"><img src="assets/insignias/redes.svg" width="44" height="44" alt=""></td><td><b>CISCO: Redes Empresariales Avanzadas</b><br><sub>certificado · 81 horas</sub></td><td>UNINTER<br><sub>nov 2024</sub></td><td><sub>constancia en PDF</sub></td></tr>
-<tr><td align="center" width="56"><img src="assets/insignias/linux.svg" width="44" height="44" alt=""></td><td><b>OpenSUSE Linux OS Fundamentals</b><br><sub>curso en línea</sub></td><td>EDUCBA · Coursera<br><sub>sep 2025</sub></td><td><a href="https://coursera.org/verify/D66JI5C6CMUL"><b>verificar</b></a></td></tr>
-<tr><td align="center" width="56"><img src="assets/insignias/ia.svg" width="44" height="44" alt=""></td><td><b>Diplomado en Inteligencia Artificial Generativa y Automatización</b><br><sub>diplomado · 112 horas</sub></td><td>Top Learning Online<br><sub>sep 2025</sub></td><td><sub>constancia en PDF</sub></td></tr>
-<tr><td align="center" width="56"><img src="assets/insignias/desarrollo.svg" width="44" height="44" alt=""></td><td><b>Introduction to Git and GitHub</b><br><sub>curso en línea</sub></td><td>Google · Coursera<br><sub>abr 2025</sub></td><td><a href="https://coursera.org/verify/85AUMO3S7G8Y"><b>verificar</b></a></td></tr>
-<tr><td align="center" width="56"><img src="assets/insignias/gestion.svg" width="44" height="44" alt=""></td><td><b>Scrum Master Certification: Scrum Methodologies</b><br><sub>curso en línea</sub></td><td>LearnQuest · Coursera<br><sub>jun 2025</sub></td><td><a href="https://coursera.org/verify/L4123WTS5IIU"><b>verificar</b></a></td></tr>
-</table>
+<p align="center"><img src="assets/tarjetas/constancia-ccnav7-redes-empresariales-seguridad-y-automatizacion.svg" width="49%" alt="CCNAv7: Redes empresariales, Seguridad y Automatización — Cisco Networking Academy · academia UNINTER, dic 2023"> <img src="assets/tarjetas/constancia-cisco-redes-empresariales-avanzadas.svg" width="49%" alt="CISCO: Redes Empresariales Avanzadas — UNINTER, nov 2024"></p>
+<p align="center"><a href="https://coursera.org/verify/D66JI5C6CMUL"><img src="assets/tarjetas/constancia-opensuse-linux-os-fundamentals.svg" width="49%" alt="OpenSUSE Linux OS Fundamentals — EDUCBA · Coursera, sep 2025"></a> <img src="assets/tarjetas/constancia-diplomado-en-inteligencia-artificial-generativa-y-automatizacion.svg" width="49%" alt="Diplomado en Inteligencia Artificial Generativa y Automatización — Top Learning Online, sep 2025"></p>
+<p align="center"><a href="https://coursera.org/verify/85AUMO3S7G8Y"><img src="assets/tarjetas/constancia-introduction-to-git-and-github.svg" width="49%" alt="Introduction to Git and GitHub — Google · Coursera, abr 2025"></a> <a href="https://coursera.org/verify/L4123WTS5IIU"><img src="assets/tarjetas/constancia-scrum-master-certification-scrum-methodologies.svg" width="49%" alt="Scrum Master Certification: Scrum Methodologies — LearnQuest · Coursera, jun 2025"></a></p>
 
 <details><summary><b>Ver todos mis estudios, cursos y constancias</b> — nombre exacto, emisor, fecha y enlace de verificación (18)</summary>
 
@@ -284,6 +280,13 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 
 <p align="center"><img src="assets/trayectoria.svg" width="100%" alt="Trayectoria: 2021 SEDAGRO → 2023 – 2024 Junta de Conciliación → 2025 BBVA Technology → 2026 Marelli"></p>
 
+<p align="center"><img src="assets/tarjetas/exp-marelli.svg" width="100%" alt="Técnico de Pruebas en Marelli (2026, Tepotzotlán, Estado de México): Pruebas funcionales a tarjetas electrónicas en varias etapas: manufactura, antes de la entrega al cliente y verificación posterior. Desarrollo y administración de bases de datos para el seguimiento de resultados y de materiales reparados. Respaldo de la información de las máquinas de prueba."></p>
+<p align="center"><img src="assets/tarjetas/exp-bbva-technology.svg" width="100%" alt="Técnico de Soporte e Implementación TI en BBVA Technology America (2025, Ciudad de México · clientes en Colombia, Venezuela y España): Soporte técnico a clientes internacionales en un equipo de dos personas. Implementación de autenticación biométrica (Face ID y huella digital) para usuarios bancarios. Gestión y actualización de credenciales de usuario en Linux. Apoyo en el desarrollo en Java del asistente digital de la aplicación bancaria y en servicios de AWS para soporte de infraestructura."></p>
+<p align="center"><img src="assets/tarjetas/exp-junta-de-conciliacion.svg" width="100%" alt="Técnico en TI (servicio social) en Junta de Conciliación y Arbitraje (2023 – 2024, Cuernavaca, Morelos): Diagnóstico y solución de problemas de conectividad en más de 50 estaciones de trabajo. Configuración y gestión de switches; mantenimiento preventivo y correctivo de equipos. Soporte técnico de primer nivel en hardware y software."></p>
+<p align="center"><img src="assets/tarjetas/exp-sedagro.svg" width="100%" alt="Practicante en TI en Secretaría de Desarrollo Agropecuario (SEDAGRO) (2021, Cuernavaca, Morelos): Diseño e instalación de cableado estructurado hacia switches de red; ponchado de cables. Diagnóstico de fallas de conectividad y configuración de impresoras y periféricos."></p>
+
+<details><summary><b>Ver experiencia como texto</b></summary>
+
 **Técnico de Pruebas** · Marelli  
 <sub>2026 · Tepotzotlán, Estado de México</sub>
 
@@ -312,10 +315,12 @@ Computer Systems Engineer (UNINTER) with a postgraduate degree in Technology Man
 - Diseño e instalación de cableado estructurado hacia switches de red; ponchado de cables.
 - Diagnóstico de fallas de conectividad y configuración de impresoras y periféricos.
 
+</details>
+
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/secciones/laboratorios-oscuro.svg"><source media="(prefers-color-scheme: light)" srcset="assets/secciones/laboratorios-claro.svg"><img src="assets/secciones/laboratorios-oscuro.svg" width="632" alt="Laboratorios en desarrollo"></picture></h3>
 
-- **[Cybersecurity Python Lab · siguientes entregas](https://github.com/AlfonsoCha1/Tipos-de-Proyectos/tree/main/ciberseguridad)** <sub>`pendiente`</sub> — Laboratorio de códigos 2FA (TOTP), analizador de correos con indicadores de phishing, verificador de archivos sospechosos, checklist de seguridad y seis herramientas más.
-- **[ALBA · etapa 2](https://github.com/AlfonsoCha1/Herramientas_cyberseguridad)** <sub>`pendiente`</sub> — Diagnóstico de sistemas en modo de solo lectura, flujo de BitLocker y recuperación de memorias USB.
+<p align="center"><a href="https://github.com/AlfonsoCha1/Tipos-de-Proyectos/tree/main/ciberseguridad"><img src="assets/tarjetas/lab-cybersecurity-python-lab-siguientes-entregas.svg" width="100%" alt="Cybersecurity Python Lab · siguientes entregas (pendiente): Laboratorio de códigos 2FA (TOTP), analizador de correos con indicadores de phishing, verificador de archivos sospechosos, checklist de seguridad y seis herramientas más."></a></p>
+<p align="center"><a href="https://github.com/AlfonsoCha1/Herramientas_cyberseguridad"><img src="assets/tarjetas/lab-alba-etapa-2.svg" width="100%" alt="ALBA · etapa 2 (pendiente): Diagnóstico de sistemas en modo de solo lectura, flujo de BitLocker y recuperación de memorias USB."></a></p>
 
 <sub>Mi actividad real es la gráfica de contribuciones que GitHub muestra debajo de este README; las cuadrículas animadas de esta página son decorativas.</sub>
 
