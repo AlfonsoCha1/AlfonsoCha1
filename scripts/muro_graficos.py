@@ -1218,3 +1218,84 @@ def caja_tecnologia(item: dict, color: str, indice: int, aprendiendo: bool = Fal
         "@keyframes zf{from{transform:translateY(0)}to{transform:translateY(-4px)}}" + SIN_MOVIMIENTO
     )
     return lz.armar()
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  EXPERIENCIA EN UNA SOLA PIEZA: línea de tiempo luminosa conectada a cajas animadas
+# ═════════════════════════════════════════════════════════════════════════════
+
+def experiencia_cajas(experiencia: list[dict]) -> str:
+    puntos = list(reversed(experiencia))  # de la más antigua a la más reciente
+    n = len(puntos)
+    W, gap, mx = 1200, 18, 0
+    ancho = (W - gap * (n - 1)) / n
+    yl, top, H = 46, 96, 418
+    lz = Lienzo(W, H, "Experiencia",
+                " → ".join(f"{e['anio']}: {e['puesto']} en {e['empresa']}. " + " ".join(e.get("resumen", [])) for e in puntos))
+    colores = [P[e.get("acento", "coral")] for e in puntos]
+    centros = [i * (ancho + gap) + ancho / 2 for i in range(n)]
+    lz.defs.append(
+        f'<linearGradient id="xl" gradientUnits="userSpaceOnUse" x1="{num(centros[0])}" y1="0" x2="{num(centros[-1])}" y2="0">'
+        + "".join(f'<stop offset="{num(i / max(1, n - 1))}" stop-color="{c}"/>' for i, c in enumerate(colores))
+        + "</linearGradient>"
+    )
+    # línea de tiempo con pulso viajero
+    lz.add(f'<path d="M{num(centros[0])} {yl}H{num(centros[-1])}" stroke="url(#xl)" stroke-width="12" stroke-opacity=".16" stroke-linecap="round"/>',
+           f'<path d="M{num(centros[0])} {yl}H{num(centros[-1])}" stroke="url(#xl)" stroke-width="3" stroke-linecap="round"/>',
+           f'<circle class="xp" cx="{num(centros[0])}" cy="{yl}" r="5" fill="#fff"/>')
+    for i, e in enumerate(puntos):
+        x = i * (ancho + gap)
+        cx = centros[i]
+        c1 = colores[i]
+        c2 = P[PAREJA[e.get("acento", "coral")]]
+        lz.defs.append(
+            f'<clipPath id="xc{i}"><rect x="{num(x)}" y="{top}" width="{num(ancho)}" height="{H - top}" rx="16"/></clipPath>'
+            + f'<linearGradient id="xf{i}" x1="0" y1="0" x2=".5" y2="1"><stop offset="0" stop-color="{c1}" stop-opacity=".26"/>'
+              f'<stop offset=".6" stop-color="{c2}" stop-opacity=".06"/><stop offset="1" stop-color="#070B1E" stop-opacity="0"/></linearGradient>'
+            + brillo(f"xg{i}", c1, .55) + degradado(f"xb{i}", [c1, c2], 1, 1)
+        )
+        # nodo, año y conector
+        lz.add(f'<circle cx="{num(cx)}" cy="{yl}" r="26" fill="url(#xg{i})"/>',
+               f'<path class="yn" d="{hexagono(cx, yl, 21)}" fill="none" stroke="{c1}" stroke-opacity=".55" stroke-dasharray="4 4" style="animation-delay:-{i * .7}s"/>',
+               f'<path d="{hexagono(cx, yl, 16)}" fill="#0A1230" stroke="{c1}" stroke-width="2.4"/>',
+               f'<circle cx="{num(cx)}" cy="{yl}" r="4.5" fill="{c1}"/>',
+               f'<path d="M{num(cx)} {yl + 18}V{top}" stroke="{c1}" stroke-width="2" stroke-dasharray="3 4" stroke-opacity=".8"/>',
+               f'<circle class="xd" cx="{num(cx)}" cy="{yl + 18}" r="3" fill="{tono(c1, .3)}" style="animation-delay:-{num(i * .5)}s"/>')
+        # caja
+        lz.add(f'<g clip-path="url(#xc{i})"><rect x="{num(x)}" y="{top}" width="{num(ancho)}" height="{H - top}" fill="#080C22"/>',
+               f'<rect x="{num(x)}" y="{top}" width="{num(ancho)}" height="{H - top}" fill="url(#xf{i})"/>',
+               f'<circle cx="{num(x + ancho - 40)}" cy="{top + 40}" r="110" fill="url(#xg{i})" opacity=".55"/></g>',
+               f'<rect x="{num(x + 1)}" y="{top + 1}" width="{num(ancho - 2)}" height="{H - top - 2}" rx="15" fill="none" stroke="url(#xb{i})" stroke-opacity=".6" stroke-width="1.6"/>',
+               f'<rect class="tr" x="{num(x + 1)}" y="{top + 1}" width="{num(ancho - 2)}" height="{H - top - 2}" rx="15" fill="none" '
+               f'stroke="{tono(c1, .25)}" stroke-width="2.6" stroke-linecap="round" pathLength="1000" stroke-dasharray="120 880" '
+               f'style="animation-delay:-{num(i * 1.75)}s"/>')
+        ix, iy = x + 22, top + 22
+        lz.add(f'<path d="{hexagono(ix + 24, iy + 24, 25)}" fill="{c1}" fill-opacity=".18" stroke="{c1}" stroke-width="2.2"/>',
+               icono(e.get("icono", "maletin"), ix + 11, iy + 11, 26, tono(c1, .3), 2.1))
+        anio = e["anio"]
+        ancho_a = Fuente.de("monob").ancho(anio, 13, .5) + 26
+        lz.add(f'<rect x="{num(x + ancho - 20 - ancho_a)}" y="{top + 26}" width="{num(ancho_a)}" height="28" rx="14" fill="{c1}" fill-opacity=".16" stroke="{c1}" stroke-opacity=".85"/>',
+               lz.texto("monob", anio, x + ancho - 20 - ancho_a / 2, top + 44.5, 13, tono(c1, .35), .5, "middle")[0])
+        empresa = e["empresa_corta"]
+        tam = lz.ajustar("titulo", empresa, ancho - 44, 23)
+        lz.add(neon(lz, "titulo", empresa, x + 22, top + 112, tam, c1, retraso=i * .9)[0])
+        puesto = e.get("puesto_corto", e["puesto"])
+        lz.add(lz.texto("mono", puesto, x + 22, top + 138, lz.ajustar("mono", puesto, ancho - 44, 13), tono(c2, .45))[0],
+               f'<rect x="{num(x + 22)}" y="{top + 154}" width="34" height="3" rx="1.5" fill="{c1}"/>')
+        y = top + 186
+        for linea in e.get("resumen", []):
+            for parte in envolver(linea, "texto", 15.5, ancho - 54):
+                lz.add(lz.texto("texto", parte, x + 22, y, 15.5, tono(c1, .76))[0])
+                y += 23
+            y += 6
+        lz.add(lz.texto("mono", e["lugar"].split(" · ")[0], x + 22, H - 20,
+                        lz.ajustar("mono", e["lugar"].split(" · ")[0], ancho - 44, 11.5), tono(c1, .25))[0])
+    lz.estilos.append(
+        f".xp{{animation:xp 6s ease-in-out infinite}}@keyframes xp{{0%{{transform:translateX(0);opacity:0}}10%{{opacity:1}}"
+        f"90%{{opacity:1}}100%{{transform:translateX({num(centros[-1] - centros[0])}px);opacity:0}}}}"
+        f".xd{{animation:xd 2.2s ease-in infinite}}@keyframes xd{{from{{transform:translateY(0);opacity:1}}to{{transform:translateY({top - yl - 22}px);opacity:0}}}}"
+        ".yn{transform-box:fill-box;transform-origin:center;animation:yn 3s ease-in-out infinite}"
+        "@keyframes yn{0%,100%{transform:scale(.92);opacity:.4}50%{transform:scale(1.08);opacity:1}}"
+        ".tr{animation:tr 8s linear infinite}@keyframes tr{to{stroke-dashoffset:-1000}}" + SIN_MOVIMIENTO
+    )
+    return lz.armar()
